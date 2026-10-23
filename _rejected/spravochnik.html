@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЮниХим — моющие средства для прачечных, гостиниц и химчисток</title>
+<meta name="description" content="Производим сами, в Тучково Московской области: жидкое мыло, гель для стирки, кондиционер для белья, средство для мытья посуды. Опт, контрактное производство, основа для мыла.">
+<meta name="theme-color" content="#F3C318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400..800&family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#151513;
+  --ink-2:#3C433E;
+  --rule:rgba(21,21,19,.2);
+  --acetate:rgba(238,241,238,.9);
+  --paper:#FAFBF9;
+  --desk:#1F1E1B;
+  --cover:#161513;
+  --verm:#D12A1B;
+  --rail:64px;
+  --tuck:16px;
+  --hole:22px;
+  --hole-x:25px;
+  --pad-l:96px;
+  --gap:32px;
+  --mm:.74px;
+  --step:90ms steps(2, end);
+  --f-head:"Geologica", "Segoe UI", system-ui, sans-serif;
+  --f-body:"PT Serif", Georgia, "Times New Roman", serif;
+  --f-mono:"PT Mono", ui-monospace, "Consolas", monospace;
+  --focus:#151513;
+}
+.hue-intro  {--hue:#F3C318; --on:#151513; --obj:#8F7206}
+.hue-soap   {--hue:#E2582B; --on:#151513; --obj:#86290C}
+.hue-gel    {--hue:#4FA13A; --on:#151513; --obj:#22561A}
+.hue-cond   {--hue:#13867F; --on:#0D0E0D; --obj:#06403C}
+.hue-dish   {--hue:#2638A8; --on:#F4F5F0; --obj:#121B5C}
+.hue-soon   {--hue:#6B4BB0; --on:#F4F5F0; --obj:#3A2768}
+.hue-partner{--hue:#D3CCB8; --on:#151513; --obj:#6E6650}
+.hue-contact{--hue:#9A5B34; --on:#F7F3EC; --obj:#5A321A}
+
+*,*::before,*::after{box-sizing:border-box}
+html{
+  background:var(--desk);
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scrollbar-color:#7A776C var(--desk);
+}
+::-webkit-scrollbar{width:12px;height:12px;background:var(--desk)}
+::-webkit-scrollbar-thumb{background:#7A776C;border:3px solid var(--desk);border-radius:6px}
+body{
+  margin:0;
+  padding-right:var(--rail);
+  background:var(--desk);
+  color:var(--ink);
+  font:400 17px/26px var(--f-body);
+  font-kerning:normal;
+  -webkit-font-smoothing:antialiased;
+  caret-color:#2638A8;
+  overflow-x:clip;
+}
+::selection{background:#151513;color:#F3C318}
+h1,h2,h3{margin:0;font-family:var(--f-head);text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+dl,dd{margin:0}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.nw{white-space:nowrap}
+.num,.phone{font-variant-numeric:tabular-nums lining-nums}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.skip{
+  position:absolute;left:8px;top:-80px;z-index:60;
+  padding:12px 16px;background:#151513;color:#F3C318;
+  font:600 15px/1 var(--f-head);text-decoration:none;
+}
+.skip:focus{top:8px}
+
+.tbd{
+  display:inline-block;
+  margin-left:8px;
+  padding:3px 6px 2px;
+  border:1px dashed currentColor;
+  border-radius:2px;
+  font:400 11px/1.1 var(--f-mono);
+  letter-spacing:.02em;
+  white-space:nowrap;
+  vertical-align:2px;
+}
+
+/* rail */
+.rail{
+  position:fixed;top:0;right:0;bottom:0;z-index:30;
+  width:var(--rail);
+  overflow:hidden;
+  background:var(--desk);
+}
+.rail::before{
+  content:"";position:absolute;z-index:2;inset:0 auto 0 0;width:10px;
+  background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,0));
+  pointer-events:none;
+}
+.rail ol{
+  position:relative;
+  list-style:none;margin:0;padding:6px 0;
+  height:100%;
+  display:flex;flex-direction:column;gap:3px;
+  overflow-y:auto;scrollbar-width:none;
+}
+.rail ol::-webkit-scrollbar{display:none}
+.rail li{display:flex;flex:1 1 auto;min-height:max-content}
+.rail a{
+  --focus:var(--on);
+  flex:1;
+  display:flex;align-items:center;justify-content:center;
+  padding:10px 0 10px var(--tuck);
+  background:var(--hue);color:var(--on);
+  font:600 12.5px/1 var(--f-head);letter-spacing:.01em;
+  text-decoration:none;
+  border-radius:0 10px 10px 0;
+  box-shadow:inset 4px 0 5px -3px rgba(0,0,0,.35);
+  transform:translateX(calc(var(--tuck) * -1));
+  transition:transform var(--step);
+}
+.rail a span{writing-mode:vertical-rl;white-space:nowrap}
+.rail a:hover{transform:translateX(-8px)}
+.rail a.is-current{transform:none}
+.rail a:focus-visible{outline:2px solid var(--on);outline-offset:-6px}
+
+/* boards */
+.divider{
+  position:relative;
+  padding:64px 56px 80px 0;
+  background:var(--hue);
+  color:var(--on);
+  --focus:var(--on);
+  box-shadow:inset 0 12px 10px -12px rgba(0,0,0,.45);
+}
+
+.board-head{padding-left:var(--pad-l);margin-bottom:36px}
+.board-title{
+  font:800 clamp(40px,5vw,72px)/.98 var(--f-head);
+  letter-spacing:-.03em;
+  max-width:16ch;
+}
+
+.spread{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(260px,28vw,400px);
+  gap:40px;
+  align-items:end;
+}
+.spread.top{align-items:start}
+
+.leaf{
+  position:relative;
+  padding:48px 48px 52px var(--pad-l);
+  background:var(--acetate);
+  color:var(--ink);
+  --focus:#151513;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),3px 4px 12px -3px rgba(18,16,8,.34);
+  transform-origin:left center;
+}
+.leaf::before,.leaf::after{
+  content:"";position:absolute;z-index:4;
+  left:var(--hole-x);top:calc(24% - var(--hole) / 2);
+  width:var(--hole);height:var(--hole);
+  border-radius:50%;
+  background:var(--desk);
+  box-shadow:inset 2px 3px 4px rgba(0,0,0,.65),0 1px 0 rgba(255,255,255,.5);
+}
+.leaf::after{top:calc(76% - var(--hole) / 2)}
+.leaf.arrive{animation:hinge 90ms steps(2,end) both}
+@keyframes hinge{
+  from{transform:perspective(1600px) rotateY(10deg)}
+  to{transform:none}
+}
+
+.grid4{
+  display:grid;
+  grid-template-columns:1.25fr repeat(3,minmax(0,1fr));
+  column-gap:var(--gap);
+}
+.m{grid-column:1}
+.b{grid-column:2 / -1}
+.full{grid-column:1 / -1}
+
+/* buttons, phone */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:0 26px;
+  background:#151513;color:#F4F5F0;
+  font:600 16px/1 var(--f-head);letter-spacing:.005em;
+  text-decoration:none;
+  border:0;border-radius:2px;cursor:pointer;
+  box-shadow:inset 0 0 0 0 var(--hue,#F3C318);
+  transition:box-shadow var(--step);
+}
+.btn:hover{box-shadow:inset 0 -6px 0 0 var(--hue,#F3C318)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
+.phone{
+  font:600 22px/1.2 var(--f-head);
+  letter-spacing:-.005em;
+  white-space:nowrap;
+  text-decoration:none;
+  border-bottom:2px solid currentColor;
+  padding-bottom:2px;
+  transition:border-color var(--step);
+}
+.phone:hover{border-bottom-color:var(--hue)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+
+/* intro */
+.intro{
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;
+  padding:0 56px 48px 0;
+  box-shadow:none;
+}
+.band{
+  display:flex;align-items:center;justify-content:space-between;gap:16px 24px;
+  min-height:92px;padding:20px 0 20px var(--pad-l);
+}
+.logo{
+  display:inline-flex;align-items:baseline;gap:12px;
+  padding:9px 12px 8px;
+  border:1.5px dashed currentColor;border-radius:3px;
+  text-decoration:none;color:inherit;
+}
+.logo b{font:800 22px/1 var(--f-head);letter-spacing:-.02em}
+.logo small{font:400 11px/1 var(--f-mono)}
+.band .phone{font-size:19px;border-bottom-width:1.5px}
+.intro .leaf{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:56px;padding-bottom:48px}
+.intro .grid4{align-items:start}
+.intro h1{
+  grid-column:1 / -1;
+  margin-bottom:44px;
+  font:700 clamp(40px,5.84vw,84px)/.98 var(--f-head);
+  letter-spacing:-.03em;
+}
+.lead-block{grid-column:1 / 3;padding-top:14px}
+.lede{font-size:20px;line-height:30px;max-width:34em}
+.lead-block .actions{margin-top:32px}
+
+.toc{grid-column:3 / -1;border-top:2px solid var(--ink);padding-top:12px}
+.toc h2{font:700 15px/22px var(--f-head);margin-bottom:6px}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc-row{
+  display:flex;align-items:baseline;gap:10px;
+  padding:7px 8px 7px 0;
+  color:var(--ink);text-decoration:none;
+  transition:background-color var(--step);
+}
+.toc-row:hover{background:color-mix(in srgb,var(--hue) 26%,transparent)}
+.chip{
+  flex:none;align-self:center;
+  width:12px;height:18px;
+  background:var(--hue);
+  border-radius:0 4px 4px 0;
+  box-shadow:inset 3px 0 3px -2px rgba(0,0,0,.3);
+}
+.toc-name{font:600 17px/24px var(--f-head)}
+.toc-dots{flex:1 1 16px;min-width:16px;border-bottom:1.5px dotted rgba(21,21,19,.5);transform:translateY(-5px)}
+.toc-vol{font:400 15px/24px var(--f-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+.toc-soon .toc-name{font-weight:500;color:var(--ink-2)}
+.toc-note{margin-top:8px;font-size:14px;line-height:20px;color:var(--ink-2)}
+.toc-more{
+  display:flex;flex-wrap:wrap;gap:4px 18px;
+  margin:14px 0 0;padding:12px 0 0;
+  list-style:none;
+  border-top:1px solid var(--rule);
+  font:500 15px/22px var(--f-head);
+}
+
+/* product spec */
+.spec dt,.spec dd{padding:15px 0;border-top:1px solid var(--rule)}
+.spec dt:first-of-type,.spec dd:first-of-type{border-top:2px solid var(--ink)}
+.spec dt{font:600 16px/26px var(--f-head)}
+.spec-lead{font-size:20px;line-height:30px;max-width:30em}
+.spec .b{max-width:62ch}
+.vol{font:400 16px/26px var(--f-mono);font-variant-numeric:tabular-nums}
+.status{font:600 17px/26px var(--f-head)}
+.leaf-cta{margin-top:28px}
+
+.figure{margin:0;justify-self:center;align-self:end}
+.figure svg{display:block;max-width:100%;height:auto;overflow:visible}
+.fig-s{width:calc(340 * var(--mm))}
+.fig-l{width:calc(540 * var(--mm))}
+.fig-g{width:calc(280 * var(--mm))}
+.obj{fill:var(--obj)}
+.ghost{fill:none;stroke:var(--on);stroke-width:2;stroke-dasharray:7 5;stroke-opacity:.85}
+.lbl{fill:#EEF1EE}
+.lbl-dev{fill:#EEF1EE;stroke:var(--obj);stroke-width:2;stroke-dasharray:6 4}
+.lbl-t{font-family:var(--f-head);font-weight:800;font-size:22px;letter-spacing:-.4px;fill:#151513;text-anchor:middle}
+.lbl-d{font-family:var(--f-mono);font-size:16px;fill:#151513;text-anchor:middle}
+.base{stroke:var(--on);stroke-width:2;stroke-opacity:.6}
+.cap{font-family:var(--f-mono);font-size:20px;fill:var(--on);text-anchor:middle}
+.cap-g{font-family:var(--f-head);font-weight:500;font-size:17px;fill:var(--on);text-anchor:middle}
+
+/* soon */
+.soon-line{font:500 clamp(24px,2.4vw,34px)/1.2 var(--f-head);letter-spacing:-.015em;max-width:24ch}
+
+/* partners board */
+.partners{padding-top:64px}
+.stack{display:grid;gap:40px}
+.lh{
+  font:700 clamp(26px,2.4vw,34px)/1.08 var(--f-head);
+  letter-spacing:-.02em;
+  padding-top:14px;
+}
+.who{list-style:none;margin:0;padding:0}
+.who li{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap);
+  padding:18px 0 20px;
+  border-top:1px solid var(--rule);
+}
+.who li:first-child{border-top:2px solid var(--ink)}
+.who h3{font:600 22px/28px var(--f-head);letter-spacing:-.01em}
+.who .d{grid-column:2 / -1}
+.refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.xref{
+  display:inline-block;
+  padding:4px 12px 4px 9px;
+  background:var(--hue);color:var(--on);
+  font:600 13px/18px var(--f-head);
+  text-decoration:none;
+  border-radius:0 6px 6px 0;
+  box-shadow:inset 3px 0 3px -2px rgba(0,0,0,.32);
+  transition:transform var(--step);
+}
+.xref:hover{transform:translateX(4px)}
+.xref:focus-visible{outline-color:#151513}
+
+.formats{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap);row-gap:28px;
+}
+.formats li{border-top:2px solid var(--ink);padding-top:16px}
+.formats h3{font:600 22px/28px var(--f-head);letter-spacing:-.01em;margin-bottom:10px}
+
+.why{list-style:none;margin:0;padding:0;max-width:40em}
+.why li{
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  font:500 clamp(20px,1.8vw,24px)/1.35 var(--f-head);
+  letter-spacing:-.01em;
+}
+.why li:first-child{border-top:2px solid var(--ink)}
+
+.how-cta{align-self:end;justify-self:start}
+.steps{
+  grid-column:1 / -1;
+  display:grid;grid-template-columns:subgrid;row-gap:28px;
+  list-style:none;margin:36px 0 0;padding:0;
+}
+.steps li{border-top:2px solid var(--ink);padding-top:14px}
+.steps .n{display:block;margin-bottom:16px;font:700 56px/1 var(--f-head);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.steps h3{font:600 20px/26px var(--f-head);margin-bottom:6px}
+
+/* contacts + form */
+#zayavka{scroll-margin-top:24px}
+.form-head{font:700 clamp(26px,2.4vw,34px)/1.08 var(--f-head);letter-spacing:-.02em;padding-top:4px}
+.form-intro{max-width:46ch}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px;margin-top:28px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field.wide{grid-column:1 / -1}
+.field label,.choices legend{font:600 15px/20px var(--f-head)}
+.opt{font-weight:400;color:var(--ink-2)}
+.field input{
+  width:100%;height:52px;padding:0 14px;
+  font:400 17px/1 var(--f-body);color:var(--ink);
+  background:var(--paper);
+  border:1px solid rgba(21,21,19,.5);border-radius:2px;
+  transition:border-color var(--step),box-shadow var(--step);
+}
+.field input:hover{border-color:var(--ink)}
+.field input:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-color:var(--ink)}
+.field input::placeholder{color:#5A605B;opacity:1}
+.field input[aria-invalid="true"]{border-color:var(--verm);box-shadow:inset 0 0 0 1px var(--verm)}
+.slip{
+  position:relative;align-self:flex-start;
+  margin-top:6px;padding:7px 12px 8px;
+  background:var(--verm);color:#FFFFFF;
+  font:500 14px/19px var(--f-head);
+  border-radius:0 0 4px 4px;
+  box-shadow:2px 3px 6px -2px rgba(80,10,0,.35);
+}
+.slip::before{
+  content:"";position:absolute;top:-6px;left:16px;
+  border:6px solid transparent;border-top:0;border-bottom-color:var(--verm);
+}
+.slip[hidden]{display:none}
+.choices{grid-column:1 / -1;border:0;margin:0;padding:0;min-width:0}
+.choices legend{padding:0;margin-bottom:10px}
+.choice-row{display:flex;flex-wrap:wrap;gap:8px}
+.choice{position:relative}
+.choice input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.choice span{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 16px;
+  background:var(--paper);
+  border:1px solid rgba(21,21,19,.5);border-radius:2px;
+  font:500 15px/1 var(--f-head);
+  transition:background-color var(--step),color var(--step);
+}
+.choice:hover span{border-color:var(--ink)}
+.choice input:checked + span{background:#151513;color:#F4F5F0;border-color:#151513}
+.choice input:focus-visible + span{outline:3px solid var(--ink);outline-offset:2px}
+.form-foot{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:6px}
+.fine{font-size:14px;line-height:20px;color:var(--ink-2);max-width:44ch}
+.done{
+  margin-top:24px;padding:16px 18px;
+  background:#151513;color:#F4F5F0;
+  font:500 17px/24px var(--f-head);
+}
+.done[hidden]{display:none}
+.done:focus-visible{outline-color:#151513}
+
+.contact-board{padding-top:4px}
+.contact-board dt{font:600 14px/20px var(--f-head);margin-top:22px}
+.contact-board dt:first-child{margin-top:0}
+.contact-board dd{margin-top:6px}
+.contact-board .phone{font-size:26px;display:inline-block;margin-bottom:8px}
+.contact-board address{font-style:normal;max-width:30ch}
+
+/* back cover */
+.cover{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:20px 48px;
+  padding:44px 56px 52px var(--pad-l);
+  background:var(--cover);color:#D9DBD6;
+  --focus:#F3C318;
+  font-size:15px;line-height:23px;
+}
+.cover .logo{color:#EEF1EE}
+.cover address{font-style:normal;max-width:52ch}
+.cover .legal{text-align:right}
+
+/* responsive */
+@media (max-width:1100px){
+  .spread{grid-template-columns:minmax(0,1fr) clamp(220px,26vw,300px)}
+  :root{--mm:.6px}
+}
+@media (max-width:980px){
+  .grid4{grid-template-columns:minmax(140px,.8fr) 2fr}
+  .b{grid-column:2}
+  .intro h1,.lead-block,.toc{grid-column:1 / -1}
+  .toc{margin-top:44px;max-width:560px}
+  .spread{grid-template-columns:minmax(0,1fr)}
+  .figure{justify-self:end;margin-right:24px}
+  .who li{grid-template-columns:minmax(0,1fr)}
+  .who .d{grid-column:1;margin-top:6px}
+  .formats{grid-template-columns:minmax(0,1fr)}
+  .cover{grid-template-columns:minmax(0,1fr)}
+  .cover .legal{text-align:left}
+  :root{--mm:.7px}
+}
+@media (max-width:760px){
+  :root{--pad-l:40px;--hole:14px;--hole-x:13px;--gap:20px;--tuck:12px;--mm:.56px}
+  body{padding-right:0}
+  .rail{position:sticky;top:0;bottom:auto;width:auto;height:48px}
+  .rail::before{inset:0 0 auto 0;width:auto;height:8px;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0))}
+  .rail ol{flex-direction:row;padding:0 8px;overflow-x:auto;overflow-y:hidden}
+  .rail li{flex:0 0 auto;min-height:0}
+  .rail a{
+    padding:var(--tuck) 14px 0;
+    font-size:13px;
+    border-radius:0 0 10px 10px;
+    box-shadow:inset 0 4px 5px -3px rgba(0,0,0,.35);
+    transform:translateY(calc(var(--tuck) * -1));
+  }
+  .rail a span{writing-mode:horizontal-tb}
+  .rail a:hover{transform:translateY(-6px)}
+  .rail a.is-current{transform:none}
+  [data-divider],#zayavka,section[id]{scroll-margin-top:48px}
+  .divider{padding:44px 12px 48px 0}
+  .intro{min-height:calc(100svh - 48px);padding:0 12px 20px 0}
+  .band{min-height:0;padding:16px 0 18px var(--pad-l)}
+  .band .phone{font-size:17px}
+  .leaf{padding:28px 20px 32px var(--pad-l)}
+  .intro .leaf{padding-top:32px;padding-bottom:32px}
+  .intro h1{margin-bottom:28px}
+  .lede{font-size:18px;line-height:27px}
+  .board-head{margin-bottom:24px}
+  .board-title{font-size:clamp(32px,9.5vw,48px)}
+  .partners{padding-top:44px}
+  .stack{gap:28px}
+  .steps .n{font-size:44px;margin-bottom:10px}
+  .figure{justify-self:center;margin-right:0}
+  .cover{padding:36px 16px 44px var(--pad-l)}
+}
+@media (max-width:640px){
+  .grid4{grid-template-columns:minmax(0,1fr)}
+  .m,.b{grid-column:1}
+  .spec dd{border-top:0 !important;padding-top:0}
+  .spec dt{padding-bottom:4px}
+  .lh,.form-head{padding-top:0;margin-bottom:18px}
+  .form-grid{grid-template-columns:minmax(0,1fr)}
+  .how-cta{margin-top:18px}
+  .toc-name{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#mylo">К продукции</a>
+
+<nav class="rail" aria-label="Разделы">
+  <ol>
+    <li><a class="hue-intro is-current" href="#nachalo" aria-current="location"><span>Начало</span></a></li>
+    <li><a class="hue-soap" href="#mylo"><span>Мыло</span></a></li>
+    <li><a class="hue-gel" href="#gel"><span>Гель</span></a></li>
+    <li><a class="hue-cond" href="#kondicioner"><span>Кондиционер</span></a></li>
+    <li><a class="hue-dish" href="#posuda"><span>Для посуды</span></a></li>
+    <li><a class="hue-soon" href="#skoro"><span>Скоро</span></a></li>
+    <li><a class="hue-partner" href="#sotrudnichestvo"><span>Сотрудничество</span></a></li>
+    <li><a class="hue-contact" href="#kontakty"><span>Контакты</span></a></li>
+  </ol>
+</nav>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="b-pump" viewBox="0 0 74 215">
+    <path d="M12 215Q0 215 0 203V80Q0 52 22 47H44Q66 52 66 80V203Q66 215 54 215Z"/>
+    <rect x="21" y="33" width="24" height="16" rx="2"/>
+    <rect x="29" y="14" width="8" height="21"/>
+    <rect x="16" y="6" width="34" height="10" rx="3"/>
+    <rect x="48" y="8" width="26" height="5" rx="2.5"/>
+  </symbol>
+  <symbol id="b-flip" viewBox="0 0 70 220">
+    <path d="M10 220Q0 220 0 210V72Q0 44 24 38H46Q70 44 70 72V210Q70 220 60 220Z"/>
+    <rect x="22" y="10" width="26" height="30" rx="4"/>
+    <rect x="25" y="2" width="20" height="10" rx="3"/>
+  </symbol>
+  <symbol id="b-can5" viewBox="0 0 190 290">
+    <rect x="0" y="50" width="190" height="240" rx="14"/>
+    <path fill-rule="evenodd" d="M30 64V16Q30 0 46 0H114Q130 0 130 16V64ZM46 50V22Q46 14 54 14H106Q114 14 114 22V50Z"/>
+    <rect x="150" y="44" width="24" height="10"/>
+    <rect x="146" y="24" width="32" height="24" rx="3"/>
+  </symbol>
+  <symbol id="b-can20" viewBox="0 0 290 390">
+    <rect x="0" y="60" width="290" height="330" rx="18"/>
+    <path fill-rule="evenodd" d="M85 76V18Q85 0 103 0H187Q205 0 205 18V76ZM103 60V26Q103 16 113 16H177Q187 16 187 26V60Z"/>
+    <rect x="234" y="52" width="30" height="12"/>
+    <rect x="228" y="26" width="42" height="30" rx="4"/>
+  </symbol>
+</svg>
+
+<main id="main">
+
+  <section id="nachalo" class="divider hue-intro intro" data-divider aria-labelledby="nachalo-t">
+    <header class="band">
+      <a class="logo" href="#nachalo" aria-label="ЮниХим, логотип в разработке"><b>ЮниХим</b><small>логотип в разработке</small></a>
+      <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+    </header>
+    <div class="leaf">
+      <div class="grid4">
+        <h1 id="nachalo-t">Моющие средства для прачечных, гостиниц и химчисток</h1>
+        <div class="lead-block">
+          <p class="lede">Производим сами, в Тучково Московской области. Поставляем оптом, выпускаем продукцию под вашим брендом и поставляем основу для мыла.</p>
+          <div class="actions">
+            <a class="btn" href="#zayavka">Получить прайс</a>
+            <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+          </div>
+        </div>
+        <nav class="toc" aria-labelledby="toc-t">
+          <h2 id="toc-t">Содержание</h2>
+          <ol>
+            <li><a class="toc-row hue-soap" href="#mylo"><span class="chip" aria-hidden="true"></span><span class="toc-name">Жидкое мыло</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-vol">0,5&nbsp;л · 5&nbsp;л</span></a></li>
+            <li><a class="toc-row hue-gel" href="#gel"><span class="chip" aria-hidden="true"></span><span class="toc-name">Гель для стирки</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-vol">5&nbsp;л · 20&nbsp;л</span></a></li>
+            <li><a class="toc-row hue-cond" href="#kondicioner"><span class="chip" aria-hidden="true"></span><span class="toc-name">Кондиционер для белья</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-vol">5&nbsp;л · 20&nbsp;л</span></a></li>
+            <li><a class="toc-row hue-dish" href="#posuda"><span class="chip" aria-hidden="true"></span><span class="toc-name">Средство для мытья посуды</span><span class="toc-dots" aria-hidden="true"></span><span class="toc-vol">0,5&nbsp;л · 5&nbsp;л</span></a></li>
+            <li><a class="toc-row toc-soon hue-soon" href="#skoro"><span class="chip" aria-hidden="true"></span><span class="toc-name">Скоро: гели для душа, шампуни</span></a></li>
+          </ol>
+          <p class="toc-note">Фасовка <span class="tbd">уточнить</span></p>
+          <ul class="toc-more">
+            <li><a href="#dlya-kogo">Для кого</a></li>
+            <li><a href="#formaty">Сотрудничество</a></li>
+            <li><a href="#kak-nachat">Как начать</a></li>
+            <li><a href="#kontakty">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section id="mylo" class="divider hue-soap" data-divider aria-labelledby="mylo-t">
+    <header class="board-head"><h2 class="board-title" id="mylo-t">Жидкое мыло</h2></header>
+    <div class="spread">
+      <div class="leaf">
+        <dl class="spec grid4">
+          <dt class="m">Назначение</dt>
+          <dd class="b"><p class="spec-lead">Мягкое мыло для рук: номера, санузлы, общие зоны.</p></dd>
+          <dt class="m">Отдушки</dt>
+          <dd class="b">Без отдушки, лаванда, зелёный чай <span class="tbd">уточнить</span></dd>
+          <dt class="m">Фасовка</dt>
+          <dd class="b"><span class="vol">0,5&nbsp;л · 5&nbsp;л</span> <span class="tbd">уточнить</span></dd>
+          <dt class="m">Этикетка</dt>
+          <dd class="b"><span class="status">Готова</span></dd>
+        </dl>
+        <div class="grid4 leaf-cta"><div class="b"><a class="btn" href="#zayavka">Получить прайс</a></div></div>
+      </div>
+      <figure class="figure">
+        <svg class="fig-s" viewBox="0 0 340 345" role="img" aria-labelledby="mylo-f">
+          <title id="mylo-f">Флакон 0,5 л с дозатором и канистра 5 л</title>
+          <use href="#b-pump" class="obj" x="24" y="80" width="74" height="215"/>
+          <rect class="lbl" x="32" y="180" width="50" height="78" rx="2"/>
+          <use href="#b-can5" class="obj" x="130" y="5" width="190" height="290"/>
+          <rect class="lbl" x="152" y="115" width="146" height="130" rx="3"/>
+          <text class="lbl-t" x="225" y="188">ЮниХим</text>
+          <line class="base" x1="0" y1="295" x2="340" y2="295"/>
+          <text class="cap" x="57" y="330">0,5 л</text>
+          <text class="cap" x="225" y="330">5 л</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="gel" class="divider hue-gel" data-divider aria-labelledby="gel-t">
+    <header class="board-head"><h2 class="board-title" id="gel-t">Гель для стирки</h2></header>
+    <div class="spread">
+      <div class="leaf">
+        <dl class="spec grid4">
+          <dt class="m">Назначение</dt>
+          <dd class="b"><p class="spec-lead">Концентрат для белого и цветного белья, для ежедневной загрузки прачечной.</p></dd>
+          <dt class="m">Отдушки</dt>
+          <dd class="b">Свежесть, альпийские травы, хлопок <span class="tbd">уточнить</span></dd>
+          <dt class="m">Фасовка</dt>
+          <dd class="b"><span class="vol">5&nbsp;л · 20&nbsp;л</span> <span class="tbd">уточнить</span></dd>
+          <dt class="m">Этикетка</dt>
+          <dd class="b"><span class="status">В разработке</span></dd>
+        </dl>
+        <div class="grid4 leaf-cta"><div class="b"><a class="btn" href="#zayavka">Получить прайс</a></div></div>
+      </div>
+      <figure class="figure">
+        <svg class="fig-l" viewBox="0 0 540 445" role="img" aria-labelledby="gel-f">
+          <title id="gel-f">Канистры 5 л и 20 л, этикетка в разработке</title>
+          <use href="#b-can5" class="obj" x="10" y="105" width="190" height="290"/>
+          <rect class="lbl-dev" x="32" y="215" width="146" height="130" rx="3"/>
+          <text class="lbl-d" x="105" y="274">этикетка</text>
+          <text class="lbl-d" x="105" y="296">в разработке</text>
+          <use href="#b-can20" class="obj" x="235" y="5" width="290" height="390"/>
+          <rect class="lbl-dev" x="270" y="155" width="220" height="170" rx="3"/>
+          <text class="lbl-d" x="380" y="234">этикетка</text>
+          <text class="lbl-d" x="380" y="256">в разработке</text>
+          <line class="base" x1="0" y1="395" x2="540" y2="395"/>
+          <text class="cap" x="105" y="430">5 л</text>
+          <text class="cap" x="380" y="430">20 л</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="kondicioner" class="divider hue-cond" data-divider aria-labelledby="kondicioner-t">
+    <header class="board-head"><h2 class="board-title" id="kondicioner-t">Кондиционер для белья</h2></header>
+    <div class="spread">
+      <div class="leaf">
+        <dl class="spec grid4">
+          <dt class="m">Назначение</dt>
+          <dd class="b"><p class="spec-lead">Мягкость тканей, лёгкая глажка, стойкий аромат.</p></dd>
+          <dt class="m">Отдушки</dt>
+          <dd class="b">Морской бриз, цветочный, детский <span class="tbd">уточнить</span></dd>
+          <dt class="m">Фасовка</dt>
+          <dd class="b"><span class="vol">5&nbsp;л · 20&nbsp;л</span> <span class="tbd">уточнить</span></dd>
+          <dt class="m">Этикетка</dt>
+          <dd class="b"><span class="status">Готова</span></dd>
+        </dl>
+        <div class="grid4 leaf-cta"><div class="b"><a class="btn" href="#zayavka">Получить прайс</a></div></div>
+      </div>
+      <figure class="figure">
+        <svg class="fig-l" viewBox="0 0 540 445" role="img" aria-labelledby="kondicioner-f">
+          <title id="kondicioner-f">Канистры 5 л и 20 л</title>
+          <use href="#b-can5" class="obj" x="10" y="105" width="190" height="290"/>
+          <rect class="lbl" x="32" y="215" width="146" height="130" rx="3"/>
+          <text class="lbl-t" x="105" y="288">ЮниХим</text>
+          <use href="#b-can20" class="obj" x="235" y="5" width="290" height="390"/>
+          <rect class="lbl" x="270" y="155" width="220" height="170" rx="3"/>
+          <text class="lbl-t" x="380" y="248">ЮниХим</text>
+          <line class="base" x1="0" y1="395" x2="540" y2="395"/>
+          <text class="cap" x="105" y="430">5 л</text>
+          <text class="cap" x="380" y="430">20 л</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="posuda" class="divider hue-dish" data-divider aria-labelledby="posuda-t">
+    <header class="board-head"><h2 class="board-title" id="posuda-t">Средство для мытья посуды</h2></header>
+    <div class="spread">
+      <div class="leaf">
+        <dl class="spec grid4">
+          <dt class="m">Назначение</dt>
+          <dd class="b"><p class="spec-lead">Снимает жир, бережно к рукам. Для кухонь гостиниц и кафе.</p></dd>
+          <dt class="m">Отдушки</dt>
+          <dd class="b">Лимон, яблоко, алоэ <span class="tbd">уточнить</span></dd>
+          <dt class="m">Фасовка</dt>
+          <dd class="b"><span class="vol">0,5&nbsp;л · 5&nbsp;л</span> <span class="tbd">уточнить</span></dd>
+          <dt class="m">Этикетка</dt>
+          <dd class="b"><span class="status">В разработке</span></dd>
+        </dl>
+        <div class="grid4 leaf-cta"><div class="b"><a class="btn" href="#zayavka">Получить прайс</a></div></div>
+      </div>
+      <figure class="figure">
+        <svg class="fig-s" viewBox="0 0 340 345" role="img" aria-labelledby="posuda-f">
+          <title id="posuda-f">Флакон 0,5 л и канистра 5 л, этикетка в разработке</title>
+          <use href="#b-flip" class="obj" x="24" y="75" width="70" height="220"/>
+          <rect class="lbl-dev" x="32" y="171" width="54" height="90" rx="2"/>
+          <use href="#b-can5" class="obj" x="130" y="5" width="190" height="290"/>
+          <rect class="lbl-dev" x="152" y="115" width="146" height="130" rx="3"/>
+          <text class="lbl-d" x="225" y="174">этикетка</text>
+          <text class="lbl-d" x="225" y="196">в разработке</text>
+          <line class="base" x1="0" y1="295" x2="340" y2="295"/>
+          <text class="cap" x="59" y="330">0,5 л</text>
+          <text class="cap" x="225" y="330">5 л</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="skoro" class="divider hue-soon" data-divider aria-labelledby="skoro-t">
+    <header class="board-head"><h2 class="board-title" id="skoro-t">Скоро в линейке</h2></header>
+    <div class="spread">
+      <div class="leaf">
+        <div class="grid4">
+          <p class="full soon-line">Гели для душа, шампуни и другие средства.</p>
+        </div>
+      </div>
+      <figure class="figure">
+        <svg class="fig-g" viewBox="0 0 280 300" role="img" aria-labelledby="skoro-f">
+          <title id="skoro-f">Места для новых средств: гель для душа и шампунь</title>
+          <use href="#b-pump" class="ghost" x="30" y="40" width="74" height="215"/>
+          <use href="#b-flip" class="ghost" x="170" y="35" width="70" height="220"/>
+          <line class="base" x1="0" y1="255" x2="280" y2="255"/>
+          <text class="cap-g" x="63" y="288">гель для душа</text>
+          <text class="cap-g" x="205" y="288">шампунь</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <div id="sotrudnichestvo" class="divider hue-partner partners" data-divider>
+    <div class="stack">
+
+      <section id="dlya-kogo" class="leaf" aria-labelledby="dlya-kogo-t">
+        <div class="grid4">
+          <h2 class="m lh" id="dlya-kogo-t">Для кого</h2>
+          <ul class="b who">
+            <li>
+              <h3>Прачечные</h3>
+              <div class="d">
+                <p>Гели и кондиционеры в канистрах для ежедневной загрузки машин.</p>
+                <p class="refs"><a class="xref hue-gel" href="#gel">Гель для стирки</a><a class="xref hue-cond" href="#kondicioner">Кондиционер</a></p>
+              </div>
+            </li>
+            <li>
+              <h3>Гостиницы</h3>
+              <div class="d">
+                <p>Жидкое мыло для номеров и общих зон, средство для посуды для кухни.</p>
+                <p class="refs"><a class="xref hue-soap" href="#mylo">Жидкое мыло</a><a class="xref hue-dish" href="#posuda">Для посуды</a></p>
+              </div>
+            </li>
+            <li>
+              <h3>Химчистки</h3>
+              <div class="d">
+                <p>Средства для стирки и ухода за тканями разных типов.</p>
+                <p class="refs"><a class="xref hue-gel" href="#gel">Гель для стирки</a><a class="xref hue-cond" href="#kondicioner">Кондиционер</a></p>
+              </div>
+            </li>
+            <li>
+              <h3>Дома быта</h3>
+              <div class="d">
+                <p>Весь набор моющих средств от одного производителя.</p>
+                <p class="refs"><a class="xref hue-soap" href="#mylo">Жидкое мыло</a><a class="xref hue-gel" href="#gel">Гель для стирки</a><a class="xref hue-cond" href="#kondicioner">Кондиционер</a><a class="xref hue-dish" href="#posuda">Для посуды</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="formaty" class="leaf" aria-labelledby="formaty-t">
+        <div class="grid4">
+          <h2 class="m lh" id="formaty-t">Сотрудничество</h2>
+          <ul class="b formats">
+            <li>
+              <h3>Оптовые поставки</h3>
+              <p>Напрямую с производства, от нескольких канистр до паллет. <span class="tbd">объёмы уточнить</span></p>
+            </li>
+            <li>
+              <h3>Контрактное производство</h3>
+              <p>Выпустим продукцию под вашим брендом: рецептура, розлив, этикетка.</p>
+            </li>
+            <li>
+              <h3>Основа для мыла</h3>
+              <p>Готовая мыльная основа для производителей и мыловаров.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="pochemu" class="leaf" aria-labelledby="pochemu-t">
+        <div class="grid4">
+          <h2 class="m lh" id="pochemu-t">Почему мы</h2>
+          <ul class="b why">
+            <li>Своё производство, не перепродаём.</li>
+            <li>Тучково, Московская область — доставка по Москве и области.</li>
+            <li>Документы на продукцию <span class="tbd">какие именно — уточнить</span></li>
+            <li>Подберём отдушку, фасовку и тару под объект.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="kak-nachat" class="leaf" aria-labelledby="kak-nachat-t">
+        <div class="grid4">
+          <h2 class="m lh" id="kak-nachat-t">Как начать</h2>
+          <div class="b how-cta actions">
+            <a class="btn" href="#zayavka">Получить прайс</a>
+            <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+          </div>
+          <ol class="steps">
+            <li><span class="n" aria-hidden="true">1</span><h3>Заявка</h3><p>На сайте или по телефону.</p></li>
+            <li><span class="n" aria-hidden="true">2</span><h3>Прайс и образцы</h3><p>Пришлём цены, при необходимости образцы.</p></li>
+            <li><span class="n" aria-hidden="true">3</span><h3>Договор</h3><p>Согласуем объёмы, тару и условия.</p></li>
+            <li><span class="n" aria-hidden="true">4</span><h3>Поставка</h3><p>Отгрузка и доставка по Москве и МО.</p></li>
+          </ol>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <section id="kontakty" class="divider hue-contact" data-divider aria-labelledby="kontakty-t">
+    <header class="board-head"><h2 class="board-title" id="kontakty-t">Контакты</h2></header>
+    <div class="spread top">
+      <div class="leaf" id="zayavka">
+        <div class="grid4">
+          <h3 class="m form-head" id="zayavka-t">Получите <span class="nw">прайс-лист</span></h3>
+          <div class="b">
+            <p class="form-intro">Оставьте телефон — перезвоним в течение рабочего дня и подберём продукцию под ваш объект.</p>
+            <form id="price-form" class="form-grid" action="#" method="post" novalidate aria-labelledby="zayavka-t">
+              <div class="field">
+                <label for="f-name">Имя</label>
+                <input id="f-name" name="client_name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+                <p class="slip" id="f-name-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Телефон</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 ___ ___-__-__" required aria-describedby="f-phone-err">
+                <p class="slip" id="f-phone-err" hidden></p>
+              </div>
+              <div class="field wide">
+                <label for="f-company">Компания <span class="opt">(необязательно)</span></label>
+                <input id="f-company" name="company" type="text" autocomplete="organization">
+              </div>
+              <fieldset class="choices">
+                <legend>Что интересует</legend>
+                <div class="choice-row">
+                  <label class="choice"><input type="radio" name="interest" value="opt"><span>Опт</span></label>
+                  <label class="choice"><input type="radio" name="interest" value="brand"><span>Под мой бренд</span></label>
+                  <label class="choice"><input type="radio" name="interest" value="base"><span>Основа для мыла</span></label>
+                  <label class="choice"><input type="radio" name="interest" value="other"><span>Другое</span></label>
+                </div>
+              </fieldset>
+              <div class="form-foot">
+                <button class="btn" type="submit">Отправить заявку</button>
+                <p class="fine">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
+              </div>
+            </form>
+            <div class="done" id="form-done" role="status" tabindex="-1" hidden>Спасибо, заявка принята — перезвоним в течение рабочего дня. <span class="tbd">куда приходят заявки — уточнить</span></div>
+          </div>
+        </div>
+      </div>
+      <aside class="contact-board" aria-label="Телефоны и адрес">
+        <dl>
+          <dt>Телефоны</dt>
+          <dd>
+            <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a><br>
+            <a class="phone" href="tel:+79852007060">+7 985 200-70-60</a>
+          </dd>
+          <dt>Почта</dt>
+          <dd><span class="tbd" style="margin-left:0">уточнить</span></dd>
+          <dt>Адрес</dt>
+          <dd><address>143132, Московская обл., Рузский р-н, пос. Тучково, ул. Партизан, д.&nbsp;41, стр.&nbsp;8</address></dd>
+          <dt>Производитель</dt>
+          <dd>ООО «ЮниХим-Про»</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cover">
+  <a class="logo" href="#nachalo" aria-label="ЮниХим, логотип в разработке"><b>ЮниХим</b><small>логотип в разработке</small></a>
+  <address>
+    <a class="nw" href="tel:+74959684745">+7 495 968-47-45</a>, <a class="nw" href="tel:+79852007060">+7 985 200-70-60</a><br>
+    Почта <span class="tbd">уточнить</span><br>
+    143132, Московская обл., Рузский р-н, пос. Тучково, ул. Партизан, д.&nbsp;41, стр.&nbsp;8
+  </address>
+  <p class="legal">© 2026 ООО «ЮниХим-Про»<br><a href="#">Политика конфиденциальности</a></p>
+</footer>
+
+<script>
+(function () {
+  var rail = document.querySelector('.rail');
+  var list = rail.querySelector('ol');
+  var tabs = Array.prototype.slice.call(rail.querySelectorAll('a'));
+  var boards = tabs.map(function (t) { return document.getElementById(t.hash.slice(1)); });
+  var wide = window.matchMedia('(min-width: 761px)');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var current = 'nachalo';
+
+  function setActive(id) {
+    if (id === current) return;
+    current = id;
+    tabs.forEach(function (t) {
+      var on = t.hash === '#' + id;
+      t.classList.toggle('is-current', on);
+      if (on) {
+        t.setAttribute('aria-current', 'location');
+        if (!wide.matches) {
+          var li = t.parentElement;
+          if (li.offsetLeft < list.scrollLeft || li.offsetLeft + li.offsetWidth > list.scrollLeft + list.clientWidth) {
+            list.scrollLeft = li.offsetLeft - 16;
+          }
+        }
+      } else {
+        t.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function sizeTabs() {
+    tabs.forEach(function (t, i) {
+      t.parentElement.style.flexGrow = wide.matches && boards[i] ? (boards[i].offsetHeight / 100).toFixed(2) : '';
+    });
+  }
+
+  function arrive(board) {
+    if (!board || still.matches) return;
+    var leaf = board.classList.contains('leaf') ? board : board.querySelector('.leaf');
+    if (!leaf) return;
+    leaf.classList.remove('arrive');
+    void leaf.offsetWidth;
+    leaf.classList.add('arrive');
+  }
+  document.addEventListener('animationend', function (e) {
+    if (e.target.classList && e.target.classList.contains('arrive')) e.target.classList.remove('arrive');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-35% 0px -64% 0px' });
+    boards.forEach(function (b) { if (b) io.observe(b); });
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () {
+      setActive(t.hash.slice(1));
+      arrive(boards[i]);
+    });
+  });
+
+  list.addEventListener('keydown', function (e) {
+    var i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    var n = null;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+    else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+    else if (e.key === 'Home') n = 0;
+    else if (e.key === 'End') n = tabs.length - 1;
+    if (n === null) return;
+    e.preventDefault();
+    tabs[n].focus();
+  });
+
+  sizeTabs();
+  var raf = 0;
+  window.addEventListener('resize', function () {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(sizeTabs);
+  });
+  if (wide.addEventListener) wide.addEventListener('change', sizeTabs);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeTabs);
+
+  var nameInput = document.getElementById('f-name');
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#zayavka"]'), function (a) {
+    a.addEventListener('click', function () {
+      requestAnimationFrame(function () {
+        setActive('kontakty');
+        arrive(document.getElementById('zayavka'));
+        nameInput.focus({ preventScroll: true });
+      });
+    });
+  });
+
+  var form = document.getElementById('price-form');
+  var done = document.getElementById('form-done');
+  var rules = {
+    'f-name': function (v) {
+      return v.trim() ? '' : 'Укажите имя — так мы будем знать, как к вам обращаться.';
+    },
+    'f-phone': function (v) {
+      var d = v.replace(/\D/g, '');
+      if (!d) return 'Укажите телефон — без него мы не сможем перезвонить.';
+      var ok = d.length === 10 || (d.length === 11 && /^[78]/.test(d));
+      return ok ? '' : 'Проверьте номер: нужно 10 цифр после +7, например +7 495 968-47-45.';
+    }
+  };
+  function check(input) {
+    var msg = rules[input.id](input.value);
+    var slip = document.getElementById(input.id + '-err');
+    if (msg) {
+      slip.textContent = msg;
+      slip.hidden = false;
+      input.setAttribute('aria-invalid', 'true');
+    } else {
+      slip.textContent = '';
+      slip.hidden = true;
+      input.removeAttribute('aria-invalid');
+    }
+    return !msg;
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fields = [nameInput, document.getElementById('f-phone')];
+    var bad = fields.filter(function (f) { return !check(f); });
+    if (bad.length) {
+      done.hidden = true;
+      bad[0].focus();
+      return;
+    }
+    form.reset();
+    done.hidden = false;
+    done.focus();
+  });
+  form.addEventListener('input', function (e) {
+    var t = e.target;
+    if (rules[t.id] && t.getAttribute('aria-invalid') === 'true') check(t);
+    if (!done.hidden) done.hidden = true;
+  });
+})();
+</script>
+</body>
+</html>

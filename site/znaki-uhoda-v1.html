@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЮниХим — моющие средства для прачечных, гостиниц и химчисток</title>
+<meta name="description" content="Производитель моющих средств в Тучково, Московская область. Опт, контрактное производство под вашим брендом, основа для мыла.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..900&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --page: #EFEFEA;
+  --satin: #F6F6F3;
+  --satin-hi: #FDFDFB;
+  --fold: #E4E4DE;
+  --ink: #111111;
+  --ink-2: #4E535A;
+  --grey: #8A8F96;
+  --grey-soft: #BFC3C8;
+  --cobalt: #1F3FBF;
+  --cobalt-deep: #172F94;
+  --cobalt-tint: #E9ECF6;
+  --on-cobalt-2: #CDD5F5;
+  --error: #A61B1B;
+  --hair: rgba(17, 17, 17, .14);
+
+  --f-label: "Commissioner", "Segoe UI", system-ui, sans-serif;
+  --f-code: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  --gutter: clamp(16px, 3.5vw, 56px);
+  --wrap: 1320px;
+  --label-w: clamp(300px, 34.4vw, 440px);
+  --hero-gap: clamp(40px, 5vw, 80px);
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+
+  --sec-top: clamp(88px, 10vw, 152px);
+  --sec-bottom: clamp(64px, 7vw, 104px);
+
+  --ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --sym-bg: var(--satin);
+
+  --stitch: repeating-linear-gradient(90deg, currentColor 0 7px, transparent 7px 12px);
+  --stitch-v: repeating-linear-gradient(180deg, currentColor 0 7px, transparent 7px 12px);
+  --sheen: linear-gradient(104deg, rgba(255,255,255,0) 22%, rgba(255,255,255,.62) 40%, rgba(255,255,255,0) 57%);
+  --weave: repeating-linear-gradient(0deg, rgba(17,17,17,.022) 0 1px, rgba(17,17,17,0) 1px 3px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  scrollbar-color: var(--grey) var(--page);
+  scrollbar-width: thin;
+}
+html::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track { background: var(--page); }
+html::-webkit-scrollbar-thumb { background: var(--grey); border: 3px solid var(--page); border-radius: 6px; }
+html::-webkit-scrollbar-thumb:hover { background: var(--ink-2); }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--f-label);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection { background: var(--cobalt); color: #fff; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { color: var(--cobalt); }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+input, select, textarea, button { font: inherit; color: inherit; }
+input, textarea { caret-color: var(--cobalt); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+.vh {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: var(--gutter); top: -60px; z-index: 50;
+  background: var(--ink); color: #fff; padding: 10px 16px; font-weight: 600; text-decoration: none;
+}
+.skip:focus { top: 12px; color: #fff; }
+
+.wrap { width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+.code { font-family: var(--f-code); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+
+.todo {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 6px 2px;
+  border: 1px dashed var(--grey);
+  border-radius: 2px;
+  font: 600 10.5px/1.1 var(--f-label);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+  vertical-align: .18em;
+}
+
+/* Symbols */
+.sym { width: 100%; height: auto; aspect-ratio: 1; overflow: visible; color: inherit; }
+#sprite path, #sprite rect, #sprite circle { vector-effect: non-scaling-stroke; }
+
+/* Shared label anatomy */
+.fold {
+  position: relative;
+  height: 26px;
+  color: rgba(17,17,17,.5);
+  background: linear-gradient(180deg, #DDDDD6 0%, #ECECE7 55%, #E2E2DB 100%);
+  border-bottom: 1px solid rgba(17,17,17,.09);
+  box-shadow: 0 1px 0 rgba(255,255,255,.85);
+}
+.fold::after {
+  content: ""; position: absolute; left: 12px; right: 12px; top: 11px; height: 1.5px;
+  background: var(--stitch);
+}
+.satin {
+  background-color: var(--satin);
+  background-image: var(--sheen), var(--weave);
+}
+.selvage { position: relative; }
+.selvage::before {
+  content: ""; position: absolute; inset: 0 6px; pointer-events: none;
+  border-inline: 1px solid rgba(17,17,17,.07);
+}
+
+/* Buttons */
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px;
+  padding: 14px 30px;
+  border: 0; border-radius: 2px;
+  background: var(--cobalt); color: #fff;
+  font: 700 17px/1.1 var(--f-label);
+  letter-spacing: .01em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 10px 22px -12px rgba(31,63,191,.7);
+  transition: background-color 400ms var(--ease), box-shadow 400ms var(--ease), transform 400ms var(--ease);
+}
+.btn::after {
+  content: ""; position: absolute; inset: 5px; pointer-events: none;
+  border: 1px dashed rgba(255,255,255,.5); border-radius: 1px;
+}
+.btn:hover { background: var(--cobalt-deep); color: #fff; box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 14px 26px -12px rgba(31,63,191,.8); }
+.btn:active { transform: translateY(1px); }
+.btn--sm { min-height: 44px; padding: 10px 20px; font-size: 15px; }
+.btn--light { background: var(--satin); color: var(--cobalt); box-shadow: 0 10px 22px -14px rgba(0,0,0,.5); }
+.btn--light::after { border-color: rgba(31,63,191,.4); }
+.btn--light:hover { background: #fff; color: var(--cobalt-deep); }
+.btn[disabled] { background: var(--grey); cursor: progress; box-shadow: none; }
+
+.phone {
+  font-weight: 700; font-variant-numeric: tabular-nums lining-nums;
+  text-decoration: none; white-space: nowrap;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+
+/* Header */
+.site-header {
+  position: absolute; z-index: 5; top: 0;
+  left: calc(var(--gutter) + var(--label-w) + var(--hero-gap));
+  right: var(--gutter);
+  height: 88px;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-5);
+}
+.site-header__brand { display: none; }
+.site-nav ul { display: flex; flex-wrap: wrap; gap: 4px clamp(14px, 1.6vw, 24px); }
+.site-nav a { font-size: 15px; font-weight: 500; text-decoration: none; color: #fff; padding-block: 6px; white-space: nowrap; }
+.btn { white-space: nowrap; }
+.site-nav a:hover { color: #fff; text-decoration: underline; }
+.site-header__cta { display: flex; align-items: center; gap: var(--s-5); }
+.site-header__cta .phone { font-size: 16px; color: #fff; }
+.menu-btn { display: none; }
+
+/* On cobalt / on ink: rings, hovers, selection, chips */
+.site-header :focus-visible, .hero :focus-visible, .band :focus-visible, .site-footer :focus-visible { outline-color: #fff; }
+.site-header a:not(.btn):hover, .hero a:not(.btn):hover, .site-footer a:not(.btn):hover { color: #fff; }
+.site-header ::selection, .hero ::selection { background: #fff; color: var(--cobalt-deep); }
+.site-header .todo { color: var(--on-cobalt-2); border-color: rgba(255,255,255,.55); }
+
+/* Hero */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--label-w) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "label intro" "label minis" "label .";
+  column-gap: var(--hero-gap);
+  padding-inline: var(--gutter);
+  min-height: max(calc(100svh + 96px), 860px);
+  padding-bottom: clamp(48px, 6vw, 96px);
+  background: var(--cobalt);
+  color: #fff;
+}
+.hero__pattern {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  color: #fff; opacity: .07;
+  --sym-bg: var(--cobalt);
+}
+.hero__label {
+  grid-area: label; position: relative; z-index: 1;
+  filter: drop-shadow(0 2px 2px rgba(6,14,58,.3)) drop-shadow(0 30px 34px rgba(6,14,58,.42));
+}
+.hero__intro { grid-area: intro; position: relative; container-type: inline-size; padding-top: clamp(124px, 17vh, 176px); }
+.hero__minis { grid-area: minis; position: relative; container-type: inline-size; padding-top: var(--s-7); padding-bottom: var(--s-6); }
+
+.hero h1 {
+  font-size: clamp(2.8rem, 10.4cqi, 5.6rem);
+  line-height: .96;
+  font-weight: 800;
+  letter-spacing: -.032em;
+  max-width: 12em;
+  color: #fff;
+}
+.hero__lead {
+  margin-top: var(--s-5);
+  font-size: clamp(17px, 1.1rem + .3vw, 21px);
+  line-height: 1.5;
+  max-width: 38em;
+  color: var(--on-cobalt-2);
+}
+.hero__actions { margin-top: var(--s-6); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
+.hero__actions .phone { font-size: 21px; color: #fff; }
+
+/* Big care label */
+.care-label {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 28px), 0 100%);
+  transform-origin: 50% 0;
+}
+.care-label > .fold { height: 52px; }
+.care-label > .fold::after { top: 24px; left: 16px; right: 16px; }
+.care-label__body { padding: clamp(24px, 2.6vw, 40px) clamp(24px, 2.8vw, 44px) 0; }
+
+.logo-slot {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  padding: 12px 16px 12px;
+  border: 1px dashed var(--grey);
+}
+.logo-slot__name { font-size: clamp(36px, 3.5vw, 52px); line-height: .9; font-weight: 900; letter-spacing: -.02em; }
+.logo-slot .todo { margin-left: 0; }
+
+.care-label__origin {
+  margin-top: var(--s-4);
+  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  line-height: 1.45;
+}
+.care-label__rule { height: 1px; margin: var(--s-5) 0; background: var(--hair); border: 0; }
+
+.care-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 1vw, 14px);
+}
+.care-grid li {
+  --sym-bg: var(--satin);
+  padding: clamp(6px, .8vw, 10px);
+  border-radius: 2px;
+  color: var(--ink);
+  transition: color 450ms var(--ease), background-color 450ms var(--ease), transform 450ms var(--ease);
+}
+.care-label.is-active .care-grid li { color: var(--grey-soft); }
+.care-label.is-active .care-grid li.is-lit {
+  --sym-bg: var(--cobalt-tint);
+  color: var(--cobalt);
+  background-color: var(--cobalt-tint);
+  transform: translateY(-2px);
+}
+
+.care-lines { margin-top: var(--s-5); display: grid; gap: 2px; }
+.care-lines li {
+  padding: 7px 10px 6px;
+  margin-inline: -10px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.35;
+  transition: color 450ms var(--ease), background-color 450ms var(--ease);
+}
+.care-label.is-active .care-lines li { color: var(--grey); }
+.care-label.is-active .care-lines li.is-lit { color: #fff; background: var(--cobalt); }
+
+.care-label__legal {
+  margin-top: var(--s-5);
+  font-size: 12px; letter-spacing: .06em; color: var(--ink-2); line-height: 1.5;
+}
+
+/* Mini labels */
+.minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+@container (min-width: 620px) { .minis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.mini-wrap { filter: drop-shadow(0 1px 1px rgba(6,14,58,.22)) drop-shadow(0 10px 12px rgba(6,14,58,.26)); }
+.mini {
+  --sym-bg: var(--satin);
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  width: 100%; height: 100%;
+  padding: 12px 26px 12px 18px;
+  border: 0;
+  text-align: left;
+  color: var(--ink);
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%);
+  transition: background-color 450ms var(--ease), color 450ms var(--ease);
+}
+.mini::before {
+  content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(17,17,17,.45);
+}
+.mini__name { font-weight: 700; font-size: 15px; line-height: 1.2; }
+.mini__regime { font-size: 12.5px; line-height: 1.3; color: var(--ink-2); transition: color 450ms var(--ease); }
+.mini__syms { display: flex; gap: 6px; margin-top: auto; padding-top: 4px; }
+.mini__syms svg { width: 24px; }
+.mini:focus-visible { outline: none; }
+.mini-wrap:has(.mini:focus-visible) { outline: 2px solid #fff; outline-offset: 3px; }
+.mini.is-current { --sym-bg: var(--ink); background-color: var(--ink); background-image: none; color: #fff; }
+.mini.is-current::before { color: rgba(255,255,255,.6); }
+.mini.is-current .mini__regime { color: var(--grey-soft); }
+.mini[aria-pressed="true"]:not(.is-current) { box-shadow: inset 0 0 0 2px var(--ink); }
+.minis__hint { margin-top: var(--s-4); font-size: 14px; color: var(--on-cobalt-2); }
+.minis__hint a { font-weight: 600; color: #fff; }
+
+/* Sections */
+.section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
+.section__head { margin-bottom: clamp(32px, 3.5vw, 48px); max-width: 52rem; }
+.section h2, .band h2 {
+  font-size: clamp(2.25rem, 1.3rem + 2.6vw, 3.6rem);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -.024em;
+}
+.section__lead { margin-top: var(--s-4); font-size: 19px; color: var(--ink-2); max-width: 40em; }
+
+/* Products */
+.products { overflow-x: clip; }
+.plabels {
+  position: relative;
+  display: flex; flex-wrap: wrap; align-items: flex-start;
+  gap: var(--s-7) var(--s-5);
+}
+.plabels::before {
+  content: ""; position: absolute; z-index: 2; top: 0; height: 26px;
+  left: calc(50% - 50vw); right: calc(50% - 50vw);
+  background: linear-gradient(180deg, #E2E2DB, #EAEAE4 50%, #DFDFD8);
+  border-block: 1px solid rgba(17,17,17,.1);
+  box-shadow: 0 6px 10px -6px rgba(17,17,17,.2);
+}
+.plabels::after {
+  content: ""; position: absolute; z-index: 3; top: 11px; height: 1.5px;
+  left: calc(50% - 50vw); right: calc(50% - 50vw);
+  background: var(--stitch); color: rgba(17,17,17,.55);
+}
+.plabel {
+  flex: 1 1 228px; max-width: 340px;
+  filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 14px 16px rgba(17,17,17,.09));
+}
+.plabel__inner {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 18px), 0 100%);
+  padding-bottom: 44px;
+}
+.plabel__body { padding: var(--s-5) clamp(18px, 1.6vw, 24px) 0; }
+.photo-slot {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  height: 132px; padding: 12px;
+  border: 1px dashed var(--grey);
+  background: repeating-linear-gradient(135deg, rgba(17,17,17,.045) 0 1px, transparent 1px 9px);
+  text-align: center; font-size: 13px; line-height: 1.35; color: var(--ink-2);
+}
+.photo-slot .todo { margin-left: 0; }
+.photo-slot--dev { font-weight: 600; color: var(--ink); }
+.plabel__name { margin-top: var(--s-5); font-size: 22px; line-height: 1.12; font-weight: 800; letter-spacing: -.01em; }
+.plabel__desc { margin-top: var(--s-2); font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.plabel__regime { margin-top: var(--s-5); padding-block: var(--s-4); border-block: 1px solid var(--hair); }
+.sym-row { display: flex; gap: 10px; }
+.sym-row svg { width: 38px; }
+.plabel__regime-note { display: block; margin-top: var(--s-2); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.specs { margin-top: var(--s-4); display: grid; gap: var(--s-3); }
+.specs dt { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.specs dd { margin-top: 2px; font-size: 15px; line-height: 1.45; }
+.vol { display: inline-block; margin-right: 6px; padding: 1px 6px; border: 1px solid var(--ink); border-radius: 2px; font-size: 13.5px; }
+
+.plabel--soon { flex: 0 1 220px; filter: none; }
+.plabel--soon .plabel__inner {
+  clip-path: none; padding: 58px 22px 32px;
+  border: 1.5px dashed var(--grey); background: transparent;
+}
+.plabel--soon p { font-size: 15px; line-height: 1.5; }
+.plabel--soon strong { display: block; font-size: 22px; line-height: 1.12; font-weight: 800; margin-bottom: var(--s-2); }
+.plabel--soon a { display: inline-block; margin-top: var(--s-4); font-weight: 600; color: var(--cobalt); }
+
+/* Section grounds */
+.section--satin { background: var(--satin); }
+.section--tint { background: var(--cobalt-tint); }
+
+/* Segments */
+.segments { border-top: 1px solid var(--ink); }
+.segment {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) calc(4 * clamp(40px, 3.6vw, 54px) + 3 * clamp(10px, 1.2vw, 18px)) minmax(0, 1.1fr);
+  gap: var(--s-5) clamp(24px, 4vw, 64px);
+  align-items: center;
+  padding-block: clamp(28px, 3.2vw, 44px);
+}
+.segment + .segment::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.35);
+}
+.segment h3 { font-size: clamp(30px, 1.2rem + 2.2vw, 50px); line-height: 1; font-weight: 800; letter-spacing: -.022em; }
+.segment .sym-row { gap: clamp(10px, 1.2vw, 18px); }
+.segment .sym-row svg { width: clamp(40px, 3.6vw, 54px); }
+.segment__text { font-size: 18px; line-height: 1.5; }
+.segment__fit { margin-top: var(--s-2); font-size: 14.5px; color: var(--ink-2); }
+.segment__fit a { color: var(--ink); font-weight: 600; }
+.segment__fit a:hover { color: var(--cobalt); }
+
+/* Ink band */
+.band-section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
+.band-wrap {
+  margin-right: clamp(16px, 4vw, 72px);
+  filter: drop-shadow(0 2px 2px rgba(17,17,17,.16)) drop-shadow(0 26px 30px rgba(17,17,17,.28));
+}
+.band {
+  --sym-bg: var(--ink);
+  position: relative;
+  color: #fff;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.07) 41%, rgba(255,255,255,0) 58%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(255,255,255,0) 1px 3px);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 56px) 50%, 100% 100%, 0 100%);
+  padding: clamp(56px, 6vw, 88px) calc(56px + clamp(24px, 4vw, 72px)) clamp(56px, 6vw, 88px) calc(var(--gutter) + max(0px, (100vw - var(--wrap) - 2 * var(--gutter)) / 2));
+}
+.band::before, .band::after {
+  content: ""; position: absolute; left: 0; right: 80px; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.5);
+}
+.band::before { top: 16px; }
+.band::after { bottom: 16px; }
+.band h2 { color: #fff; }
+.band__inner { max-width: var(--wrap); }
+.band .section__lead { color: var(--grey-soft); }
+.band a:not(.btn):hover { color: #fff; }
+.formats { margin-top: clamp(32px, 3.5vw, 48px); }
+.format {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: var(--s-4) clamp(24px, 4vw, 64px);
+  padding-block: clamp(22px, 2.4vw, 32px);
+  border-top: 1px solid rgba(255,255,255,.28);
+}
+.format h3 { font-size: clamp(24px, 1rem + 1.4vw, 36px); line-height: 1.08; font-weight: 800; letter-spacing: -.015em; }
+.format p { font-size: 18px; line-height: 1.5; color: #fff; max-width: 34em; }
+.format .todo { color: var(--grey-soft); border-color: var(--grey); }
+.band__cta { margin-top: clamp(28px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
+.band__cta .phone { font-size: 19px; color: #fff; }
+
+/* Why */
+.why { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: var(--s-6) clamp(32px, 5vw, 96px); align-items: start; }
+.why-list li {
+  padding-block: clamp(18px, 2vw, 26px);
+  border-top: 1px solid var(--hair);
+  font-size: clamp(21px, 1rem + .9vw, 30px); line-height: 1.25; letter-spacing: -.01em;
+}
+.why-list li:last-child { border-bottom: 1px solid var(--hair); }
+.why-list b { font-weight: 800; }
+.why-list span { color: var(--ink-2); }
+
+/* Steps */
+.steps { --step-gap: clamp(20px, 3vw, 48px); position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-6) var(--step-gap); }
+.step { position: relative; }
+.step:not(:last-child)::before {
+  content: ""; position: absolute; top: 31px; left: 76px; right: calc(-1 * var(--step-gap) + 12px); height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.4);
+}
+.step__n {
+  position: relative; z-index: 1;
+  display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 1.75px solid var(--ink);
+  background: var(--page);
+  font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums lining-nums;
+}
+.step:first-child .step__n { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.step h3 { margin-top: var(--s-5); font-size: 24px; line-height: 1.15; font-weight: 800; }
+.step p { margin-top: var(--s-2); font-size: 16px; color: var(--ink-2); max-width: 22em; }
+
+/* Request */
+.request { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: var(--s-7) clamp(32px, 6vw, 112px); align-items: start; }
+.request__text p { margin-top: var(--s-4); font-size: 19px; color: var(--ink-2); max-width: 30em; }
+.request__phones { margin-top: var(--s-6); display: grid; justify-items: start; gap: var(--s-3); }
+.request__phones a { font-size: clamp(22px, 1rem + 1vw, 30px); }
+
+.form-label {
+  filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 22px 26px rgba(17,17,17,.12));
+}
+.form-label__inner {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%);
+  padding-bottom: 56px;
+}
+.form-label > .form-label__inner > .fold { height: 40px; }
+.form-label > .form-label__inner > .fold::after { top: 18px; }
+.lform { padding: clamp(24px, 3vw, 40px) clamp(22px, 3vw, 44px) 0; }
+.field + .field, .field + fieldset, fieldset + .lform__submit { margin-top: var(--s-5); }
+.field label, .lform legend {
+  display: block;
+  font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-2);
+}
+.field label i { font-style: normal; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.field input {
+  display: block; width: 100%;
+  margin-top: 4px; padding: 10px 0 9px;
+  border: 0; border-bottom: 1.5px solid var(--ink); border-radius: 0;
+  background: transparent;
+  font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums lining-nums;
+  transition: border-color 300ms var(--ease);
+}
+.field input::placeholder { color: #6E737A; font-weight: 400; }
+.field input:hover { border-bottom-color: var(--cobalt); }
+.field input:focus-visible { outline: none; border-bottom-color: var(--cobalt); box-shadow: 0 1.5px 0 var(--cobalt); }
+.field input[aria-invalid="true"] { border-bottom-color: var(--error); box-shadow: 0 1.5px 0 var(--error); }
+.field__error { min-height: 0; margin-top: 6px; font-size: 14px; line-height: 1.4; color: var(--error); font-weight: 500; }
+.field__error:empty { display: none; }
+
+.lform fieldset { margin: 0; padding: 0; border: 0; }
+.lform fieldset { margin-top: var(--s-6); }
+.choices { margin-top: var(--s-3); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2) var(--s-4); }
+.choice { position: relative; display: flex; align-items: center; gap: 12px; padding: 8px 0; cursor: pointer; font-size: 16px; font-weight: 500; }
+.choice input { position: absolute; opacity: 0; width: 24px; height: 24px; margin: 0; cursor: pointer; }
+.choice__mark {
+  flex: none; display: grid; place-items: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 1.75px solid var(--ink);
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease);
+}
+.choice__mark::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #fff; transform: scale(0); transition: transform 300ms var(--ease); }
+.choice:hover .choice__mark { border-color: var(--cobalt); }
+.choice input:checked + .choice__mark { background: var(--cobalt); border-color: var(--cobalt); }
+.choice input:checked + .choice__mark::after { transform: scale(1); }
+.choice input:focus-visible + .choice__mark { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+.lform__submit { margin-top: var(--s-6); }
+.lform__submit .btn { width: 100%; }
+.lform__consent { margin-top: var(--s-3); font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+.lform__status { margin-top: var(--s-4); padding: 14px 16px; background: var(--cobalt-tint); font-size: 15px; line-height: 1.45; }
+.lform__status[hidden] { display: none; }
+.lform__status b { color: var(--cobalt); }
+
+/* Footer */
+.site-footer {
+  position: relative;
+  padding-top: calc(var(--s-8) + 14px);
+  padding-bottom: var(--s-6);
+  background: var(--ink);
+  color: #fff;
+}
+.site-footer::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 14px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.1) 0 1px, rgba(255,255,255,0) 1px 3px),
+    linear-gradient(180deg, #2A2A2A, #1A1A1A);
+}
+.site-footer::after {
+  content: ""; position: absolute; top: 24px; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.4);
+}
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) repeat(3, minmax(0, 1fr)); gap: var(--s-6) var(--s-7); }
+.footer-grid h2 { font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: var(--s-3); }
+.footer-grid p, .footer-grid li { font-size: 16px; line-height: 1.55; }
+.footer-grid .phone { font-size: 19px; }
+.footer-grid li + li { margin-top: 6px; }
+.footer-brand .logo-slot { border-color: rgba(255,255,255,.4); }
+.footer-brand .logo-slot__name { font-size: 34px; }
+.footer-brand p { margin-top: var(--s-4); font-size: 14px; color: var(--grey-soft); max-width: 22em; }
+.site-footer .todo { color: var(--grey-soft); border-color: var(--grey); }
+.footer-bottom {
+  margin-top: var(--s-8); padding-top: var(--s-5);
+  border-top: 1px solid rgba(255,255,255,.18);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-3) var(--s-6);
+  font-size: 14px; color: var(--grey-soft);
+}
+
+/* Photos */
+.photo-band { margin: 0; background: var(--satin); overflow: hidden; }
+.photo-band img { display: block; width: 100%; height: clamp(260px, 32vw, 480px); object-fit: cover; object-position: 50% 55%; filter: saturate(.9); }
+.photo-cap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; padding-block: 14px 4px; font-size: 13px; color: var(--ink-2); }
+.photo-cap b { font-weight: 600; color: var(--ink); }
+.segment__head { display: flex; align-items: center; gap: clamp(14px, 1.6vw, 24px); min-width: 0; }
+.segment__photo { flex: none; width: clamp(96px, 12vw, 176px); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 2px; filter: saturate(.85); box-shadow: 0 1px 1px rgba(17,17,17,.1), 0 12px 18px -10px rgba(17,17,17,.3); }
+.why__photo { margin-top: var(--s-6); }
+.why__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 35% 50%; border-radius: 2px; filter: saturate(.9); }
+.why__photo figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
+.segments__note { margin-top: var(--s-4); font-size: 13px; color: var(--ink-2); }
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference) {
+  .care-label { animation: settle 1500ms var(--ease) both; }
+  .care-grid .sym { animation: print 800ms var(--ease) both; animation-delay: calc(260ms + var(--i, 0) * 55ms); }
+  @keyframes settle {
+    from { transform: translateY(-28px) rotate(-1.4deg); }
+    to { transform: none; }
+  }
+  @keyframes print {
+    from { clip-path: inset(0 100% 0 0); filter: blur(2px); }
+    to { clip-path: inset(0 0 0 0); filter: blur(0); }
+  }
+
+  /* Scroll reveal: only below-the-fold elements get .rv (set by JS) */
+  .js-reveal .rv {
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
+  .js-reveal .rv:not(.is-in) { opacity: 0; transform: translateY(24px); }
+  .js-reveal .plabel.rv { transform-origin: 50% 0; transition-duration: 700ms, 1100ms; }
+  .js-reveal .plabel.rv:not(.is-in) { transform: translateY(-22px) rotate(-1.2deg); }
+  .js-reveal .photo-band img.rv { transition-duration: 700ms, 1400ms; }
+  .js-reveal .photo-band img.rv:not(.is-in) { transform: scale(1.06); }
+  .js-reveal .rv:not(.is-in) .sym-row .sym { clip-path: inset(0 100% 0 0); }
+  .js-reveal .rv.is-in .sym-row .sym {
+    animation: print 800ms var(--ease) both;
+    animation-delay: calc(var(--d, 0ms) + 220ms + var(--si, 0) * 90ms);
+  }
+  .sym-row li:nth-child(2) .sym { --si: 1; }
+  .sym-row li:nth-child(3) .sym { --si: 2; }
+  .sym-row li:nth-child(4) .sym { --si: 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 1ms !important; }
+}
+
+@media (max-width: 1520px) {
+  .site-header__cta .phone { display: none; }
+}
+@media (max-width: 1360px) {
+  .site-nav a { font-size: 14.5px; }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .site-nav ul { gap: 4px 14px; }
+  .site-header .btn--sm { display: none; }
+  .segment { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+  .segment .sym-row { grid-column: 1; grid-row: 2; }
+  .segment > div { grid-column: 2; grid-row: 1 / span 2; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 960px) {
+  .site-header {
+    position: relative; left: auto; right: auto; height: auto;
+    padding: 14px var(--gutter);
+    flex-wrap: wrap; gap: 12px;
+    background: var(--cobalt);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .site-header__brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
+  .site-header__brand b { font-size: 24px; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+  .site-header__brand .todo { margin-left: 0; font-size: 9.5px; }
+  .site-header__cta { margin-left: auto; gap: 10px; }
+  .menu-btn {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px;
+    border: 1.5px solid #fff; border-radius: 2px; background: transparent; color: #fff;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+  }
+  .menu-btn[aria-expanded="true"] { background: var(--satin); color: var(--cobalt); border-color: var(--satin); }
+  .burger-lines { display: grid; gap: 5px; width: 20px; }
+  .burger-lines span { display: block; height: 2px; background: currentColor; transition: transform 250ms var(--ease), opacity 200ms var(--ease); }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .site-header .btn--sm { display: none; }
+  .site-nav { flex-basis: 100%; display: none; order: 3; }
+  .site-nav.is-open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0; padding-bottom: 8px; }
+  .site-nav a { display: block; padding: 12px 0; font-size: 18px; border-top: 1px solid rgba(255,255,255,.2); }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-template-areas: "intro" "label" "minis";
+    min-height: 0;
+    padding-bottom: var(--s-8);
+    overflow: clip;
+  }
+  .hero__intro { padding-top: var(--s-7); }
+  .hero h1 { font-size: clamp(2.5rem, 12.2cqi, 4rem); }
+  .hero__label { margin-top: var(--s-7); }
+  .care-label {
+    position: relative; inset: auto;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 18px), 0 100%);
+    padding-bottom: 40px;
+  }
+  .care-label > .fold { height: 30px; }
+  .care-label > .fold::after { top: 13px; }
+  .care-label__body { padding: 20px 20px 0; }
+  .care-label__head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 16px; }
+  .care-label .logo-slot { padding: 0; border: 0; }
+  .care-label .logo-slot .todo { display: none; }
+  .logo-slot__name { font-size: 32px; }
+  .care-label__origin { margin-top: 0; font-size: 11.5px; letter-spacing: .1em; }
+  .care-label__rule { margin: var(--s-4) 0; }
+  .care-grid { grid-template-columns: repeat(6, 1fr); gap: 4px; }
+  .care-grid li { padding: 5px; }
+  .care-lines { margin-top: var(--s-4); }
+  .care-lines li { font-size: 11.5px; letter-spacing: .07em; padding: 6px 10px 5px; }
+  .care-label__legal { display: none; }
+  .hero__minis { padding-top: var(--s-5); padding-bottom: 0; }
+
+  .plabels { gap: var(--s-6); }
+  .plabels::before, .plabels::after { display: none; }
+  .plabel, .plabel--soon { flex: 1 1 100%; max-width: none; }
+  .plabel--soon .plabel__inner { padding-top: 32px; }
+
+  .segment { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); }
+  .segment .sym-row, .segment > div { grid-column: auto; grid-row: auto; }
+
+  .band-wrap { margin-right: 0; }
+  .band {
+    clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 50%, 100% 100%, 0 100%);
+    padding: 56px calc(var(--gutter) + 28px) 56px var(--gutter);
+  }
+  .band::before, .band::after { right: 34px; }
+  .format { grid-template-columns: minmax(0, 1fr); gap: var(--s-2); }
+
+  .why { grid-template-columns: minmax(0, 1fr); }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
+  .step:not(:last-child)::before { top: 76px; bottom: calc(-1 * var(--s-6) + 12px); left: 31px; right: auto; width: 1.5px; height: auto; background: var(--stitch-v); }
+  .step { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: var(--s-5); }
+  .step__n { grid-row: 1 / span 2; }
+  .step h3 { margin-top: 6px; }
+
+  .request { grid-template-columns: minmax(0, 1fr); }
+  .choices { grid-template-columns: minmax(0, 1fr); }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<svg id="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="s-t30" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">30</text>
+    </symbol>
+    <symbol id="s-t40" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">40</text>
+    </symbol>
+    <symbol id="s-t60" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">60</text>
+    </symbol>
+    <symbol id="s-hand" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <path style="fill:var(--sym-bg, #F6F6F3)" d="M30 4 V25.5 a5.5 5.5 0 0 1 -11 0 V20 l-3.6 -4 a2 2 0 0 1 3 -2.7 L19 14 V4"/>
+      <path d="M22.7 24 V30.4 M26.3 24 V30.4"/>
+    </symbol>
+    <symbol id="s-bleach" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 6.5 L43 39.5 H5 Z"/>
+    </symbol>
+    <symbol id="s-tumble" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="6" width="36" height="36" rx="1.5"/>
+      <circle cx="24" cy="24" r="12.5"/>
+      <circle cx="24" cy="24" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="s-line" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="6" width="36" height="36" rx="1.5"/>
+      <path d="M6 9.5 C15 21 33 21 42 9.5"/>
+    </symbol>
+    <symbol id="s-iron1" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 39 H44 V22.5 H17 C10.6 22.5 6.6 29.5 4 39 Z"/>
+      <path d="M20 22.5 C20 15.6 22.6 12 28 12 H42 V22.5"/>
+      <circle cx="26" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="s-iron2" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 39 H44 V22.5 H17 C10.6 22.5 6.6 29.5 4 39 Z"/>
+      <path d="M20 22.5 C20 15.6 22.6 12 28 12 H42 V22.5"/>
+      <circle cx="21.5" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+      <circle cx="30.5" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="s-p" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="17.5"/>
+      <path d="M20.5 32.5 V15.5 H26.3 a4.7 4.7 0 0 1 0 9.4 H20.5"/>
+    </symbol>
+    <symbol id="s-f" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="17.5"/>
+      <path d="M21 32.5 V15.5 H29.5 M21 23.7 H28"/>
+    </symbol>
+    <symbol id="s-w" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="17.5"/>
+      <path d="M14.5 16.5 L18.7 31.5 L24 19.8 L29.3 31.5 L33.5 16.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#request">Перейти к заявке</a>
+
+<header class="site-header" id="top">
+  <a class="site-header__brand" href="#top" aria-label="ЮниХим, на главную">
+    <b>ЮниХим</b><span class="todo">логотип в разработке</span>
+  </a>
+  <nav class="site-nav" id="site-nav" aria-label="Разделы">
+    <ul>
+      <li><a href="#products">Продукция</a></li>
+      <li><a href="#clients">Для кого</a></li>
+      <li><a href="#cooperation">Сотрудничество</a></li>
+      <li><a href="#start">Как начать</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+  <div class="site-header__cta">
+    <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+    <a class="btn btn--sm btn--light" href="#request">Получить прайс</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Меню"><span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="hero__pattern" aria-hidden="true" focusable="false">
+    <defs>
+      <pattern id="care-pattern" width="520" height="440" patternUnits="userSpaceOnUse">
+        <use href="#s-t40" x="24" y="28" width="168" height="168"/>
+        <use href="#s-tumble" x="300" y="44" width="150" height="150"/>
+        <use href="#s-iron2" x="150" y="250" width="168" height="168"/>
+        <use href="#s-w" x="390" y="268" width="120" height="120"/>
+      </pattern>
+      <filter id="care-pattern-ink" x="0" y="0" width="100%" height="100%"><feMorphology operator="dilate" radius="1.2"/></filter>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#care-pattern)" filter="url(#care-pattern-ink)"/>
+  </svg>
+  <div class="hero__label">
+    <div class="care-label satin selvage" id="care-label">
+      <div class="fold" aria-hidden="true"></div>
+      <div class="care-label__body">
+        <div class="care-label__head">
+          <div class="logo-slot" role="img" aria-label="ЮниХим — логотип в разработке">
+            <span class="logo-slot__name" aria-hidden="true">ЮниХим</span>
+            <span class="todo" aria-hidden="true">логотип в разработке</span>
+          </div>
+          <p class="care-label__origin">Сделано в Тучково,<br>Московская обл.</p>
+        </div>
+        <hr class="care-label__rule">
+        <ul class="care-grid" aria-label="Знаки ухода">
+          <li data-sym="t30" style="--i:0"><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
+          <li data-sym="t40" style="--i:1"><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+          <li data-sym="t60" style="--i:2"><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
+          <li data-sym="hand" style="--i:3"><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+          <li data-sym="bleach" style="--i:4"><svg class="sym" role="img" aria-label="Отбеливание допускается"><use href="#s-bleach"/></svg></li>
+          <li data-sym="tumble" style="--i:5"><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
+          <li data-sym="line" style="--i:6"><svg class="sym" role="img" aria-label="Сушка на верёвке"><use href="#s-line"/></svg></li>
+          <li data-sym="iron2" style="--i:7"><svg class="sym" role="img" aria-label="Глажка при средней температуре"><use href="#s-iron2"/></svg></li>
+          <li data-sym="iron1" style="--i:8"><svg class="sym" role="img" aria-label="Глажка при низкой температуре"><use href="#s-iron1"/></svg></li>
+          <li data-sym="p" style="--i:9"><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
+          <li data-sym="f" style="--i:10"><svg class="sym" role="img" aria-label="Химчистка, растворитель F"><use href="#s-f"/></svg></li>
+          <li data-sym="w" style="--i:11"><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
+        </ul>
+        <ul class="care-lines" aria-label="Продукция">
+          <li data-product="soap">Жидкое мыло — номера, санузлы</li>
+          <li data-product="gel">Гель для стирки — ежедневная загрузка</li>
+          <li data-product="cond">Кондиционер — мягкость, лёгкая глажка</li>
+          <li data-product="dish">Средство для посуды — кухня</li>
+        </ul>
+        <p class="care-label__legal">ООО «ЮниХим-Про»<br>143132, Московская обл., Рузский р-н, пос.&nbsp;Тучково</p>
+        <p class="vh" aria-live="polite" id="care-status"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__intro">
+    <h1 id="hero-title">Моющие средства для прачечных, гостиниц и химчисток</h1>
+    <p class="hero__lead">Производим сами, в Тучково Московской области. Поставляем оптом, выпускаем продукцию под вашим брендом и поставляем основу для мыла.</p>
+    <div class="hero__actions">
+      <a class="btn btn--light" href="#request">Получить прайс</a>
+      <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+    </div>
+  </div>
+
+  <div class="hero__minis">
+    <div class="minis" role="group" aria-label="Продукция: отметить режимы на ярлыке">
+      <div class="mini-wrap">
+        <button class="mini satin" type="button" data-product="soap" data-syms="hand t30" aria-pressed="false" aria-controls="care-label">
+          <span class="mini__name">Жидкое мыло</span>
+          <span class="mini__regime">режим: номера и санузлы</span>
+          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-hand"/></svg><svg class="sym"><use href="#s-t30"/></svg></span>
+        </button>
+      </div>
+      <div class="mini-wrap">
+        <button class="mini satin" type="button" data-product="gel" data-syms="t40 t60 w" aria-pressed="false" aria-controls="care-label">
+          <span class="mini__name">Гель для стирки</span>
+          <span class="mini__regime">режим: ежедневная загрузка</span>
+          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-t40"/></svg><svg class="sym"><use href="#s-t60"/></svg><svg class="sym"><use href="#s-w"/></svg></span>
+        </button>
+      </div>
+      <div class="mini-wrap">
+        <button class="mini satin" type="button" data-product="cond" data-syms="tumble line iron2" aria-pressed="false" aria-controls="care-label">
+          <span class="mini__name">Кондиционер для белья</span>
+          <span class="mini__regime">режим: мягкость и глажка</span>
+          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-tumble"/></svg><svg class="sym"><use href="#s-line"/></svg><svg class="sym"><use href="#s-iron2"/></svg></span>
+        </button>
+      </div>
+      <div class="mini-wrap">
+        <button class="mini satin" type="button" data-product="dish" data-syms="hand t40" aria-pressed="false" aria-controls="care-label">
+          <span class="mini__name">Средство для мытья посуды</span>
+          <span class="mini__regime">режим: кухня</span>
+          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-hand"/></svg><svg class="sym"><use href="#s-t40"/></svg></span>
+        </button>
+      </div>
+    </div>
+    <p class="minis__hint">Наведите или нажмите на продукт — на ярлыке отметятся его знаки. <a href="#products">Вся продукция</a></p>
+  </div>
+</section>
+
+
+<section class="section products" id="products" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="products-title">Продукция</h2>
+    </div>
+
+    <div class="plabels">
+      <article class="plabel" id="product-soap" aria-labelledby="p-soap">
+        <div class="plabel__inner satin selvage">
+          <div class="fold" aria-hidden="true"></div>
+          <div class="plabel__body">
+            <div class="photo-slot"><span>Фото флакона с этикеткой</span><span class="todo">уточнить</span></div>
+            <h3 class="plabel__name" id="p-soap">Жидкое мыло</h3>
+            <p class="plabel__desc">Мягкое мыло для рук: номера, санузлы, общие зоны.</p>
+            <div class="plabel__regime">
+              <ul class="sym-row" aria-label="Знаки режима">
+                <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+                <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
+              </ul>
+              <span class="plabel__regime-note">режим: номера и санузлы</span>
+            </div>
+            <dl class="specs">
+              <div><dt>Отдушки</dt><dd>без отдушки, лаванда, зелёный чай <span class="todo">уточнить</span></dd></div>
+              <div><dt>Фасовка</dt><dd><span class="vol code">0,5 л</span><span class="vol code">5 л</span><span class="todo">уточнить</span></dd></div>
+              <div><dt>Этикетка</dt><dd>готова</dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <article class="plabel" id="product-gel" aria-labelledby="p-gel">
+        <div class="plabel__inner satin selvage">
+          <div class="fold" aria-hidden="true"></div>
+          <div class="plabel__body">
+            <div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div>
+            <h3 class="plabel__name" id="p-gel">Гель для стирки</h3>
+            <p class="plabel__desc">Концентрат для белого и цветного белья, для ежедневной загрузки прачечной.</p>
+            <div class="plabel__regime">
+              <ul class="sym-row" aria-label="Знаки режима">
+                <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+                <li><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
+                <li><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
+              </ul>
+              <span class="plabel__regime-note">режим: ежедневная загрузка</span>
+            </div>
+            <dl class="specs">
+              <div><dt>Отдушки</dt><dd>свежесть, альпийские травы, хлопок <span class="todo">уточнить</span></dd></div>
+              <div><dt>Фасовка</dt><dd><span class="vol code">5 л</span><span class="vol code">20 л</span><span class="todo">уточнить</span></dd></div>
+              <div><dt>Этикетка</dt><dd>в разработке</dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <article class="plabel" id="product-cond" aria-labelledby="p-cond">
+        <div class="plabel__inner satin selvage">
+          <div class="fold" aria-hidden="true"></div>
+          <div class="plabel__body">
+            <div class="photo-slot"><span>Фото канистры с этикеткой</span><span class="todo">уточнить</span></div>
+            <h3 class="plabel__name" id="p-cond">Кондиционер для белья</h3>
+            <p class="plabel__desc">Мягкость тканей, лёгкая глажка, стойкий аромат.</p>
+            <div class="plabel__regime">
+              <ul class="sym-row" aria-label="Знаки режима">
+                <li><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
+                <li><svg class="sym" role="img" aria-label="Сушка на верёвке"><use href="#s-line"/></svg></li>
+                <li><svg class="sym" role="img" aria-label="Глажка при средней температуре"><use href="#s-iron2"/></svg></li>
+              </ul>
+              <span class="plabel__regime-note">режим: мягкость и глажка</span>
+            </div>
+            <dl class="specs">
+              <div><dt>Отдушки</dt><dd>морской бриз, цветочный, детский <span class="todo">уточнить</span></dd></div>
+              <div><dt>Фасовка</dt><dd><span class="vol code">5 л</span><span class="vol code">20 л</span><span class="todo">уточнить</span></dd></div>
+              <div><dt>Этикетка</dt><dd>готова</dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <article class="plabel" id="product-dish" aria-labelledby="p-dish">
+        <div class="plabel__inner satin selvage">
+          <div class="fold" aria-hidden="true"></div>
+          <div class="plabel__body">
+            <div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div>
+            <h3 class="plabel__name" id="p-dish">Средство для мытья посуды</h3>
+            <p class="plabel__desc">Снимает жир, бережно к рукам. Для кухонь гостиниц и кафе.</p>
+            <div class="plabel__regime">
+              <ul class="sym-row" aria-label="Знаки режима">
+                <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+                <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+              </ul>
+              <span class="plabel__regime-note">режим: кухня</span>
+            </div>
+            <dl class="specs">
+              <div><dt>Отдушки</dt><dd>лимон, яблоко, алоэ <span class="todo">уточнить</span></dd></div>
+              <div><dt>Фасовка</dt><dd><span class="vol code">0,5 л</span><span class="vol code">5 л</span><span class="todo">уточнить</span></dd></div>
+              <div><dt>Этикетка</dt><dd>в разработке</dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <aside class="plabel plabel--soon" aria-label="Скоро в линейке">
+        <div class="plabel__inner">
+          <p><strong>Скоро в линейке</strong>Гели для душа, шампуни и другие средства.</p>
+          <a href="#request">Спросить о новинках</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<figure class="photo-band">
+  <img src="img/lab-production.webp" alt="Белые канистры на линии розлива" width="1920" height="1080" loading="lazy" decoding="async">
+  <figcaption class="wrap photo-cap"><b>Розлив в канистры</b><span>Фото условное <span class="todo">заменить</span></span></figcaption>
+</figure>
+
+<section class="section section--satin" id="clients" aria-labelledby="clients-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="clients-title">Для кого</h2>
+      <p class="section__lead">Четыре режима — по одному на каждый тип объекта.</p>
+    </div>
+    <ul class="segments">
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-laundry.webp" alt="" width="900" height="600"><h3>Прачечные</h3></header>
+        <ul class="sym-row" aria-label="Режим прачечной">
+          <li><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text">Гели и кондиционеры в канистрах для ежедневной загрузки машин.</p>
+          <p class="segment__fit">Подойдут: <a href="#product-gel">гель для стирки</a>, <a href="#product-cond">кондиционер для белья</a></p>
+        </div>
+      </li>
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-hotel.webp" alt="" width="900" height="600"><h3>Гостиницы</h3></header>
+        <ul class="sym-row" aria-label="Режим гостиницы">
+          <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text">Жидкое мыло для номеров и общих зон, средство для посуды для кухни.</p>
+          <p class="segment__fit">Подойдут: <a href="#product-soap">жидкое мыло</a>, <a href="#product-dish">средство для мытья посуды</a></p>
+        </div>
+      </li>
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-drycleaning.webp" alt="" width="900" height="600"><h3>Химчистки</h3></header>
+        <ul class="sym-row" aria-label="Режим химчистки">
+          <li><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Глажка при низкой температуре"><use href="#s-iron1"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text">Средства для стирки и ухода за тканями разных типов.</p>
+          <p class="segment__fit">Подойдут: <a href="#product-gel">гель для стирки</a>, <a href="#product-cond">кондиционер для белья</a></p>
+        </div>
+      </li>
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-service.webp" alt="" width="900" height="600"><h3>Дома быта</h3></header>
+        <ul class="sym-row" aria-label="Режим дома быта">
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Отбеливание допускается"><use href="#s-bleach"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Глажка при средней температуре"><use href="#s-iron2"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text">Весь набор моющих средств от одного производителя.</p>
+          <p class="segment__fit">Подойдёт <a href="#products">вся линейка</a></p>
+        </div>
+      </li>
+    </ul>
+    <p class="segments__note">Фото в разделе условные <span class="todo">заменить</span></p>
+  </div>
+</section>
+
+<section class="band-section" id="cooperation" aria-labelledby="coop-title">
+  <div class="band-wrap">
+    <div class="band">
+      <div class="band__inner">
+        <h2 id="coop-title">Три формата сотрудничества</h2>
+        <ul class="formats">
+          <li class="format">
+            <h3>Оптовые поставки</h3>
+            <p>Напрямую с производства, от нескольких канистр до паллет <span class="todo">объёмы уточнить</span></p>
+          </li>
+          <li class="format">
+            <h3>Контрактное производство</h3>
+            <p>Выпустим продукцию под вашим брендом: рецептура, розлив, этикетка.</p>
+          </li>
+          <li class="format">
+            <h3>Основа для мыла</h3>
+            <p>Готовая мыльная основа для производителей и мыловаров.</p>
+          </li>
+        </ul>
+        <div class="band__cta">
+          <a class="btn btn--light" href="#request">Обсудить формат</a>
+          <a class="phone" href="tel:+79852007060">+7 985 200-70-60</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why" aria-labelledby="why-title">
+  <div class="wrap why">
+    <div class="why__aside">
+      <h2 id="why-title">Почему мы</h2>
+      <figure class="why__photo">
+        <img src="img/znaki-label.webp" alt="Ярлык, вшитый в шов сложенного белья" width="1920" height="823">
+        <figcaption>Фото условное <span class="todo">заменить</span></figcaption>
+      </figure>
+    </div>
+    <ul class="why-list">
+      <li><b>Своё производство,</b> <span>не перепродаём.</span></li>
+      <li><b>Тучково, Московская область</b> <span>— доставка по Москве и области.</span></li>
+      <li><b>Документы на продукцию</b> <span class="todo">какие именно — уточнить</span></li>
+      <li><b>Подберём отдушку, фасовку и тару</b> <span>под объект.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="start" aria-labelledby="start-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="start-title">Как начать</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n" aria-hidden="true">1</span>
+        <h3>Заявка</h3>
+        <p>На сайте или по телефону.</p>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">2</span>
+        <h3>Прайс и образцы</h3>
+        <p>Пришлём цены, при необходимости — образцы.</p>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">3</span>
+        <h3>Договор</h3>
+        <p>Согласуем объёмы, тару и условия.</p>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">4</span>
+        <h3>Поставка</h3>
+        <p>Отгрузка и доставка по Москве и МО.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--tint" id="request" aria-labelledby="request-title">
+  <div class="wrap request">
+    <div class="request__text">
+      <h2 id="request-title">Получите прайс-лист</h2>
+      <p>Оставьте телефон — перезвоним в течение рабочего дня и подберём продукцию под ваш объект.</p>
+      <div class="request__phones">
+        <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+        <a class="phone" href="tel:+79852007060">+7 985 200-70-60</a>
+      </div>
+    </div>
+
+    <div class="form-label">
+      <div class="form-label__inner satin selvage">
+        <div class="fold" aria-hidden="true"></div>
+        <form class="lform" id="lform" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" placeholder="Как к вам обращаться">
+            <p class="field__error" id="e-name"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-phone" placeholder="Номер для звонка">
+            <p class="field__error" id="e-phone"></p>
+          </div>
+          <div class="field">
+            <label for="f-company">Компания <i>— необязательно</i></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Прачечная, гостиница, химчистка…">
+          </div>
+          <fieldset>
+            <legend>Что интересует</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="interest" value="opt"><span class="choice__mark" aria-hidden="true"></span>Опт</label>
+              <label class="choice"><input type="radio" name="interest" value="brand"><span class="choice__mark" aria-hidden="true"></span>Под мой бренд</label>
+              <label class="choice"><input type="radio" name="interest" value="base"><span class="choice__mark" aria-hidden="true"></span>Основа для мыла</label>
+              <label class="choice"><input type="radio" name="interest" value="other"><span class="choice__mark" aria-hidden="true"></span>Другое</label>
+            </div>
+          </fieldset>
+          <div class="lform__submit">
+            <button class="btn" type="submit">Отправить заявку</button>
+            <p class="lform__consent">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
+          </div>
+          <p class="lform__status" id="lform-status" role="status" hidden></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" id="contacts">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-slot" role="img" aria-label="ЮниХим — логотип в разработке">
+          <span class="logo-slot__name" aria-hidden="true">ЮниХим</span>
+          <span class="todo" aria-hidden="true">логотип в разработке</span>
+        </div>
+        <p>Моющие средства для прачечных, гостиниц, химчисток и домов быта. Своё производство в Тучково.</p>
+      </div>
+      <div>
+        <h2>Телефоны</h2>
+        <ul>
+          <li><a class="phone" href="tel:+74959684745">+7 495 968-47-45</a></li>
+          <li><a class="phone" href="tel:+79852007060">+7 985 200-70-60</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Почта</h2>
+        <p>Адрес почты <span class="todo">уточнить</span></p>
+      </div>
+      <div>
+        <h2>Производство</h2>
+        <p><span class="num">143132</span>, Московская обл., Рузский р-н, пос. Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="num">2026</span> ООО «ЮниХим-Про»</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  /* Product highlights on the hero label */
+  var label = document.getElementById('care-label');
+  var status = document.getElementById('care-status');
+  var minis = Array.prototype.slice.call(document.querySelectorAll('.mini'));
+  var symCells = Array.prototype.slice.call(label.querySelectorAll('[data-sym]'));
+  var lines = Array.prototype.slice.call(label.querySelectorAll('[data-product]'));
+  var hovered = null, pinned = null;
+
+  function byKey(key) { return minis.filter(function (b) { return b.dataset.product === key; })[0]; }
+
+  function render() {
+    var key = hovered || pinned;
+    var btn = key ? byKey(key) : null;
+    var syms = btn ? btn.dataset.syms.split(' ') : [];
+    label.classList.toggle('is-active', !!key);
+    var names = [];
+    symCells.forEach(function (li) {
+      var on = syms.indexOf(li.dataset.sym) !== -1;
+      li.classList.toggle('is-lit', on);
+      if (on) names.push(li.querySelector('svg').getAttribute('aria-label'));
+    });
+    lines.forEach(function (li) { li.classList.toggle('is-lit', li.dataset.product === key); });
+    minis.forEach(function (b) { b.classList.toggle('is-current', b.dataset.product === key); });
+    status.textContent = btn ? btn.querySelector('.mini__name').textContent + ': ' + names.join(', ') : '';
+  }
+
+  minis.forEach(function (b) {
+    b.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovered = b.dataset.product; render(); } });
+    b.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovered = null; render(); } });
+    b.addEventListener('focus', function () {
+      var fv = true;
+      try { fv = b.matches(':focus-visible'); } catch (err) {}
+      if (fv) { hovered = b.dataset.product; render(); }
+    });
+    b.addEventListener('blur', function () { if (hovered === b.dataset.product) { hovered = null; render(); } });
+    b.addEventListener('click', function () {
+      pinned = pinned === b.dataset.product ? null : b.dataset.product;
+      minis.forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.product === pinned)); });
+      render();
+    });
+  });
+
+  /* Mobile menu */
+  var menuBtn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('site-nav');
+  menuBtn.addEventListener('click', function () {
+    var open = menuBtn.getAttribute('aria-expanded') !== 'true';
+    menuBtn.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) { menuBtn.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { menuBtn.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
+  });
+
+  /* Request form */
+  var form = document.getElementById('lform');
+  var fName = document.getElementById('f-name');
+  var fPhone = document.getElementById('f-phone');
+  var formStatus = document.getElementById('lform-status');
+
+  function checkName() {
+    if (!fName.value.trim()) return 'Укажите имя — так мы будем знать, как к вам обращаться.';
+    return '';
+  }
+  function checkPhone() {
+    var v = fPhone.value.trim();
+    var digits = v.replace(/\D/g, '');
+    if (!v) return 'Укажите телефон — по нему перезвоним с прайсом.';
+    if (/[^\d\s()+\-]/.test(v)) return 'В телефоне могут быть только цифры, пробелы, скобки, «+» и «-».';
+    if (digits.length < 10) return 'В номере меньше 10 цифр. Проверьте телефон, например: +7 495 968-47-45.';
+    if (digits.length > 15) return 'В номере слишком много цифр. Проверьте телефон, например: +7 495 968-47-45.';
+    return '';
+  }
+  function show(input, msg) {
+    var err = document.getElementById(input.getAttribute('aria-describedby'));
+    err.textContent = msg;
+    if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    return !msg;
+  }
+  fName.addEventListener('input', function () { if (fName.hasAttribute('aria-invalid')) show(fName, checkName()); });
+  fPhone.addEventListener('input', function () { if (fPhone.hasAttribute('aria-invalid')) show(fPhone, checkPhone()); });
+  fName.addEventListener('blur', function () { if (fName.value) show(fName, checkName()); });
+  fPhone.addEventListener('blur', function () { if (fPhone.value) show(fPhone, checkPhone()); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    formStatus.hidden = true;
+    var okName = show(fName, checkName());
+    var okPhone = show(fPhone, checkPhone());
+    if (!okName) { fName.focus(); return; }
+    if (!okPhone) { fPhone.focus(); return; }
+    formStatus.innerHTML = '<b>Спасибо, заявка заполнена.</b> Перезвоним в течение рабочего дня. <span class="todo">отправка заявок: почта или Telegram — уточнить</span>';
+    formStatus.hidden = false;
+    form.reset();
+  });
+
+  /* Scroll reveal: only what starts below the fold; static under reduced motion */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var targets = document.querySelectorAll([
+      '.section__head', '.plabel', '.photo-band img', '.photo-cap', '.segment', '.segments__note',
+      '.band-wrap', '.why__aside', '.why-list li', '.step', '.request__text', '.form-label'
+    ].join(','));
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var io = new IntersectionObserver(function (entries) {
+      var n = 0;
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.style.setProperty('--d', Math.min(n, 5) * 90 + 'ms');
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+        n++;
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    Array.prototype.forEach.call(targets, function (el) {
+      if (el.getBoundingClientRect().top < vh * 0.92) return;
+      el.classList.add('rv');
+      io.observe(el);
+    });
+    document.documentElement.classList.add('js-reveal');
+  }
+})();
+</script>
+</body>
+</html>

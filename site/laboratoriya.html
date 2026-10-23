@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЮниХим — моющие средства для прачечных, гостиниц и химчисток</title>
+<meta name="description" content="Производитель моющих средств в Тучково, Московская область. Опт, контрактное производство под вашим брендом, основа для мыла.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F7F8F6;
+  --sheet: #FFFFFF;
+  --g1: #E3E8EA;
+  --g5: #D3DADE;
+  --ink: #1A1E22;
+  --ink-2: #4D565E;
+  --ink-3: #69737B;
+  --rule: #CBD2D6;
+  --rule-2: #A9B3B9;
+  --green: #0E6B55;
+  --green-d: #0A5443;
+  --green-t: #E4EFEB;
+  --amber: #B7791F;
+  --error: #9E3A2E;
+  --on-ink: #E9ECEB;
+  --on-ink-2: #AEB7BD;
+
+  --f-sans: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "Roboto Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  --wrap: 1320px;
+  --pad: 48px;
+  --gap: 24px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --expo: cubic-bezier(.19, 1, .22, 1);
+
+  /* bottle-glass field (first screen) */
+  --field: #0B5745;
+  --field-d: #083F32;
+  --field-chip: #0A4A3B;
+  --on-field: #FFFFFF;
+  --on-field-2: #CFE3DB;
+  --on-field-3: #A9CBBE;
+  --field-rule: rgba(255, 255, 255, .22);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scrollbar-color: #8A949B var(--paper);
+  scrollbar-width: thin;
+  overflow-x: clip;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: #8A949B; border: 3px solid var(--paper); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-2); }
+::selection { background: var(--green); color: #fff; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  caret-color: var(--green);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; }
+a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+a:hover { color: var(--green); }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul, ol, dl, dd { margin: 0; padding: 0; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+.wrap { max-width: calc(var(--wrap) + var(--pad) * 2); margin-inline: auto; padding-inline: var(--pad); }
+.g12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); }
+
+.grid-paper { position: relative; isolation: isolate; background-color: var(--paper); }
+.paper { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.grid-paper > :not(.paper) { position: relative; z-index: 1; }
+
+.todo {
+  display: inline-block;
+  margin-left: .45em;
+  padding: 0 .45em;
+  border: 1px dashed var(--rule-2);
+  border-radius: 2px;
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: .02em;
+  color: var(--ink-2);
+  vertical-align: .15em;
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid var(--green);
+  border-radius: 3px;
+  background: var(--green);
+  color: #fff;
+  font: 600 16px/1 var(--f-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s, border-color .2s, transform .1s;
+}
+.btn:hover { background: var(--green-d); border-color: var(--green-d); color: #fff; }
+.btn:active { transform: translateY(1px); }
+.btn--sm { min-height: 40px; padding: 0 18px; font-size: 15px; }
+
+/* header */
+.site-header { border-bottom: 1px solid var(--rule); background: var(--paper); position: relative; z-index: 5; }
+.site-header .wrap { display: flex; align-items: center; gap: 32px; min-height: 76px; }
+.logo {
+  display: inline-flex; flex-direction: column; justify-content: center;
+  padding: 5px 12px 6px;
+  border: 1px dashed var(--rule-2);
+  border-radius: 2px;
+  text-decoration: none;
+  line-height: 1.15;
+  flex: none;
+}
+.logo b { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+.logo small { font-size: 11px; color: var(--ink-2); }
+.nav ul { display: flex; gap: 28px; list-style: none; }
+.nav a { font-size: 15px; font-weight: 500; text-decoration: none; padding-block: 6px; }
+.nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.head-actions { margin-left: auto; display: flex; align-items: center; gap: 22px; }
+.head-phone { font-weight: 600; font-size: 16px; text-decoration: none; white-space: nowrap; }
+.menu-btn { display: none; }
+
+/* header + hero share one green field */
+.site-header { background: var(--field); border-bottom-color: var(--field-rule); color: var(--on-field); }
+.site-header .logo { border-color: rgba(255,255,255,.45); }
+.site-header .logo small { color: var(--on-field-2); }
+.site-header a:hover { color: var(--on-field); }
+.site-header :focus-visible, .hero :focus-visible { outline-color: #fff; }
+.site-header ::selection, .hero ::selection { background: #fff; color: var(--field-d); }
+.btn--light { background: #fff; border-color: #fff; color: var(--green-d); }
+.btn.btn--light:hover { background: var(--green-t); border-color: var(--green-t); color: var(--field-d); }
+
+/* hero */
+.hero { padding-block: 56px 112px; }
+.hero.grid-paper { background-color: var(--field); color: var(--on-field); }
+@media (min-width: 1024px) {
+  .hero { min-height: calc(100vh - 77px); min-height: calc(100svh - 77px); display: flex; align-items: center; padding-block: 64px 96px; }
+  .hero > .wrap { width: 100%; }
+}
+.hero-text { grid-column: 1 / 8; align-self: center; padding-right: 24px; }
+.hero h1 {
+  font-size: clamp(2.5rem, 1.2rem + 4.6vw, 5rem);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  max-width: 11.5em;
+}
+.hero-lead { margin-top: 32px; font-size: 20px; line-height: 1.55; color: var(--ink-2); max-width: 34em; }
+.hero-cta { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.hero-phone { font-size: 20px; font-weight: 600; text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 6px; }
+.hero-phone:hover { text-decoration-color: var(--green); }
+.hero-meta { margin-top: 56px; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 40px; border-top: 1px solid var(--rule); padding-top: 16px; }
+.hero-meta dt { font-size: 13px; color: var(--ink-2); }
+.hero-meta dd { font-size: 15px; font-weight: 500; }
+
+.hero-fig { grid-column: 8 / 13; margin: 0; }
+.sheet { border: 1px solid var(--rule); padding: 18px 18px 12px; position: relative; }
+.stage { position: relative; aspect-ratio: 560 / 480; }
+.stage > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.hero-fig figcaption { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-2); }
+
+.glass { fill: none; stroke: var(--ink); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.glass--thin { stroke-width: .9; stroke: var(--ink-2); }
+.leader { fill: none; stroke: var(--ink); stroke-width: .75; vector-effect: non-scaling-stroke; }
+.leader-dot { fill: var(--ink); }
+.bench { stroke: var(--ink); stroke-width: 1.25; vector-effect: non-scaling-stroke; }
+.liq { fill: var(--green); fill-opacity: .13; transition: fill-opacity .6s var(--ease); }
+.men { fill: none; stroke: var(--green); stroke-width: 1.25; vector-effect: non-scaling-stroke; }
+.mark { fill: var(--amber); }
+.unit { font-family: var(--f-mono); font-size: 10px; fill: var(--ink-2); }
+.lvl { transition: transform .6s var(--ease); }
+.vessel.is-up .lvl { transform: translateY(var(--up)); }
+.vessel.is-up .liq { fill-opacity: .22; }
+
+.tag {
+  position: absolute;
+  left: var(--x); top: var(--y);
+  transform: translateY(-50%);
+  display: grid; gap: 1px;
+  padding: 5px 9px 6px;
+  background: var(--paper);
+  border: 1px solid var(--rule-2);
+  border-radius: 2px;
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s, background-color .2s;
+}
+.tag--r { left: auto; right: 0; }
+.tag b { font-size: 13px; font-weight: 600; line-height: 1.3; white-space: nowrap; }
+.tag span { font-family: var(--f-mono); font-size: 11.5px; line-height: 1.3; color: var(--ink-2); white-space: nowrap; }
+.tag:hover, .tag.is-active { border-color: var(--green); background: var(--sheet); }
+.tag.is-active b { color: var(--green); }
+
+/* hero on the green field: white line art, light type */
+.hero h1 { color: var(--on-field); }
+.hero .hero-lead { color: var(--on-field-2); }
+.hero .hero-phone { color: var(--on-field); text-decoration-color: rgba(255,255,255,.55); }
+.hero .hero-phone:hover { color: var(--on-field); text-decoration-color: #fff; }
+.hero .hero-meta { border-top-color: var(--field-rule); }
+.hero .hero-meta dt { color: var(--on-field-3); }
+.hero .hero-meta dd { color: var(--on-field); }
+.hero .sheet { background: rgba(4, 38, 30, .26); border-color: rgba(255,255,255,.32); }
+.hero .hero-fig figcaption { border-top-color: var(--field-rule); color: var(--on-field-3); }
+.hero .todo, .site-header .todo { color: var(--on-field-2); border-color: rgba(255,255,255,.45); }
+.hero .glass { stroke: #fff; }
+.hero .glass--thin { stroke: rgba(255,255,255,.7); }
+.hero .leader, .hero .bench { stroke: #fff; }
+.hero .leader-dot { fill: #fff; }
+.hero .tick { fill: #fff; }
+.hero .hatch-l { stroke: #fff; stroke-opacity: .35; }
+.hero .liq { fill: #fff; fill-opacity: .18; }
+.hero .vessel.is-up .liq { fill-opacity: .27; }
+.hero .men { stroke: #fff; }
+.hero .unit { fill: var(--on-field-3); }
+.hero .tag { background: var(--field-chip); border-color: rgba(255,255,255,.42); color: #fff; }
+.hero .tag span { color: var(--on-field-2); }
+.hero .tag:hover, .hero .tag.is-active { background: var(--field-d); border-color: #fff; }
+.hero .tag.is-active b { color: #fff; }
+.hero .tag[aria-pressed="true"] { box-shadow: inset 0 -2px 0 #fff; }
+
+/* sections */
+.section { padding-block: 136px 96px; }
+.section-head { margin-bottom: 48px; }
+.section h2 { font-size: clamp(2.125rem, 1.4rem + 2.2vw, 3.25rem); line-height: 1.08; font-weight: 700; letter-spacing: -.025em; }
+.section-lead { margin-top: 16px; font-size: 18px; color: var(--ink-2); max-width: 40em; }
+
+/* products journal */
+.journal { border-top: 1px solid var(--ink); }
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 3fr) minmax(0, 6fr);
+  column-gap: var(--gap);
+  padding-block: 28px;
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 24px;
+}
+.entry-fig {
+  position: relative;
+  min-height: 248px;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 20px;
+  border: 1px solid var(--rule);
+}
+.entry-fig::after { content: ""; position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 20px; height: 1px; background: var(--ink); }
+.entry-fig svg:not(.paper) { position: relative; z-index: 1; overflow: visible; }
+.entry-head { display: flex; flex-direction: column; align-items: flex-start; padding-top: 4px; }
+.entry h3 { font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -.015em; transition: color .3s; }
+.entry.is-active h3 { color: var(--green); }
+.entry-link { margin-top: auto; padding-top: 24px; font-size: 15px; font-weight: 600; }
+.fields > div { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 16px; padding-block: 11px; border-bottom: 1px solid var(--rule); }
+.fields > div:first-child { border-top: 1px solid var(--rule); }
+.fields dt { font-size: 14px; color: var(--ink-2); padding-top: 2px; }
+.fields dd { font-size: 16px; }
+.fields .mono { font-size: 15px; }
+.lbl-ok { color: var(--green); font-weight: 500; }
+.lbl-wip { display: inline-block; padding: 1px 10px; border: 1px dashed var(--rule-2); border-radius: 2px; font-size: 14px; color: var(--ink-2); }
+.entry--soon .entry-fig { background: var(--paper); }
+.entry--soon .glass { stroke-dasharray: 4 4; stroke: var(--ink-2); }
+.entry--soon h3 { color: var(--ink-2); }
+
+/* audience table */
+.ruled-table { width: 100%; border-collapse: collapse; }
+.ruled-table th { text-align: left; font-size: 13px; font-weight: 500; color: var(--ink-2); padding: 0 24px 12px 0; border-bottom: 1px solid var(--ink); }
+.ruled-table td { vertical-align: top; padding: 24px 24px 24px 0; border-bottom: 1px solid var(--rule); }
+.ruled-table td:last-child, .ruled-table th:last-child { padding-right: 0; }
+.ruled-table .obj { width: 22%; font-size: 24px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; }
+.ruled-table .task { width: 44%; color: var(--ink-2); }
+.prod-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.prod-list a { font-weight: 500; text-decoration-color: var(--rule-2); }
+.prod-list a:hover { text-decoration-color: var(--green); }
+
+/* cooperation */
+.coop { background: var(--green-t); border-block: 0; }
+.coop .coop-item { border-bottom-color: #B9D2C8; }
+.coop .pick { color: var(--green-d); }
+.coop .todo { border-color: #8FB0A3; color: #3E5A50; }
+.coop-aside { grid-column: 1 / 5; }
+.coop-aside .section-lead { max-width: 22em; }
+.coop-list { grid-column: 6 / 13; border-top: 1px solid var(--ink); }
+.coop-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; padding-block: 32px 30px; border-bottom: 1px solid var(--rule); }
+.coop-item dt { font-size: 30px; line-height: 1.15; font-weight: 600; letter-spacing: -.02em; }
+.coop-item dd { grid-column: 1; color: var(--ink-2); font-size: 18px; max-width: 32em; }
+.coop-item .pick { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 15px; font-weight: 600; white-space: nowrap; }
+
+/* why */
+.why { background: var(--ink); color: var(--on-ink); padding-block: 112px 112px; }
+.why h2 { color: #fff; }
+.why ::selection { background: var(--green-t); color: var(--ink); }
+.why-list { list-style: none; margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--gap); }
+.why-list li { padding: 24px 48px 40px 0; border-top: 1px solid #3A4249; font-size: 24px; line-height: 1.35; color: var(--on-ink-2); max-width: 26em; }
+.why-list b { color: #fff; font-weight: 600; }
+.why .todo { color: var(--on-ink-2); border-color: #5C666E; }
+
+/* method */
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 var(--gap); position: relative; padding-top: 34px; }
+.ruler { position: absolute; left: 0; top: 0; width: 100%; height: 10px; }
+.step { position: relative; padding-right: 16px; }
+.step::before { content: ""; position: absolute; left: 0; top: -34px; width: 1px; height: 22px; background: var(--ink); }
+.step-n { display: block; font-size: 15px; font-weight: 600; color: var(--green); font-variant-numeric: tabular-nums; }
+.step h3 { margin-top: 6px; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.01em; }
+.step p { margin-top: 10px; color: var(--ink-2); max-width: 22em; }
+
+/* request */
+.request { padding-block: 120px; }
+.request-aside { grid-column: 1 / 6; padding-right: 24px; }
+.request-aside .section-lead { color: var(--ink); }
+.request-phones { margin-top: 40px; list-style: none; display: grid; gap: 4px; }
+.request-phones a { font-size: 22px; font-weight: 600; text-decoration: none; }
+.request-phones a:hover { text-decoration: underline; }
+.request-note { margin-top: 8px; font-size: 14px; color: var(--ink-2); }
+.form-sheet { grid-column: 6 / 13; background: var(--sheet); border: 1px solid var(--rule-2); padding: 40px 44px 36px; box-shadow: 0 1px 2px rgba(26,30,34,.04), 0 12px 32px -18px rgba(26,30,34,.18); }
+.form-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 24px; align-items: baseline; padding-block: 14px; border-bottom: 1px solid var(--rule); }
+.form-row:first-of-type { border-top: 1px solid var(--ink); }
+.form-row label, .form-row legend { font-size: 15px; font-weight: 500; }
+.form-row .opt { display: block; font-size: 13px; font-weight: 400; color: var(--ink-2); }
+.form-row input[type="text"], .form-row input[type="tel"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--rule-2);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 400 17px/1.4 var(--f-sans);
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-row input::placeholder { color: var(--ink-3); }
+.form-row input:focus { outline: none; border-bottom-color: var(--green); box-shadow: 0 1px 0 0 var(--green); }
+.form-row input[aria-invalid="true"] { border-bottom-color: var(--error); box-shadow: 0 1px 0 0 var(--error); }
+.err { grid-column: 2; font-size: 14px; color: var(--error); line-height: 1.45; }
+fieldset.form-row { margin: 0; padding-inline: 0; border-width: 0 0 1px; border-style: solid; border-color: var(--rule); min-width: 0; }
+fieldset.form-row legend { float: left; padding: 0; width: 150px; margin-right: 24px; }
+.radios { display: flex; flex-wrap: wrap; gap: 10px 24px; padding-top: 2px; }
+.radio { display: inline-flex; align-items: center; gap: 9px; font-size: 16px; cursor: pointer; }
+.radio input {
+  appearance: none; -webkit-appearance: none; margin: 0;
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 1.25px solid var(--ink); background: var(--sheet);
+  display: grid; place-content: center; cursor: pointer;
+}
+.radio input::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); transform: scale(0); transition: transform .2s var(--ease); }
+.radio input:checked { border-color: var(--green); }
+.radio input:checked::before { transform: scale(1); }
+.form-foot { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.consent { font-size: 13px; color: var(--ink-2); max-width: 30em; line-height: 1.5; }
+.form-done { padding-block: 24px; }
+.form-done h3 { font-size: 26px; font-weight: 600; color: var(--green); }
+.form-done p { margin-top: 10px; color: var(--ink-2); }
+
+/* footer */
+.site-footer { background: var(--ink); color: var(--on-ink); padding-block: 72px 40px; font-size: 15px; }
+.site-footer a { color: var(--on-ink); }
+.site-footer a:hover { color: #fff; }
+.site-footer ::selection { background: var(--green-t); color: var(--ink); }
+.foot-grid { row-gap: 32px; }
+.foot-brand { grid-column: 1 / 4; }
+.foot-brand .logo { border-color: #5C666E; color: #fff; }
+.foot-brand .logo small { color: var(--on-ink-2); }
+.foot-col { grid-column: span 3; }
+.foot-col h2 { font-size: 13px; font-weight: 500; color: var(--on-ink-2); margin-bottom: 10px; }
+.foot-col ul { list-style: none; display: grid; gap: 4px; }
+.foot-phone { font-size: 18px; font-weight: 600; text-decoration: none; }
+.site-footer .todo { color: var(--on-ink-2); border-color: #5C666E; }
+.foot-bottom { margin-top: 56px; padding-top: 20px; border-top: 1px solid #3A4249; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--on-ink-2); font-size: 14px; }
+
+/* section grounds: green field > photo > white sheet > lab white > pale green > graphite > lab white > graph paper > graphite */
+.photo-band { margin: 0; background: var(--sheet); }
+#products { background: var(--sheet); }
+#clients { background: var(--paper); border-top: 1px solid var(--rule); }
+#start { background: var(--paper); }
+.request { border-top: 1px solid var(--rule); }
+
+/* photos */
+.photo-band img { display: block; width: 100%; height: clamp(300px, 36vw, 520px); object-fit: cover; filter: saturate(.9); }
+.photo-cap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; padding-top: 10px; font-size: 13px; color: var(--ink-2); }
+.obj-photo { display: block; width: 100%; height: auto; max-width: 320px; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 16px; border: 1px solid var(--rule); filter: saturate(.9); }
+.ruled-table .obj { width: 344px; font-size: 28px; }
+.ruled-table td { padding-block: 32px; }
+.ruled-table .task { width: auto; font-size: 19px; line-height: 1.5; padding-top: 34px; }
+.ruled-table td:last-child { width: 30%; padding-top: 36px; }
+.table-note { margin-top: 16px; font-size: 13px; color: var(--ink-2); }
+.why {
+  background:
+    linear-gradient(90deg, rgba(26,30,34,.97) 0%, rgba(26,30,34,.9) 50%, rgba(26,30,34,.74) 100%),
+    url("img/lab-bench.webp") center / cover no-repeat,
+    var(--ink);
+}
+
+/* responsive */
+@media (max-width: 1360px) {
+  .nav ul { gap: 20px; }
+  .head-actions { gap: 16px; }
+}
+@media (max-width: 1180px) {
+  .site-header .wrap { gap: 20px; }
+  .nav ul { gap: 16px; }
+  .nav a { font-size: 14px; }
+  .head-phone { display: none; }
+}
+@media (max-width: 1023px) {
+  :root { --pad: 32px; }
+  .hero-text, .hero-fig { grid-column: 1 / -1; }
+  .hero-text { padding-right: 0; }
+  .hero-fig { margin-top: 56px; max-width: 560px; }
+  .entry { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); row-gap: 20px; }
+  .entry-fields { grid-column: 1 / -1; }
+  .coop-aside, .coop-list { grid-column: 1 / -1; }
+  .coop-list { margin-top: 40px; }
+  .request-aside, .form-sheet { grid-column: 1 / -1; }
+  .form-sheet { margin-top: 48px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 56px; }
+  .steps .ruler { display: none; }
+  .step { border-top: 1px solid var(--ink); padding-top: 20px; }
+  .step::before { top: 0; height: 9px; }
+  .foot-brand, .foot-col { grid-column: span 6; }
+  .ruled-table .obj { width: 42%; font-size: 24px; }
+  .ruled-table .task { font-size: 17px; }
+  .ruled-table td:last-child { width: 28%; }
+}
+@media (max-width: 860px) {
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--field-d); border-bottom: 1px solid var(--field-rule); box-shadow: 0 18px 32px -20px rgba(4,30,24,.55); }
+  .nav.is-open { display: block; }
+  .nav ul { flex-direction: column; gap: 0; padding: 8px var(--pad) 16px; }
+  .nav a { display: block; padding-block: 12px; font-size: 17px; border-bottom: 1px solid var(--field-rule); }
+  .menu-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 40px; padding: 0 12px;
+    border: 1px solid rgba(255,255,255,.5); border-radius: 3px;
+    background: transparent; color: #fff;
+    font: 500 15px/1 var(--f-sans); cursor: pointer;
+  }
+  .menu-btn { width: 44px; height: 44px; padding: 0; justify-content: center; }
+  .menu-btn[aria-expanded="true"] { background: #fff; border-color: #fff; color: var(--field-d); }
+  .burger-lines { display: grid; gap: 5px; width: 20px; }
+  .burger-lines span { display: block; height: 2px; background: currentColor; transition: transform .25s var(--ease), opacity .2s var(--ease); }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+@media (max-width: 640px) {
+  :root { --pad: 16px; --gap: 16px; }
+  body { font-size: 16px; }
+  .site-header .wrap { min-height: 64px; gap: 12px; }
+  .logo b { font-size: 16px; }
+  .logo small { font-size: 10px; }
+  .head-actions { gap: 8px; }
+  .head-actions .btn { display: none; }
+  .hero { padding-block: 36px 72px; }
+  .hero-lead { margin-top: 20px; font-size: 17px; }
+  .hero-cta { margin-top: 28px; }
+  .hero-cta .btn { width: 100%; }
+  .hero-meta { grid-template-columns: 1fr; gap: 10px; margin-top: 36px; }
+  .hero-fig { margin-top: 44px; }
+  .sheet { padding: 12px 12px 8px; }
+  .tag { padding: 3px 6px 4px; }
+  .tag b { font-size: 10.5px; }
+  .tag span { font-size: 9.5px; }
+  .section { padding-block: 88px 64px; }
+  .section-head { margin-bottom: 32px; }
+  .entry { grid-template-columns: 1fr; padding-block: 24px; }
+  .entry-fig { min-height: 200px; }
+  .entry h3 { font-size: 24px; }
+  .entry-link { margin-top: 12px; padding-top: 0; }
+  .fields > div { grid-template-columns: 104px minmax(0, 1fr); gap: 12px; }
+  .ruled-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ruled-table, .ruled-table tbody, .ruled-table tr, .ruled-table td { display: block; width: 100%; }
+  .ruled-table tr { padding-block: 20px; border-bottom: 1px solid var(--rule); }
+  .ruled-table tr:first-child { border-top: 1px solid var(--ink); }
+  .ruled-table td { padding: 0; border: 0; width: auto !important; }
+  .ruled-table td + td { margin-top: 8px; }
+  .ruled-table .obj { font-size: 22px; }
+  .ruled-table td, .ruled-table .task, .ruled-table td:last-child { padding: 0; }
+  .ruled-table .task { font-size: 16px; }
+  .obj-photo { max-width: none; margin-bottom: 14px; }
+  .coop-item { grid-template-columns: 1fr; padding-block: 24px; }
+  .coop-item dt { font-size: 24px; }
+  .coop-item dd { font-size: 16px; }
+  .coop-item .pick { grid-column: 1; grid-row: auto; margin-top: 6px; }
+  .why { padding-block: 80px; }
+  .why-list { grid-template-columns: 1fr; margin-top: 32px; }
+  .why-list li { font-size: 20px; padding: 18px 0 26px; }
+  .steps { grid-template-columns: 1fr; row-gap: 32px; }
+  .request { padding-block: 80px; }
+  .form-sheet { padding: 24px 18px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .err { grid-column: 1; }
+  fieldset.form-row legend { float: none; width: auto; margin: 0 0 10px; }
+  .form-foot .btn { width: 100%; }
+  .foot-brand, .foot-col { grid-column: 1 / -1; }
+}
+
+/* scroll language: liquid fills along graduations, text settles, ruler draws.
+   Hidden states exist only under html.motion, which JS sets after marking what is already in view. */
+.fill { transition: transform 1.6s var(--expo); }
+.motion .entry:not(.in) .fill { transform: translateY(var(--d)); }
+.motion .entry .entry-head,
+.motion .entry .entry-fields { transition: opacity .9s var(--expo), transform 1.1s var(--expo); }
+.motion .entry .entry-head { transition-delay: .12s; }
+.motion .entry .entry-fields { transition-delay: .24s; }
+.motion .entry:not(.in) .entry-head,
+.motion .entry:not(.in) .entry-fields { opacity: 0; transform: translateY(20px); }
+.ruler { transition: clip-path 1.4s var(--expo); clip-path: inset(0 0 0 0); }
+.motion .steps:not(.in) .ruler { clip-path: inset(0 100% 0 0); }
+.motion .steps .step { transition: opacity .8s var(--expo), transform 1s var(--expo); }
+.motion .steps .step:nth-child(2) { transition-delay: .15s; }
+.motion .steps .step:nth-child(3) { transition-delay: .4s; }
+.motion .steps .step:nth-child(4) { transition-delay: .65s; }
+.motion .steps .step:nth-child(5) { transition-delay: .9s; }
+.motion .steps:not(.in) .step { opacity: 0; transform: translateY(20px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fill, .ruler, .entry-head, .entry-fields, .step { transition: none !important; }
+  .motion .entry:not(.in) .fill { transform: none; }
+  .motion .entry:not(.in) .entry-head, .motion .entry:not(.in) .entry-fields, .motion .steps:not(.in) .step { opacity: 1; transform: none; }
+  .motion .steps:not(.in) .ruler { clip-path: none; }
+  .lvl, .liq, .radio input::before { transition: none; }
+  .vessel.is-up .lvl { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="ЮниХим, на главную">
+      <b>ЮниХим</b>
+      <small>логотип в разработке</small>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#products">Продукция</a></li>
+        <li><a href="#clients">Для кого</a></li>
+        <li><a href="#cooperation">Сотрудничество</a></li>
+        <li><a href="#start">Как начать</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <a class="head-phone num" href="tel:+74959684745">+7 495 968-47-45</a>
+      <a class="btn btn--sm btn--light" href="#request">Получить прайс</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню">
+        <span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero grid-paper" aria-labelledby="hero-title">
+  <svg class="paper" aria-hidden="true" focusable="false"><defs><pattern id="mm-field" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M6.5 0V30M12.5 0V30M18.5 0V30M24.5 0V30M0 6.5H30M0 12.5H30M0 18.5H30M0 24.5H30" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="1"/><path d="M0.5 0V30M0 0.5H30" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#mm-field)"/></svg>
+  <div class="wrap g12">
+    <div class="hero-text">
+      <h1 id="hero-title">Моющие средства для прачечных, гостиниц и химчисток</h1>
+      <p class="hero-lead">Производим сами, в Тучково Московской области. Поставляем оптом, выпускаем продукцию под вашим брендом и поставляем основу для мыла.</p>
+      <div class="hero-cta">
+        <a class="btn btn--light" href="#request">Получить прайс</a>
+        <a class="hero-phone num" href="tel:+74959684745">+7 495 968-47-45</a>
+      </div>
+      <dl class="hero-meta">
+        <div><dt>Производство</dt><dd>своё, пос. Тучково, МО</dd></div>
+        <div><dt>Доставка</dt><dd>Москва и область</dd></div>
+        <div><dt>Форматы</dt><dd>опт, под ваш бренд, основа для мыла</dd></div>
+      </dl>
+    </div>
+
+    <figure class="hero-fig">
+      <div class="sheet">
+        <div class="stage">
+          <svg id="bench-svg" viewBox="0 100 560 480" role="img" aria-labelledby="fig-desc">
+            <desc id="fig-desc">Схема: мерный цилиндр, химический стакан, колба и пятилитровая канистра с жидкостью на разных уровнях, по одному сосуду на каждое средство.</desc>
+            <defs>
+              <clipPath id="cl-soap"><rect x="56" y="136" width="44" height="400"/></clipPath>
+              <clipPath id="cl-dish"><path d="M150 352 L150 552 Q150 560 158 560 L246 560 Q254 560 254 552 L254 352 Z"/></clipPath>
+              <clipPath id="cl-cond"><path d="M330 258 L330 340 L288 548 Q286 560 298 560 L386 560 Q398 560 396 548 L354 340 L354 258 Z"/></clipPath>
+              <clipPath id="cl-gel"><path d="M424 552 L424 352 L444 328 L528 328 Q536 328 536 336 L536 552 Q536 560 528 560 L432 560 Q424 560 424 552 Z"/></clipPath>
+              <pattern id="tk-soap" x="56" y="0" width="14" height="40" patternUnits="userSpaceOnUse">
+                <g class="tick" fill="#1A1E22" fill-opacity=".75"><rect x="0" y="0" width="14" height="1"/><rect x="0" y="8" width="6" height="1"/><rect x="0" y="16" width="6" height="1"/><rect x="0" y="20" width="9" height="1"/><rect x="0" y="24" width="6" height="1"/><rect x="0" y="32" width="6" height="1"/></g>
+              </pattern>
+              <pattern id="tk-dish" x="150" y="0" width="12" height="40" patternUnits="userSpaceOnUse">
+                <g class="tick" fill="#1A1E22" fill-opacity=".75"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="10" width="5" height="1"/><rect x="0" y="20" width="8" height="1"/><rect x="0" y="30" width="5" height="1"/></g>
+              </pattern>
+              <pattern id="tk-cond" x="330" y="0" width="24" height="60" patternUnits="userSpaceOnUse">
+                <g class="tick" fill="#1A1E22" fill-opacity=".75"><rect x="2" y="0" width="20" height="1"/><rect x="7" y="30" width="10" height="1"/></g>
+              </pattern>
+              <pattern id="tk-gel" x="522" y="0" width="14" height="40" patternUnits="userSpaceOnUse">
+                <g class="tick" fill="#1A1E22" fill-opacity=".75"><rect x="0" y="0" width="14" height="1"/><rect x="8" y="10" width="6" height="1"/><rect x="5" y="20" width="9" height="1"/><rect x="8" y="30" width="6" height="1"/></g>
+              </pattern>
+              <pattern id="hatch" x="0" y="0" width="7" height="7" patternUnits="userSpaceOnUse">
+                <path class="hatch-l" d="M0 7 L7 0" stroke="#1A1E22" stroke-opacity=".45" stroke-width=".8"/>
+              </pattern>
+            </defs>
+
+            <g class="leaders">
+              <path class="leader" d="M100 170 H140"/><circle class="leader-dot" cx="100" cy="170" r="2"/>
+              <path class="leader" d="M204 344 V262"/><circle class="leader-dot" cx="204" cy="344" r="2"/>
+              <path class="leader" d="M342 256 V150"/><circle class="leader-dot" cx="342" cy="256" r="2"/>
+              <path class="leader" d="M506 294 V236"/><circle class="leader-dot" cx="506" cy="294" r="2"/>
+            </g>
+
+            <g class="vessel" data-v="soap" id="v-soap">
+              <g clip-path="url(#cl-soap)">
+                <g class="lvl" style="--up:-120px">
+                  <rect class="liq" x="56" y="330" width="44" height="240"/>
+                  <path class="men" d="M56 330 Q78 334 100 330"/>
+                </g>
+              </g>
+              <rect x="56" y="168" width="14" height="361" fill="url(#tk-soap)"/>
+              <text class="unit" x="74" y="160">мл</text>
+              <path class="glass" d="M52 128 L56 136 L56 536 M108 126 L100 136 L100 536 M34 560 L44 536 L112 536 L122 560"/>
+              <g class="lvl" style="--up:-120px"><path class="mark" d="M40 326 L48 330 L40 334 Z"/></g>
+            </g>
+
+            <g class="vessel" data-v="dish" id="v-dish">
+              <g clip-path="url(#cl-dish)">
+                <g class="lvl" style="--up:-80px">
+                  <rect class="liq" x="150" y="480" width="104" height="90"/>
+                  <path class="men" d="M150 480 Q202 485 254 480"/>
+                </g>
+              </g>
+              <rect x="150" y="392" width="12" height="161" fill="url(#tk-dish)"/>
+              <text class="unit" x="166" y="388">мл</text>
+              <path class="glass" d="M144 344 L150 352 L150 552 Q150 560 158 560 L246 560 Q254 560 254 552 L254 352 L260 346"/>
+              <g class="lvl" style="--up:-80px"><path class="mark" d="M134 476 L142 480 L134 484 Z"/></g>
+            </g>
+
+            <g class="vessel" data-v="cond" id="v-cond">
+              <g clip-path="url(#cl-cond)">
+                <g class="lvl" style="--up:-100px">
+                  <rect class="liq" x="280" y="470" width="124" height="100"/>
+                  <path class="men" d="M300 470 Q342 475 384 470"/>
+                </g>
+              </g>
+              <rect x="330" y="400" width="24" height="121" fill="url(#tk-cond)"/>
+              <path class="glass" d="M325 258 H359 M330 258 L330 340 L288 548 Q286 560 298 560 L386 560 Q398 560 396 548 L354 340 L354 258"/>
+              <g class="lvl" style="--up:-100px"><path class="mark" d="M274 466 L282 470 L274 474 Z"/></g>
+            </g>
+
+            <g class="vessel" data-v="gel" id="v-gel">
+              <g clip-path="url(#cl-gel)">
+                <g class="lvl" style="--up:-80px">
+                  <rect class="liq" x="424" y="450" width="112" height="120"/>
+                  <path class="men" d="M424 450 H536"/>
+                </g>
+              </g>
+              <rect x="522" y="360" width="14" height="193" fill="url(#tk-gel)"/>
+              <text class="unit" x="510" y="356">л</text>
+              <path class="glass" d="M424 552 L424 352 L444 328 L528 328 Q536 328 536 336 L536 552 Q536 560 528 560 L432 560 Q424 560 424 552 Z M448 328 V316 H466 V328 M444 316 V302 H470 V316 M480 328 V300 Q480 294 486 294 L524 294 Q530 294 530 300 V328 M492 328 V306 H518 V328"/>
+              <path class="glass glass--thin" d="M444 316 H470 M447 306 H467 M447 310 H467"/>
+              <g class="lvl" style="--up:-80px"><path class="mark" d="M408 446 L416 450 L408 454 Z"/></g>
+            </g>
+
+            <line class="bench" x1="0" y1="560" x2="560" y2="560"/>
+            <rect x="0" y="561" width="560" height="11" fill="url(#hatch)"/>
+          </svg>
+
+          <button class="tag" type="button" data-vessel="soap" aria-pressed="false" style="--x:22.9%;--y:14.58%"><b>Жидкое мыло</b><span>0,5 л · 5 л</span></button>
+          <button class="tag" type="button" data-vessel="dish" aria-pressed="false" style="--x:19.3%;--y:33.75%"><b>Средство для посуды</b><span>0,5 л · 5 л</span></button>
+          <button class="tag" type="button" data-vessel="cond" aria-pressed="false" style="--x:56.4%;--y:10.42%"><b>Кондиционер для белья</b><span>5 л · 20 л</span></button>
+          <button class="tag tag--r" type="button" data-vessel="gel" aria-pressed="false" style="--y:28.33%"><b>Гель для стирки</b><span>5 л · 20 л</span></button>
+        </div>
+      </div>
+      <figcaption>
+        <span>Рис. 1. Средства в производстве</span>
+        <span>Фасовка предварительная<span class="todo">уточнить</span></span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<figure class="photo-band">
+  <img src="img/lab-production.webp" alt="Линия розлива: белые канистры на конвейере" width="1920" height="823" loading="lazy">
+  <figcaption class="wrap photo-cap"><span>Рис. 2. Розлив в канистры</span><span>Фото условное<span class="todo">заменить на фото производства</span></span></figcaption>
+</figure>
+
+<section class="section" id="products" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="products-title">Продукция</h2>
+      <p class="section-lead">Четыре средства для ежедневной работы прачечной, гостиницы и кухни. Отдушку и фасовку подберём под объект.</p>
+    </div>
+
+    <div class="journal">
+      <article class="entry" id="p-soap" data-vessel="soap" aria-labelledby="p-soap-t">
+        <div class="entry-fig grid-paper" data-fig="soap" data-box="24 116 106 446"><svg class="paper" aria-hidden="true" focusable="false"><defs><pattern id="mm-soap" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M6.5 0V30M12.5 0V30M18.5 0V30M24.5 0V30M0 6.5H30M0 12.5H30M0 18.5H30M0 24.5H30" fill="none" stroke="#E3E8EA" stroke-width="1"/><path d="M0.5 0V30M0 0.5H30" fill="none" stroke="#D3DADE" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#mm-soap)"/></svg></div>
+        <div class="entry-head">
+          <h3 id="p-soap-t">Жидкое мыло</h3>
+          <a class="entry-link" href="#request" data-pick="opt">Запросить прайс</a>
+        </div>
+        <dl class="fields entry-fields">
+          <div><dt>Назначение</dt><dd>Мягкое мыло для рук: номера, санузлы, общие зоны.</dd></div>
+          <div><dt>Отдушки</dt><dd>без отдушки, лаванда, зелёный чай<span class="todo">уточнить</span></dd></div>
+          <div><dt>Фасовка</dt><dd><span class="mono">0,5 л · 5 л</span><span class="todo">уточнить</span></dd></div>
+          <div><dt>Этикетка</dt><dd><span class="lbl-ok">готова</span></dd></div>
+        </dl>
+      </article>
+
+      <article class="entry" id="p-gel" data-vessel="gel" aria-labelledby="p-gel-t">
+        <div class="entry-fig grid-paper" data-fig="gel" data-box="400 288 148 274"><svg class="paper" aria-hidden="true" focusable="false"><defs><pattern id="mm-gel" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M6.5 0V30M12.5 0V30M18.5 0V30M24.5 0V30M0 6.5H30M0 12.5H30M0 18.5H30M0 24.5H30" fill="none" stroke="#E3E8EA" stroke-width="1"/><path d="M0.5 0V30M0 0.5H30" fill="none" stroke="#D3DADE" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#mm-gel)"/></svg></div>
+        <div class="entry-head">
+          <h3 id="p-gel-t">Гель для стирки</h3>
+          <a class="entry-link" href="#request" data-pick="opt">Запросить прайс</a>
+        </div>
+        <dl class="fields entry-fields">
+          <div><dt>Назначение</dt><dd>Концентрат для белого и цветного белья, для ежедневной загрузки прачечной.</dd></div>
+          <div><dt>Отдушки</dt><dd>свежесть, альпийские травы, хлопок<span class="todo">уточнить</span></dd></div>
+          <div><dt>Фасовка</dt><dd><span class="mono">5 л · 20 л</span><span class="todo">уточнить</span></dd></div>
+          <div><dt>Этикетка</dt><dd><span class="lbl-wip">этикетка в разработке</span></dd></div>
+        </dl>
+      </article>
+
+      <article class="entry" id="p-cond" data-vessel="cond" aria-labelledby="p-cond-t">
+        <div class="entry-fig grid-paper" data-fig="cond" data-box="262 248 156 314"><svg class="paper" aria-hidden="true" focusable="false"><defs><pattern id="mm-cond" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M6.5 0V30M12.5 0V30M18.5 0V30M24.5 0V30M0 6.5H30M0 12.5H30M0 18.5H30M0 24.5H30" fill="none" stroke="#E3E8EA" stroke-width="1"/><path d="M0.5 0V30M0 0.5H30" fill="none" stroke="#D3DADE" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#mm-cond)"/></svg></div>
+        <div class="entry-head">
+          <h3 id="p-cond-t">Кондиционер для белья</h3>
+          <a class="entry-link" href="#request" data-pick="opt">Запросить прайс</a>
+        </div>
+        <dl class="fields entry-fields">
+          <div><dt>Назначение</dt><dd>Мягкость тканей, лёгкая глажка, стойкий аромат.</dd></div>
+          <div><dt>Отдушки</dt><dd>морской бриз, цветочный, детский<span class="todo">уточнить</span></dd></div>
+          <div><dt>Фасовка</dt><dd><span class="mono">5 л · 20 л</span><span class="todo">уточнить</span></dd></div>
+          <div><dt>Этикетка</dt><dd><span class="lbl-ok">готова</span></dd></div>
+        </dl>
+      </article>
+
+      <article class="entry" id="p-dish" data-vessel="dish" aria-labelledby="p-dish-t">
+        <div class="entry-fig grid-paper" data-fig="dish" data-box="128 330 144 232"><svg class="paper" aria-hidden="true" focusable="false"><defs><pattern id="mm-dish" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M6.5 0V30M12.5 0V30M18.5 0V30M24.5 0V30M0 6.5H30M0 12.5H30M0 18.5H30M0 24.5H30" fill="none" stroke="#E3E8EA" stroke-width="1"/><path d="M0.5 0V30M0 0.5H30" fill="none" stroke="#D3DADE" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#mm-dish)"/></svg></div>
+        <div class="entry-head">
+          <h3 id="p-dish-t">Средство для мытья посуды</h3>
+          <a class="entry-link" href="#request" data-pick="opt">Запросить прайс</a>
+        </div>
+        <dl class="fields entry-fields">
+          <div><dt>Назначение</dt><dd>Снимает жир, бережно к рукам. Для кухонь гостиниц и кафе.</dd></div>
+          <div><dt>Отдушки</dt><dd>лимон, яблоко, алоэ<span class="todo">уточнить</span></dd></div>
+          <div><dt>Фасовка</dt><dd><span class="mono">0,5 л · 5 л</span><span class="todo">уточнить</span></dd></div>
+          <div><dt>Этикетка</dt><dd><span class="lbl-wip">этикетка в разработке</span></dd></div>
+        </dl>
+      </article>
+
+      <article class="entry entry--soon" aria-labelledby="p-soon-t">
+        <div class="entry-fig">
+          <svg viewBox="0 0 110 150" width="66" height="90" aria-hidden="true">
+            <path class="glass" d="M30 150 L30 62 Q30 50 42 46 L46 44 V30 H64 V44 L68 46 Q80 50 80 62 V150 M42 30 V20 H68 V30 M68 24 H88 V30"/>
+          </svg>
+        </div>
+        <div class="entry-head">
+          <h3 id="p-soon-t">Скоро в линейке</h3>
+        </div>
+        <dl class="fields entry-fields">
+          <div><dt>Средства</dt><dd>Гели для душа, шампуни и другие средства.</dd></div>
+          <div><dt>Статус</dt><dd>в разработке</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="clients" aria-labelledby="clients-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="clients-title">Для кого</h2>
+    </div>
+    <table class="ruled-table">
+      <thead>
+        <tr><th scope="col">Объект</th><th scope="col">Что нужно в работе</th><th scope="col">Средства</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="obj"><img class="obj-photo" src="img/lab-laundry.webp" alt="" width="900" height="600">Прачечные</td>
+          <td class="task">Гели и кондиционеры в канистрах для ежедневной загрузки машин.</td>
+          <td><ul class="prod-list"><li><a href="#p-gel">Гель для стирки</a></li><li><a href="#p-cond">Кондиционер для белья</a></li></ul></td>
+        </tr>
+        <tr>
+          <td class="obj"><img class="obj-photo" src="img/lab-hotel.webp" alt="" width="900" height="600">Гостиницы</td>
+          <td class="task">Жидкое мыло для номеров и общих зон, средство для посуды для кухни.</td>
+          <td><ul class="prod-list"><li><a href="#p-soap">Жидкое мыло</a></li><li><a href="#p-dish">Средство для мытья посуды</a></li></ul></td>
+        </tr>
+        <tr>
+          <td class="obj"><img class="obj-photo" src="img/lab-drycleaning.webp" alt="" width="900" height="600">Химчистки</td>
+          <td class="task">Средства для стирки и ухода за тканями разных типов.</td>
+          <td><ul class="prod-list"><li><a href="#p-gel">Гель для стирки</a></li><li><a href="#p-cond">Кондиционер для белья</a></li></ul></td>
+        </tr>
+        <tr>
+          <td class="obj"><img class="obj-photo" src="img/lab-service.webp" alt="" width="900" height="600">Дома быта</td>
+          <td class="task">Весь набор моющих средств от одного производителя.</td>
+          <td><ul class="prod-list"><li><a href="#p-soap">Жидкое мыло</a></li><li><a href="#p-gel">Гель для стирки</a></li><li><a href="#p-cond">Кондиционер для белья</a></li><li><a href="#p-dish">Средство для мытья посуды</a></li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="table-note">Фото в разделе условные<span class="todo">заменить</span></p>
+  </div>
+</section>
+
+<section class="section coop" id="cooperation" aria-labelledby="coop-title">
+  <div class="wrap g12">
+    <div class="coop-aside">
+      <h2 id="coop-title">Сотрудничество</h2>
+      <p class="section-lead">Три формата работы. Нужный можно отметить в заявке.</p>
+    </div>
+    <dl class="coop-list">
+      <div class="coop-item">
+        <dt>Оптовые поставки</dt>
+        <dd>Напрямую с производства, от нескольких канистр до паллет.<span class="todo">объёмы уточнить</span></dd>
+        <a class="pick" href="#request" data-pick="opt">Выбрать в заявке</a>
+      </div>
+      <div class="coop-item">
+        <dt>Контрактное производство</dt>
+        <dd>Выпустим продукцию под вашим брендом: рецептура, розлив, этикетка.</dd>
+        <a class="pick" href="#request" data-pick="brand">Выбрать в заявке</a>
+      </div>
+      <div class="coop-item">
+        <dt>Основа для мыла</dt>
+        <dd>Готовая мыльная основа для производителей и мыловаров.</dd>
+        <a class="pick" href="#request" data-pick="base">Выбрать в заявке</a>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="why" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <h2 id="why-title" class="section-title-why" style="font-size:clamp(2.125rem,1.4rem + 2.2vw,3.25rem);line-height:1.08;letter-spacing:-.025em">Почему мы</h2>
+    <ul class="why-list">
+      <li><b>Своё производство,</b> не перепродаём.</li>
+      <li><b>Тучково, Московская область</b> — доставка по Москве и области.</li>
+      <li><b>Документы на продукцию.</b><span class="todo">какие именно — уточнить</span></li>
+      <li><b>Подберём отдушку, фасовку и тару</b> под объект.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="start" aria-labelledby="start-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="start-title">Как начать</h2>
+    </div>
+    <ol class="steps">
+      <li class="ruler-li" aria-hidden="true" style="display:contents"><svg class="ruler" focusable="false"><defs><pattern id="ruler-ticks" width="12" height="10" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="1" height="9" fill="#A9B3B9"/></pattern></defs><rect width="100%" height="10" fill="url(#ruler-ticks)"/><rect width="100%" height="1" fill="#1A1E22"/></svg></li>
+      <li class="step"><span class="step-n">1</span><h3>Заявка</h3><p>На сайте или по телефону.</p></li>
+      <li class="step"><span class="step-n">2</span><h3>Прайс и образцы</h3><p>Пришлём цены, при необходимости образцы.</p></li>
+      <li class="step"><span class="step-n">3</span><h3>Договор</h3><p>Согласуем объёмы, тару и условия.</p></li>
+      <li class="step"><span class="step-n">4</span><h3>Поставка</h3><p>Отгрузка и доставка по Москве и МО.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="request grid-paper" id="request" aria-labelledby="request-title">
+  <svg class="paper" aria-hidden="true" focusable="false"><defs><pattern id="mm-req" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M6.5 0V30M12.5 0V30M18.5 0V30M24.5 0V30M0 6.5H30M0 12.5H30M0 18.5H30M0 24.5H30" fill="none" stroke="#E3E8EA" stroke-width="1"/><path d="M0.5 0V30M0 0.5H30" fill="none" stroke="#D3DADE" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#mm-req)"/></svg>
+  <div class="wrap g12">
+    <div class="request-aside">
+      <h2 id="request-title" style="font-size:clamp(2.125rem,1.4rem + 2.2vw,3.25rem);line-height:1.08;letter-spacing:-.025em">Получите прайс-лист</h2>
+      <p class="section-lead">Оставьте телефон — перезвоним в течение рабочего дня и подберём продукцию под ваш объект.</p>
+      <ul class="request-phones">
+        <li><a class="num" href="tel:+74959684745">+7 495 968-47-45</a></li>
+        <li><a class="num" href="tel:+79852007060">+7 985 200-70-60</a></li>
+      </ul>
+      <p class="request-note">Или позвоните — подскажем по телефону.</p>
+    </div>
+
+    <div class="form-sheet">
+      <form id="request-form" action="#" method="post" novalidate>
+        <div class="form-row">
+          <label for="f-name">Имя</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
+          <p class="err" id="e-name" hidden></p>
+        </div>
+        <div class="form-row">
+          <label for="f-phone">Телефон</label>
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" required aria-describedby="e-phone">
+          <p class="err" id="e-phone" hidden></p>
+        </div>
+        <div class="form-row">
+          <label for="f-company">Компания <span class="opt">необязательно</span></label>
+          <input type="text" id="f-company" name="company" autocomplete="organization">
+        </div>
+        <fieldset class="form-row">
+          <legend>Что интересует</legend>
+          <div class="radios">
+            <label class="radio"><input type="radio" name="interest" value="opt">Опт</label>
+            <label class="radio"><input type="radio" name="interest" value="brand">Под мой бренд</label>
+            <label class="radio"><input type="radio" name="interest" value="base">Основа для мыла</label>
+            <label class="radio"><input type="radio" name="interest" value="other">Другое</label>
+          </div>
+        </fieldset>
+        <div class="form-foot">
+          <button class="btn" type="submit">Отправить заявку</button>
+          <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="#privacy">политикой обработки персональных данных</a>.</p>
+        </div>
+      </form>
+      <div class="form-done" id="form-done" role="status" hidden>
+        <h3>Заявка записана</h3>
+        <p>Перезвоним в течение рабочего дня и подберём продукцию под ваш объект.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" id="contacts">
+  <div class="wrap">
+    <div class="g12 foot-grid">
+      <div class="foot-brand">
+        <span class="logo"><b>ЮниХим</b><small>логотип в разработке</small></span>
+      </div>
+      <div class="foot-col">
+        <h2>Телефоны</h2>
+        <ul>
+          <li><a class="foot-phone num" href="tel:+74959684745">+7 495 968-47-45</a></li>
+          <li><a class="foot-phone num" href="tel:+79852007060">+7 985 200-70-60</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Адрес производства</h2>
+        <address style="font-style:normal">143132, Московская обл., Рузский р-н, пос. Тучково, ул. Партизан, д. 41, стр. 8</address>
+      </div>
+      <div class="foot-col">
+        <h2>Почта</h2>
+        <p>адрес почты<span class="todo">уточнить</span></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ООО «ЮниХим-Про»</span>
+      <a href="#privacy" id="privacy">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var SCALE = 0.5;
+
+  document.querySelectorAll('.entry-fig[data-fig]').forEach(function (fig) {
+    var src = document.getElementById('v-' + fig.dataset.fig);
+    if (!src) return;
+    var box = fig.dataset.box.split(' ').map(Number);
+    var svg = document.createElementNS(SVGNS, 'svg');
+    svg.setAttribute('viewBox', box.join(' '));
+    svg.setAttribute('width', Math.round(box[2] * SCALE));
+    svg.setAttribute('height', Math.round(box[3] * SCALE));
+    svg.setAttribute('aria-hidden', 'true');
+    var k = fig.dataset.fig;
+    var defs = document.querySelector('#bench-svg defs').cloneNode(true);
+    defs.querySelectorAll('[id]').forEach(function (n) { n.id = n.id + '-' + k; });
+    var g = src.cloneNode(true);
+    g.removeAttribute('id');
+    g.querySelectorAll('[clip-path],[fill^="url"]').forEach(function (n) {
+      ['clip-path', 'fill'].forEach(function (a) {
+        var v = n.getAttribute(a);
+        if (v && v.indexOf('url(#') === 0) n.setAttribute(a, v.slice(0, -1) + '-' + k + ')');
+      });
+    });
+    var liq = g.querySelector('.liq');
+    var bottom = { soap: 536 }[k] || 560;
+    var d = liq ? bottom - Number(liq.getAttribute('y')) + 2 : 0;
+    g.querySelectorAll('.lvl').forEach(function (lvl) {
+      var w = document.createElementNS(SVGNS, 'g');
+      w.setAttribute('class', 'fill');
+      w.style.setProperty('--d', d + 'px');
+      lvl.parentNode.insertBefore(w, lvl);
+      w.appendChild(lvl);
+    });
+    svg.appendChild(defs);
+    svg.appendChild(g);
+    fig.appendChild(svg);
+  });
+
+  /* scroll reveal: mark what is already on screen, then switch motion on */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var targets = document.querySelectorAll('.entry, .steps');
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var io = new IntersectionObserver(function (list) {
+      list.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+    targets.forEach(function (t) {
+      var r = t.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) t.classList.add('in');
+      else io.observe(t);
+    });
+    document.documentElement.classList.add('motion');
+  }
+
+  var state = {};
+  function get(k) { return state[k] || (state[k] = { h: false, f: false, p: false }); }
+  function render(k) {
+    var s = get(k), on = s.h || s.f || s.p;
+    document.querySelectorAll('.vessel[data-v="' + k + '"]').forEach(function (v) { v.classList.toggle('is-up', on); });
+    document.querySelectorAll('[data-vessel="' + k + '"]').forEach(function (t) { t.classList.toggle('is-active', on); });
+  }
+  function bind(el, k) {
+    el.addEventListener('mouseenter', function () { get(k).h = true; render(k); });
+    el.addEventListener('mouseleave', function () { get(k).h = false; render(k); });
+    el.addEventListener('focusin', function () { get(k).f = true; render(k); });
+    el.addEventListener('focusout', function () { get(k).f = false; render(k); });
+  }
+  document.querySelectorAll('.tag[data-vessel]').forEach(function (tag) {
+    var k = tag.dataset.vessel;
+    bind(tag, k);
+    tag.addEventListener('click', function () {
+      var s = get(k); s.p = !s.p;
+      tag.setAttribute('aria-pressed', String(s.p));
+      render(k);
+    });
+  });
+  document.querySelectorAll('.entry[data-vessel]').forEach(function (entry) {
+    var k = entry.dataset.vessel;
+    bind(entry, k);
+    entry.addEventListener('pointerup', function (e) {
+      if (e.pointerType !== 'touch' || e.target.closest('a')) return;
+      var s = get(k); s.p = !s.p; render(k);
+    });
+  });
+
+  var menuBtn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) { nav.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { nav.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+  });
+
+  document.querySelectorAll('[data-pick]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var r = document.querySelector('input[name="interest"][value="' + a.dataset.pick + '"]');
+      if (r) r.checked = true;
+    });
+  });
+
+  var form = document.getElementById('request-form');
+  var nameI = document.getElementById('f-name');
+  var phoneI = document.getElementById('f-phone');
+  function setErr(input, msg) {
+    var p = document.getElementById(input.getAttribute('aria-describedby'));
+    if (msg) { p.textContent = msg; p.hidden = false; input.setAttribute('aria-invalid', 'true'); }
+    else { p.textContent = ''; p.hidden = true; input.removeAttribute('aria-invalid'); }
+  }
+  function checkName() {
+    if (!nameI.value.trim()) { setErr(nameI, 'Укажите имя — так мы будем знать, как к вам обращаться.'); return false; }
+    setErr(nameI); return true;
+  }
+  function checkPhone() {
+    var v = phoneI.value.trim();
+    var d = v.replace(/\D/g, '');
+    if (!v) { setErr(phoneI, 'Укажите телефон — без него мы не сможем перезвонить.'); return false; }
+    if (/[^\d\s()+\-]/.test(v)) { setErr(phoneI, 'В номере есть лишние символы. Оставьте только цифры, например +7 495 968-47-45.'); return false; }
+    if ((d.length === 11 && /^[78]/.test(d)) || d.length === 10) { setErr(phoneI); return true; }
+    if (d.length < 10) { setErr(phoneI, 'В номере не хватает цифр: нужно 10 цифр после +7.'); return false; }
+    setErr(phoneI, 'В номере лишние цифры: нужно 10 цифр после +7.'); return false;
+  }
+  nameI.addEventListener('blur', function () { if (nameI.hasAttribute('aria-invalid')) checkName(); });
+  phoneI.addEventListener('blur', function () { if (phoneI.value.trim() || phoneI.hasAttribute('aria-invalid')) checkPhone(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var okN = checkName(), okP = checkPhone();
+    if (!okN) { nameI.focus(); return; }
+    if (!okP) { phoneI.focus(); return; }
+    form.hidden = true;
+    var done = document.getElementById('form-done');
+    done.hidden = false;
+  });
+})();
+</script>
+</body>
+</html>

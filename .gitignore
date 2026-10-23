@@ -1,0 +1,7 @@
+publish/
+previews/
+site/_cap/
+.impeccable/review/
+.impeccable/mocks/
+*.log
+.claude/
