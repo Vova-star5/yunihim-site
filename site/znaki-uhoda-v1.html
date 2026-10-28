@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ЮниХим — моющие средства для прачечных, гостиниц и химчисток</title>
-<meta name="description" content="Производитель моющих средств в Тучково, Московская область. Опт, контрактное производство под вашим брендом, основа для мыла.">
+<title>Новая Формула — моющие средства от производителя</title>
+<meta name="description" content="Завод-производитель профессиональной химии в Тучково, Московская область. Моющие средства «Новая Формула»: прямой опт, производство под вашим брендом, основы для бытовой химии.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..900&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
@@ -162,7 +162,6 @@ input, textarea { caret-color: var(--cobalt); }
 }
 .btn:hover { background: var(--cobalt-deep); color: #fff; box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 14px 26px -12px rgba(31,63,191,.8); }
 .btn:active { transform: translateY(1px); }
-.btn--sm { min-height: 44px; padding: 10px 20px; font-size: 15px; }
 .btn--light { background: var(--satin); color: var(--cobalt); box-shadow: 0 10px 22px -14px rgba(0,0,0,.5); }
 .btn--light::after { border-color: rgba(31,63,191,.4); }
 .btn--light:hover { background: #fff; color: var(--cobalt-deep); }
@@ -208,7 +207,7 @@ input, textarea { caret-color: var(--cobalt); }
   grid-template-areas: "label intro" "label minis" "label .";
   column-gap: var(--hero-gap);
   padding-inline: var(--gutter);
-  min-height: max(calc(100svh + 96px), 860px);
+  min-height: max(100svh, 760px);
   padding-bottom: clamp(48px, 6vw, 96px);
   background: var(--cobalt);
   color: #fff;
@@ -220,40 +219,66 @@ input, textarea { caret-color: var(--cobalt); }
   --sym-bg: var(--cobalt);
 }
 .hero__label {
-  grid-area: label; position: relative; z-index: 1;
+  grid-area: label; position: sticky; top: 0; z-index: 1; align-self: start;
   filter: drop-shadow(0 2px 2px rgba(6,14,58,.3)) drop-shadow(0 30px 34px rgba(6,14,58,.42));
 }
-.hero__intro { grid-area: intro; position: relative; container-type: inline-size; padding-top: clamp(124px, 17vh, 176px); }
+.hero__intro { grid-area: intro; position: relative; container-type: inline-size; padding-top: clamp(112px, 15vh, 160px); }
 .hero__minis { grid-area: minis; position: relative; container-type: inline-size; padding-top: var(--s-7); padding-bottom: var(--s-6); }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 10.4cqi, 5.6rem);
-  line-height: .96;
+  font-size: clamp(2.4rem, 7.2cqi, 4.4rem);
+  line-height: 1;
   font-weight: 800;
-  letter-spacing: -.032em;
-  max-width: 12em;
+  letter-spacing: -.03em;
+  max-width: 15em;
   color: #fff;
 }
 .hero__lead {
   margin-top: var(--s-5);
-  font-size: clamp(17px, 1.1rem + .3vw, 21px);
-  line-height: 1.5;
-  max-width: 38em;
+  font-size: clamp(17px, 1.05rem + .2vw, 19px);
+  line-height: 1.55;
+  max-width: 40em;
   color: var(--on-cobalt-2);
 }
-.hero__actions { margin-top: var(--s-6); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
-.hero__actions .phone { font-size: 21px; color: #fff; }
+.hero__lead p + p { margin-top: var(--s-3); }
 
-/* Big care label */
+/* B2B offer: rows stitched onto the cobalt, each led by a small satin tag */
+.hero__offer { margin-top: var(--s-6); max-width: 52rem; }
+.hero__offer-title { font-size: clamp(18px, 1.05rem + .3vw, 21px); line-height: 1.35; font-weight: 700; color: #fff; }
+.offer-list { margin-top: var(--s-3); display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--s-6); }
+@container (min-width: 620px) { .offer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.offer-list li {
+  position: relative;
+  padding: 14px 0 14px 30px;
+  font-size: 17px; line-height: 1.45; color: #fff;
+}
+.offer-list li::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.4);
+}
+.offer-list li::before {
+  content: ""; position: absolute; left: 0; top: 21px; width: 16px; height: 10px;
+  background: var(--satin);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 50%, 100% 100%, 0 100%);
+}
+.offer-list b { font-weight: 700; }
+.hero__close {
+  margin-top: var(--s-4);
+  font-size: clamp(17px, 1.05rem + .2vw, 19px); line-height: 1.5; font-weight: 600;
+  max-width: 40em; color: #fff;
+}
+
+/* Big care label: the brand, woven */
 .care-label {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  position: relative;
+  padding-bottom: 64px;
   color: var(--ink);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 28px), 0 100%);
   transform-origin: 50% 0;
 }
 .care-label > .fold { height: 52px; }
 .care-label > .fold::after { top: 24px; left: 16px; right: 16px; }
-.care-label__body { padding: clamp(24px, 2.6vw, 40px) clamp(24px, 2.8vw, 44px) 0; }
+.care-label__body { padding: clamp(28px, 3vw, 44px) clamp(24px, 2.8vw, 44px) 0; }
 
 .logo-slot {
   display: inline-flex; flex-direction: column; align-items: flex-start; gap: 8px;
@@ -262,61 +287,20 @@ input, textarea { caret-color: var(--cobalt); }
 }
 .logo-slot__name { font-size: clamp(36px, 3.5vw, 52px); line-height: .9; font-weight: 900; letter-spacing: -.02em; }
 .logo-slot .todo { margin-left: 0; }
+.care-label .logo-slot { gap: 14px; padding: 16px 18px 14px; }
+.care-label .logo-slot__name { font-size: clamp(40px, 4.6vw, 66px); line-height: .92; letter-spacing: -.025em; }
 
-.care-label__origin {
-  margin-top: var(--s-4);
-  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  line-height: 1.45;
-}
-.care-label__rule { height: 1px; margin: var(--s-5) 0; background: var(--hair); border: 0; }
-
-.care-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 1vw, 14px);
-}
-.care-grid li {
-  --sym-bg: var(--satin);
-  padding: clamp(6px, .8vw, 10px);
-  border-radius: 2px;
-  color: var(--ink);
-  transition: color 450ms var(--ease), background-color 450ms var(--ease), transform 450ms var(--ease);
-}
-.care-label.is-active .care-grid li { color: var(--grey-soft); }
-.care-label.is-active .care-grid li.is-lit {
-  --sym-bg: var(--cobalt-tint);
-  color: var(--cobalt);
-  background-color: var(--cobalt-tint);
-  transform: translateY(-2px);
-}
-
-.care-lines { margin-top: var(--s-5); display: grid; gap: 2px; }
-.care-lines li {
-  padding: 7px 10px 6px;
-  margin-inline: -10px;
-  font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.35;
-  transition: color 450ms var(--ease), background-color 450ms var(--ease);
-}
-.care-label.is-active .care-lines li { color: var(--grey); }
-.care-label.is-active .care-lines li.is-lit { color: #fff; background: var(--cobalt); }
-
-.care-label__legal {
-  margin-top: var(--s-5);
-  font-size: 12px; letter-spacing: .06em; color: var(--ink-2); line-height: 1.5;
-}
-
-/* Mini labels */
+/* Mini labels: product names, each one jumps to its label below */
 .minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
 @container (min-width: 620px) { .minis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .mini-wrap { filter: drop-shadow(0 1px 1px rgba(6,14,58,.22)) drop-shadow(0 10px 12px rgba(6,14,58,.26)); }
 .mini {
-  --sym-bg: var(--satin);
   position: relative;
-  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
-  width: 100%; height: 100%;
-  padding: 12px 26px 12px 18px;
-  border: 0;
-  text-align: left;
+  display: flex; align-items: center;
+  width: 100%; height: 100%; min-height: 60px;
+  padding: 12px 28px 12px 20px;
   color: var(--ink);
-  cursor: pointer;
+  text-decoration: none;
   clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%);
   transition: background-color 450ms var(--ease), color 450ms var(--ease);
 }
@@ -325,22 +309,15 @@ input, textarea { caret-color: var(--cobalt); }
   background: var(--stitch-v); color: rgba(17,17,17,.45);
 }
 .mini__name { font-weight: 700; font-size: 15px; line-height: 1.2; }
-.mini__regime { font-size: 12.5px; line-height: 1.3; color: var(--ink-2); transition: color 450ms var(--ease); }
-.mini__syms { display: flex; gap: 6px; margin-top: auto; padding-top: 4px; }
-.mini__syms svg { width: 24px; }
+.mini:hover { background-color: var(--ink); background-image: none; color: #fff; }
+.mini:hover::before { color: rgba(255,255,255,.6); }
 .mini:focus-visible { outline: none; }
 .mini-wrap:has(.mini:focus-visible) { outline: 2px solid #fff; outline-offset: 3px; }
-.mini.is-current { --sym-bg: var(--ink); background-color: var(--ink); background-image: none; color: #fff; }
-.mini.is-current::before { color: rgba(255,255,255,.6); }
-.mini.is-current .mini__regime { color: var(--grey-soft); }
-.mini[aria-pressed="true"]:not(.is-current) { box-shadow: inset 0 0 0 2px var(--ink); }
-.minis__hint { margin-top: var(--s-4); font-size: 14px; color: var(--on-cobalt-2); }
-.minis__hint a { font-weight: 600; color: #fff; }
 
 /* Sections */
 .section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
 .section__head { margin-bottom: clamp(32px, 3.5vw, 48px); max-width: 52rem; }
-.section h2, .band h2 {
+.section h2, .band h2, .dealer h2 {
   font-size: clamp(2.25rem, 1.3rem + 2.6vw, 3.6rem);
   line-height: 1.02;
   font-weight: 800;
@@ -348,34 +325,60 @@ input, textarea { caret-color: var(--cobalt); }
 }
 .section__lead { margin-top: var(--s-4); font-size: 19px; color: var(--ink-2); max-width: 40em; }
 
-/* Products */
+/* Products: each one a long woven label, folded and sewn on the left, cut on the right */
 .products { overflow-x: clip; }
-.plabels {
-  position: relative;
-  display: flex; flex-wrap: wrap; align-items: flex-start;
-  gap: var(--s-7) var(--s-5);
-}
-.plabels::before {
-  content: ""; position: absolute; z-index: 2; top: 0; height: 26px;
-  left: calc(50% - 50vw); right: calc(50% - 50vw);
-  background: linear-gradient(180deg, #E2E2DB, #EAEAE4 50%, #DFDFD8);
-  border-block: 1px solid rgba(17,17,17,.1);
-  box-shadow: 0 6px 10px -6px rgba(17,17,17,.2);
-}
-.plabels::after {
-  content: ""; position: absolute; z-index: 3; top: 11px; height: 1.5px;
-  left: calc(50% - 50vw); right: calc(50% - 50vw);
-  background: var(--stitch); color: rgba(17,17,17,.55);
-}
-.plabel {
-  flex: 1 1 228px; max-width: 340px;
-  filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 14px 16px rgba(17,17,17,.09));
-}
+.plabels { display: grid; gap: clamp(28px, 3vw, 44px); }
+.plabel { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 16px 18px rgba(17,17,17,.09)); }
+.plabel:nth-child(odd) { margin-right: clamp(0px, 3vw, 48px); }
+.plabel:nth-child(even) { margin-left: clamp(0px, 3vw, 48px); }
 .plabel__inner {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 18px), 0 100%);
-  padding-bottom: 44px;
+  --cut: 30px;
+  --fold: 28px;
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(180px, 16vw, 232px) minmax(0, 1fr) clamp(220px, 20vw, 290px);
+  gap: var(--s-5) clamp(24px, 3vw, 44px);
+  align-items: start;
+  padding: clamp(24px, 2.6vw, 36px) calc(var(--cut) + clamp(16px, 2vw, 28px)) clamp(24px, 2.6vw, 36px) calc(var(--fold) + clamp(18px, 2vw, 28px));
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
 }
-.plabel__body { padding: var(--s-5) clamp(18px, 1.6vw, 24px) 0; }
+.plabel__inner::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--fold);
+  background: linear-gradient(90deg, #DDDDD6 0%, #ECECE7 55%, #E2E2DB 100%);
+  border-right: 1px solid rgba(17,17,17,.09);
+  box-shadow: 1px 0 0 rgba(255,255,255,.85);
+}
+.plabel__inner::after {
+  content: ""; position: absolute; left: 13px; top: 12px; bottom: 12px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(17,17,17,.5);
+}
+.plabel .photo-slot { height: auto; aspect-ratio: 4 / 5; }
+.plabel__name { font-size: clamp(24px, 1rem + 1vw, 32px); line-height: 1.1; font-weight: 800; letter-spacing: -.015em; }
+.plabel__intro { margin-top: var(--s-3); font-size: 16.5px; line-height: 1.55; color: var(--ink-2); max-width: 64ch; }
+.plabel__sub { margin-top: var(--s-5); font-size: 16.5px; line-height: 1.4; font-weight: 700; }
+.plabel__close {
+  position: relative; margin-top: var(--s-5); padding-top: var(--s-4);
+  font-size: 16.5px; line-height: 1.5; font-weight: 600; max-width: 64ch;
+}
+.plabel__close::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.3);
+}
+.plabel__aside { padding-left: clamp(20px, 2vw, 32px); border-left: 1px solid var(--hair); }
+
+/* Tag list: a small cut label leads each point */
+.tag-list { margin-top: var(--s-3); display: grid; gap: var(--s-3); }
+.tag-list li { position: relative; padding-left: 28px; font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 64ch; }
+.tag-list li::before {
+  content: ""; position: absolute; left: 0; top: .5em; width: 15px; height: 9px;
+  background: var(--cobalt);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 50%, 100% 100%, 0 100%);
+}
+.tag-list b { font-weight: 700; color: var(--ink); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip { padding: 2px 9px 3px; border: 1px solid var(--hair); border-radius: 2px; background: var(--satin-hi); font-size: 14px; line-height: 1.4; }
+.chips .vol { margin: 0; }
 .photo-slot {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
   height: 132px; padding: 12px;
@@ -385,25 +388,23 @@ input, textarea { caret-color: var(--cobalt); }
 }
 .photo-slot .todo { margin-left: 0; }
 .photo-slot--dev { font-weight: 600; color: var(--ink); }
-.plabel__name { margin-top: var(--s-5); font-size: 22px; line-height: 1.12; font-weight: 800; letter-spacing: -.01em; }
-.plabel__desc { margin-top: var(--s-2); font-size: 15px; line-height: 1.5; color: var(--ink-2); }
-.plabel__regime { margin-top: var(--s-5); padding-block: var(--s-4); border-block: 1px solid var(--hair); }
 .sym-row { display: flex; gap: 10px; }
 .sym-row svg { width: 38px; }
-.plabel__regime-note { display: block; margin-top: var(--s-2); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-.specs { margin-top: var(--s-4); display: grid; gap: var(--s-3); }
+.specs { display: grid; gap: var(--s-5); }
 .specs dt { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
 .specs dd { margin-top: 2px; font-size: 15px; line-height: 1.45; }
-.vol { display: inline-block; margin-right: 6px; padding: 1px 6px; border: 1px solid var(--ink); border-radius: 2px; font-size: 13.5px; }
+.vol { display: inline-block; margin-right: 6px; padding: 2px 7px; border: 1px solid var(--ink); border-radius: 2px; font-size: 13.5px; line-height: 1.4; }
 
-.plabel--soon { flex: 0 1 220px; filter: none; }
+.plabel--soon { filter: none; }
 .plabel--soon .plabel__inner {
-  clip-path: none; padding: 58px 22px 32px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3) var(--s-6);
+  clip-path: none; padding: 28px clamp(22px, 3vw, 40px);
   border: 1.5px dashed var(--grey); background: transparent;
 }
-.plabel--soon p { font-size: 15px; line-height: 1.5; }
-.plabel--soon strong { display: block; font-size: 22px; line-height: 1.12; font-weight: 800; margin-bottom: var(--s-2); }
-.plabel--soon a { display: inline-block; margin-top: var(--s-4); font-weight: 600; color: var(--cobalt); }
+.plabel--soon .plabel__inner::before, .plabel--soon .plabel__inner::after { display: none; }
+.plabel--soon p { font-size: 16px; line-height: 1.5; }
+.plabel--soon strong { display: block; font-size: 22px; line-height: 1.12; font-weight: 800; margin-bottom: var(--s-1); }
+.plabel--soon a { font-weight: 600; color: var(--cobalt); }
 
 /* Section grounds */
 .section--satin { background: var(--satin); }
@@ -427,9 +428,43 @@ input, textarea { caret-color: var(--cobalt); }
 .segment .sym-row { gap: clamp(10px, 1.2vw, 18px); }
 .segment .sym-row svg { width: clamp(40px, 3.6vw, 54px); }
 .segment__text { font-size: 18px; line-height: 1.5; }
-.segment__fit { margin-top: var(--s-2); font-size: 14.5px; color: var(--ink-2); }
-.segment__fit a { color: var(--ink); font-weight: 600; }
-.segment__fit a:hover { color: var(--cobalt); }
+.segment__text .todo { margin-left: 0; }
+.segment--wide { align-items: start; }
+.segment--wide > div { grid-column: 2 / -1; }
+.segment--wide h3 { font-size: clamp(28px, 1rem + 1.7vw, 40px); line-height: 1.04; }
+.segment__sub { margin-top: var(--s-5); font-size: 17px; font-weight: 700; }
+@media (min-width: 1101px) { .segment .tag-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4) var(--s-6); } }
+
+/* Dealers: a satin label sewn onto ink, both ends cut */
+.dealer {
+  position: relative;
+  padding-block: clamp(80px, 9vw, 136px);
+  color: #fff;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.05) 41%, rgba(255,255,255,0) 58%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(255,255,255,0) 1px 3px);
+}
+.dealer__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: var(--s-6) clamp(32px, 6vw, 112px); align-items: center; }
+.dealer h2 { color: #fff; }
+.dealer h2::selection { background: #fff; color: var(--ink); }
+.dealer-label { filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)) drop-shadow(0 26px 30px rgba(0,0,0,.5)); }
+.dealer-label__inner {
+  --cut: 26px;
+  position: relative;
+  color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%, var(--cut) 50%);
+  padding: clamp(40px, 4vw, 56px) calc(var(--cut) + clamp(22px, 3vw, 44px));
+}
+.dealer-label__inner::before, .dealer-label__inner::after {
+  content: ""; position: absolute; left: calc(var(--cut) + 4px); right: calc(var(--cut) + 4px); height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.4);
+}
+.dealer-label__inner::before { top: 14px; }
+.dealer-label__inner::after { bottom: 14px; }
+.dealer__lead { font-size: clamp(21px, 1rem + .7vw, 26px); line-height: 1.25; font-weight: 800; letter-spacing: -.01em; max-width: 30em; }
+.dealer-label__inner p:not(.dealer__lead) { margin-top: var(--s-3); font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 40em; }
+.dealer-label__inner .btn { margin-top: var(--s-6); }
 
 /* Ink band */
 .band-section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
@@ -445,7 +480,8 @@ input, textarea { caret-color: var(--cobalt); }
   background-image:
     linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.07) 41%, rgba(255,255,255,0) 58%),
     repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(255,255,255,0) 1px 3px);
-  clip-path: polygon(0 0, 100% 0, calc(100% - 56px) 50%, 100% 100%, 0 100%);
+  --cut: 56px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
   padding: clamp(56px, 6vw, 88px) calc(56px + clamp(24px, 4vw, 72px)) clamp(56px, 6vw, 88px) calc(var(--gutter) + max(0px, (100vw - var(--wrap) - 2 * var(--gutter)) / 2));
 }
 .band::before, .band::after {
@@ -608,10 +644,136 @@ input, textarea { caret-color: var(--cobalt); }
 .why__photo figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
 .segments__note { margin-top: var(--s-4); font-size: 13px; color: var(--ink-2); }
 
+/* Picker: object tabs + care label with the set */
+.pick { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: var(--s-7) clamp(32px, 6vw, 112px); align-items: start; }
+.pick-tabs {
+  display: grid; gap: var(--s-3); max-width: 440px;
+  filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 10px 12px rgba(17,17,17,.1));
+}
+.pick-tab {
+  --sym-bg: var(--satin);
+  position: relative;
+  display: flex; align-items: center;
+  width: 100%; min-height: 60px;
+  padding: 12px 44px 12px 30px;
+  border: 0; text-align: left; cursor: pointer;
+  font-size: 19px; font-weight: 700; line-height: 1.2; color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 50%, 100% 100%, 0 100%);
+  transition: background-color 300ms var(--ease), color 300ms var(--ease), transform 300ms var(--ease);
+}
+.pick-tab::before {
+  content: ""; position: absolute; left: 10px; top: 9px; bottom: 9px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(17,17,17,.4);
+}
+.pick-tab:hover { color: var(--cobalt); }
+.pick-tab:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--cobalt); }
+.pick-tab[aria-selected="true"] { background-color: var(--ink); background-image: none; color: #fff; transform: translateX(12px); }
+.pick-tab[aria-selected="true"]::before { color: rgba(255,255,255,.6); }
+.pick-tab[aria-selected="true"]:focus-visible { box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px var(--cobalt); }
+
+.pick-label { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 22px 26px rgba(17,17,17,.12)); transform-origin: 50% 0; }
+.pick-label__inner { clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%); padding-bottom: 56px; }
+.pick-label .fold { height: 40px; }
+.pick-label .fold::after { top: 18px; }
+.pick-panel { padding: clamp(24px, 3vw, 40px) clamp(22px, 3vw, 44px) 0; }
+.pick-panel h3 { font-size: clamp(28px, 1.2rem + 1.6vw, 40px); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+.pick-panel__lead { margin-top: var(--s-2); font-size: 16px; color: var(--ink-2); }
+.pick-items { margin-top: var(--s-4); border-top: 1px solid var(--hair); }
+.pick-item {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--s-5); align-items: center;
+  padding-block: var(--s-4);
+}
+.pick-item + .pick-item::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.3);
+}
+.pick-item a { font-size: 20px; font-weight: 800; line-height: 1.2; text-decoration-color: var(--grey-soft); }
+.pick-item a:hover { text-decoration-color: currentColor; }
+.pick-item > span { grid-column: 1; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.pick-note { margin-top: var(--s-2); padding: 12px 14px; border: 1px dashed var(--grey); font-size: 15px; line-height: 1.45; }
+.pick-label__cta { padding: var(--s-5) clamp(22px, 3vw, 44px) 0; }
+.pick-label__cta .btn { width: 100%; white-space: normal; text-align: center; }
+
+/* Terms: long cobalt woven label */
+.terms-wrap { filter: drop-shadow(0 2px 2px rgba(6,14,58,.22)) drop-shadow(0 24px 28px rgba(6,14,58,.26)); }
+.terms {
+  --cut: 44px;
+  --fold: 30px;
+  position: relative;
+  color: #fff;
+  background-color: var(--cobalt);
+  background-image:
+    linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.08) 41%, rgba(255,255,255,0) 58%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, rgba(255,255,255,0) 1px 3px);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
+  padding: var(--s-3) calc(var(--cut) + clamp(16px, 3vw, 48px)) var(--s-3) calc(var(--fold) + clamp(20px, 3vw, 44px));
+}
+.terms::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--fold);
+  background: linear-gradient(90deg, rgba(6,14,58,.38), rgba(6,14,58,.14) 60%, rgba(6,14,58,.3));
+  box-shadow: 1px 0 0 rgba(255,255,255,.14);
+}
+.terms::after {
+  content: ""; position: absolute; left: 14px; top: 12px; bottom: 12px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(255,255,255,.5);
+}
+.term {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: var(--s-2) clamp(20px, 3vw, 48px);
+  align-items: baseline;
+  padding-block: clamp(18px, 2vw, 24px);
+}
+.term + .term::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.38);
+}
+.term dt { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; line-height: 1.4; color: var(--on-cobalt-2); }
+.term dd { margin: 0; font-size: clamp(18px, 1rem + .4vw, 21px); line-height: 1.4; }
+.terms .todo { color: var(--on-cobalt-2); border-color: rgba(255,255,255,.55); }
+.terms ::selection { background: #fff; color: var(--cobalt-deep); }
+
+/* FAQ: one satin label, questions divided by stitches */
+.faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: var(--s-6) clamp(32px, 5vw, 96px); align-items: start; }
+.faq-label { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 18px 22px rgba(17,17,17,.1)); transform-origin: 50% 0; }
+.faq-label__inner { clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 20px), 0 100%); padding-bottom: 40px; }
+.faq-item { position: relative; }
+.faq-item + .faq-item::before {
+  content: ""; position: absolute; top: 0; left: 16px; right: 16px; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.3);
+}
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
+  padding: 22px clamp(20px, 2.6vw, 36px);
+  list-style: none; cursor: pointer;
+  font-size: clamp(19px, 1rem + .45vw, 23px); font-weight: 700; line-height: 1.25;
+  transition: color 300ms var(--ease);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--cobalt); }
+.faq-item summary:focus-visible { outline: 2px solid var(--cobalt); outline-offset: -6px; }
+.faq-mark {
+  flex: none; position: relative; width: 30px; height: 30px; border-radius: 50%;
+  border: 1.75px solid currentColor;
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease), color 300ms var(--ease);
+}
+.faq-mark::before, .faq-mark::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.75px;
+  margin: -.875px 0 0 -6px; background: currentColor;
+  transition: transform 300ms var(--ease);
+}
+.faq-mark::after { transform: rotate(90deg); }
+.faq-item[open] .faq-mark { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.faq-item[open] .faq-mark::after { transform: rotate(90deg) scaleX(0); }
+.faq-item p { padding: 0 calc(clamp(20px, 2.6vw, 36px) + 46px) 24px clamp(20px, 2.6vw, 36px); font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 46em; }
+
+.lform__set { margin-bottom: var(--s-3); padding: 10px 14px; border: 1px dashed var(--cobalt); font-size: 15px; line-height: 1.45; }
+.lform__set b { color: var(--cobalt); }
+
 /* Motion */
 @media (prefers-reduced-motion: no-preference) {
   .care-label { animation: settle 1500ms var(--ease) both; }
-  .care-grid .sym { animation: print 800ms var(--ease) both; animation-delay: calc(260ms + var(--i, 0) * 55ms); }
+  .care-label .logo-slot__name { animation: print 900ms var(--ease) both; animation-delay: 280ms; }
   @keyframes settle {
     from { transform: translateY(-28px) rotate(-1.4deg); }
     to { transform: none; }
@@ -621,14 +783,41 @@ input, textarea { caret-color: var(--cobalt); }
     to { clip-path: inset(0 0 0 0); filter: blur(0); }
   }
 
+  /* Load: the cobalt fabric settles, its faint symbols come up once */
+  .hero__pattern { transform-origin: 50% 35%; animation: pattern-in 1400ms var(--ease) backwards; }
+  @keyframes pattern-in { from { opacity: 0; transform: scale(1.04); } }
+
+  /* Load: headline lines rise from under a mask (JS splits lines after the font is in, then restores the text) */
+  .js-hero .hero__intro:not(.is-play) > * { animation: hold-hidden 2400ms linear; }
+  @keyframes hold-hidden { from, to { opacity: 0; } }
+  .hero h1 .ln { display: block; overflow: hidden; padding: .06em 0 .14em; margin: -.06em 0 -.14em; }
+  .hero h1 .ln__i { display: block; animation: line-rise 820ms var(--ease) backwards; animation-delay: calc(var(--k, 0) * 90ms); }
+  @keyframes line-rise { from { transform: translateY(120%); } }
+  .js-hero .hero__intro.is-play .hero__lead { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 40ms); }
+  .js-hero .hero__intro.is-play .hero__offer { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 140ms); }
+  .js-hero .hero__intro.is-play .hero__close { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 240ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+
+  /* Load: mini labels pulled off the roll, one by one, after the big label lands */
+  .hero__minis .mini-wrap { animation: unroll 700ms var(--ease) backwards; animation-delay: calc(560ms + var(--k, 0) * 100ms); }
+  .hero__minis .mini-wrap:nth-child(2) { --k: 1; }
+  .hero__minis .mini-wrap:nth-child(3) { --k: 2; }
+  .hero__minis .mini-wrap:nth-child(4) { --k: 3; }
+  @keyframes unroll {
+    from { opacity: 0; transform: translate(-18px, 12px); clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(-40px); }
+  }
+
   /* Scroll reveal: only below-the-fold elements get .rv (set by JS) */
   .js-reveal .rv {
     transition: opacity 700ms var(--ease), transform 700ms var(--ease);
     transition-delay: var(--d, 0ms);
   }
   .js-reveal .rv:not(.is-in) { opacity: 0; transform: translateY(24px); }
-  .js-reveal .plabel.rv { transform-origin: 50% 0; transition-duration: 700ms, 1100ms; }
-  .js-reveal .plabel.rv:not(.is-in) { transform: translateY(-22px) rotate(-1.2deg); }
+  .js-reveal .plabel.rv { transform-origin: 0 50%; transition-duration: 700ms, 1100ms; }
+  .js-reveal .plabel.rv:not(.is-in) { transform: translateX(-28px) rotate(-.5deg); }
+  .js-reveal .dealer-label.rv { transition-duration: 700ms, 1000ms; }
+  .js-reveal .dealer-label.rv:not(.is-in) { transform: translateY(-20px) rotate(-1.2deg); }
   .js-reveal .photo-band img.rv { transition-duration: 700ms, 1400ms; }
   .js-reveal .photo-band img.rv:not(.is-in) { transform: scale(1.06); }
   .js-reveal .rv:not(.is-in) .sym-row .sym { clip-path: inset(0 100% 0 0); }
@@ -639,6 +828,78 @@ input, textarea { caret-color: var(--cobalt); }
   .sym-row li:nth-child(2) .sym { --si: 1; }
   .sym-row li:nth-child(3) .sym { --si: 2; }
   .sym-row li:nth-child(4) .sym { --si: 3; }
+
+  /* Ink band: cut from the roll left to right, the cut end travels with the edge */
+  .js-reveal .band-wrap.rv:not(.is-in), .js-reveal .steps.rv:not(.is-in),
+  .js-reveal .why__aside.rv:not(.is-in), .js-reveal .site-footer.rv:not(.is-in) { opacity: 1; transform: none; }
+  .js-reveal .band-wrap.rv .band { transition: clip-path 900ms var(--ease); transition-delay: var(--d, 0ms); }
+  .js-reveal .band-wrap.rv:not(.is-in) .band { clip-path: polygon(0 0, 0 0, calc(0% - var(--cut)) 50%, 0 100%, 0 100%); }
+  .format:nth-child(2) { --k: 1; }
+  .format:nth-child(3) { --k: 2; }
+  .js-reveal .band-wrap.rv .format, .js-reveal .band-wrap.rv .band__cta {
+    transition: opacity 700ms var(--ease), transform 800ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + 360ms + var(--k, 0) * 110ms);
+  }
+  .js-reveal .band-wrap.rv .band__cta { --k: 3; }
+  .js-reveal .band-wrap.rv:not(.is-in) .format,
+  .js-reveal .band-wrap.rv:not(.is-in) .band__cta { opacity: 0; transform: translateX(-20px); }
+
+  /* Steps: circle pops, its stitch sews to the next one */
+  .step:nth-child(2) { --k: 1; }
+  .step:nth-child(3) { --k: 2; }
+  .step:nth-child(4) { --k: 3; }
+  .js-reveal .steps.rv .step__n {
+    transition: opacity 450ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms);
+  }
+  .js-reveal .steps.rv:not(.is-in) .step__n { opacity: 0; transform: scale(.45); }
+  .js-reveal .steps.rv .step h3, .js-reveal .steps.rv .step p {
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms + 90ms);
+  }
+  .js-reveal .steps.rv .step p { transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms + 150ms); }
+  .js-reveal .steps.rv:not(.is-in) .step h3, .js-reveal .steps.rv:not(.is-in) .step p { opacity: 0; transform: translateY(14px); }
+  .js-reveal .steps.rv .step::before { clip-path: inset(0 0 0 0); transition: clip-path 620ms var(--ease); transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms + 160ms); }
+  .js-reveal .steps.rv:not(.is-in) .step::before { clip-path: inset(0 100% 0 0); }
+  @media (max-width: 960px) {
+    .js-reveal .steps.rv:not(.is-in) .step::before { clip-path: inset(0 0 100% 0); }
+  }
+
+  /* Form label drops in and settles like the hero label */
+  .js-reveal .form-label.rv { transform-origin: 50% 0; transition-duration: 700ms, 900ms; }
+  .js-reveal .form-label.rv:not(.is-in) { transform: translateY(-28px) rotate(-1.4deg); }
+
+  /* Why: heading rises, photo wipes in from the left */
+  .js-reveal .why__aside.rv h2 { transition: opacity 700ms var(--ease), transform 700ms var(--ease); transition-delay: var(--d, 0ms); }
+  .js-reveal .why__aside.rv:not(.is-in) h2 { opacity: 0; transform: translateY(24px); }
+  .js-reveal .why__aside.rv .why__photo img { clip-path: inset(0 0 0 0); transition: clip-path 900ms var(--ease); transition-delay: calc(var(--d, 0ms) + 180ms); }
+  .js-reveal .why__aside.rv:not(.is-in) .why__photo img { clip-path: inset(0 100% 0 0); }
+  .js-reveal .why__aside.rv figcaption { transition: opacity 600ms var(--ease); transition-delay: calc(var(--d, 0ms) + 600ms); }
+  .js-reveal .why__aside.rv:not(.is-in) figcaption { opacity: 0; }
+
+  /* Footer: the seam stitch draws across */
+  .js-reveal .site-footer.rv::after { clip-path: inset(0 0 0 0); transition: clip-path 900ms var(--ease); transition-delay: 120ms; }
+  .js-reveal .site-footer.rv:not(.is-in)::after { clip-path: inset(0 100% 0 0); }
+
+  /* Picker and FAQ labels drop in and settle on their seam */
+  .js-reveal .pick-label.rv, .js-reveal .faq-label.rv { transition-duration: 700ms, 900ms; }
+  .js-reveal .pick-label.rv:not(.is-in), .js-reveal .faq-label.rv:not(.is-in) { transform: translateY(-24px) rotate(-1.2deg); }
+
+  /* Terms: the cobalt ribbon is cut off the roll, rows follow */
+  .js-reveal .terms-wrap.rv:not(.is-in) { opacity: 1; transform: none; }
+  .js-reveal .terms-wrap.rv .terms { transition: clip-path 900ms var(--ease); transition-delay: var(--d, 0ms); }
+  .js-reveal .terms-wrap.rv:not(.is-in) .terms { clip-path: polygon(0 0, 0 0, calc(0% - var(--cut)) 50%, 0 100%, 0 100%); }
+  .term:nth-child(2) { --k: 1; }
+  .term:nth-child(3) { --k: 2; }
+  .term:nth-child(4) { --k: 3; }
+  .term:nth-child(5) { --k: 4; }
+  .term:nth-child(6) { --k: 5; }
+  .term:nth-child(7) { --k: 6; }
+  .js-reveal .terms-wrap.rv .term {
+    transition: opacity 600ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + 300ms + var(--k, 0) * 80ms);
+  }
+  .js-reveal .terms-wrap.rv:not(.is-in) .term { opacity: 0; transform: translateX(-16px); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -655,7 +916,9 @@ input, textarea { caret-color: var(--cobalt); }
 /* Tablet */
 @media (max-width: 1100px) {
   .site-nav ul { gap: 4px 14px; }
-  .site-header .btn--sm { display: none; }
+  .plabel__inner { grid-template-columns: clamp(150px, 20vw, 210px) minmax(0, 1fr); }
+  .plabel__media { grid-row: 1 / span 2; }
+  .plabel__aside { grid-column: 2; padding: var(--s-4) 0 0; border-left: 0; border-top: 1px solid var(--hair); }
   .segment { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
   .segment .sym-row { grid-column: 1; grid-row: 2; }
   .segment > div { grid-column: 2; grid-row: 1 / span 2; }
@@ -672,8 +935,8 @@ input, textarea { caret-color: var(--cobalt); }
     color: #fff;
     border-bottom: 1px solid rgba(255,255,255,.18);
   }
-  .site-header__brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
-  .site-header__brand b { font-size: 24px; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+  .site-header__brand { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; text-decoration: none; color: #fff; }
+  .site-header__brand b { font-size: 23px; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
   .site-header__brand .todo { margin-left: 0; font-size: 9.5px; }
   .site-header__cta { margin-left: auto; gap: 10px; }
   .menu-btn {
@@ -687,7 +950,6 @@ input, textarea { caret-color: var(--cobalt); }
   .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(2) { opacity: 0; }
   .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .site-header .btn--sm { display: none; }
   .site-nav { flex-basis: 100%; display: none; order: 3; }
   .site-nav.is-open { display: block; }
   .site-nav ul { flex-direction: column; gap: 0; padding-bottom: 8px; }
@@ -702,40 +964,33 @@ input, textarea { caret-color: var(--cobalt); }
     overflow: clip;
   }
   .hero__intro { padding-top: var(--s-7); }
-  .hero h1 { font-size: clamp(2.5rem, 12.2cqi, 4rem); }
-  .hero__label { margin-top: var(--s-7); }
+  .hero h1 { font-size: clamp(2rem, 9.2cqi, 3.2rem); }
+  .hero__label { position: relative; top: auto; margin-top: var(--s-7); }
   .care-label {
-    position: relative; inset: auto;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 18px), 0 100%);
-    padding-bottom: 40px;
+    padding-bottom: 44px;
   }
   .care-label > .fold { height: 30px; }
   .care-label > .fold::after { top: 13px; }
-  .care-label__body { padding: 20px 20px 0; }
-  .care-label__head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 16px; }
-  .care-label .logo-slot { padding: 0; border: 0; }
-  .care-label .logo-slot .todo { display: none; }
+  .care-label__body { padding: 22px 20px 0; }
+  .care-label .logo-slot { gap: 10px; padding: 12px 14px; }
+  .care-label .logo-slot__name { font-size: clamp(30px, 9vw, 40px); }
+  .care-label .logo-slot__name br { display: none; }
   .logo-slot__name { font-size: 32px; }
-  .care-label__origin { margin-top: 0; font-size: 11.5px; letter-spacing: .1em; }
-  .care-label__rule { margin: var(--s-4) 0; }
-  .care-grid { grid-template-columns: repeat(6, 1fr); gap: 4px; }
-  .care-grid li { padding: 5px; }
-  .care-lines { margin-top: var(--s-4); }
-  .care-lines li { font-size: 11.5px; letter-spacing: .07em; padding: 6px 10px 5px; }
-  .care-label__legal { display: none; }
   .hero__minis { padding-top: var(--s-5); padding-bottom: 0; }
 
-  .plabels { gap: var(--s-6); }
-  .plabels::before, .plabels::after { display: none; }
-  .plabel, .plabel--soon { flex: 1 1 100%; max-width: none; }
-  .plabel--soon .plabel__inner { padding-top: 32px; }
+  .plabel:nth-child(odd), .plabel:nth-child(even) { margin-inline: 0; }
 
   .segment { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); }
+
+  .dealer__grid { grid-template-columns: minmax(0, 1fr); }
+  .dealer-label__inner { --cut: 16px; padding: 40px calc(16px + 20px); }
   .segment .sym-row, .segment > div { grid-column: auto; grid-row: auto; }
 
   .band-wrap { margin-right: 0; }
   .band {
-    clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 50%, 100% 100%, 0 100%);
+    --cut: 22px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
     padding: 56px calc(var(--gutter) + 28px) 56px var(--gutter);
   }
   .band::before, .band::after { right: 34px; }
@@ -748,11 +1003,37 @@ input, textarea { caret-color: var(--cobalt); }
   .step__n { grid-row: 1 / span 2; }
   .step h3 { margin-top: 6px; }
 
+  .pick { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
+  .pick-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; gap: var(--s-2); }
+  .pick-tab { min-height: 56px; padding: 10px 26px 10px 22px; font-size: 16.5px; }
+  .pick-tab[aria-selected="true"] { transform: none; }
+  .pick-tab:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .pick-item { grid-template-columns: minmax(0, 1fr); }
+  .terms { --cut: 22px; --fold: 22px; padding: var(--s-2) calc(var(--cut) + 16px) var(--s-2) calc(var(--fold) + 18px); }
+  .terms::after { left: 10px; }
+  .term { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .faq { grid-template-columns: minmax(0, 1fr); }
+  .faq-item p { padding-right: clamp(20px, 2.6vw, 36px); }
+
   .request { grid-template-columns: minmax(0, 1fr); }
   .choices { grid-template-columns: minmax(0, 1fr); }
   .footer-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Narrow: product label stacks, photo slot goes short */
+@media (max-width: 640px) {
+  .plabel__inner {
+    --cut: 18px; --fold: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 22px calc(var(--cut) + 14px) 24px calc(var(--fold) + 16px);
+  }
+  .plabel__inner::after { left: 9px; }
+  .plabel__media { grid-row: auto; }
+  .plabel .photo-slot { aspect-ratio: auto; min-height: 112px; }
+  .plabel__aside { grid-column: auto; }
+}
 </style>
+<script>try { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-hero'); } catch (e) {}</script>
 </head>
 <body>
 
@@ -779,17 +1060,10 @@ input, textarea { caret-color: var(--cobalt); }
       <path style="fill:var(--sym-bg, #F6F6F3)" d="M30 4 V25.5 a5.5 5.5 0 0 1 -11 0 V20 l-3.6 -4 a2 2 0 0 1 3 -2.7 L19 14 V4"/>
       <path d="M22.7 24 V30.4 M26.3 24 V30.4"/>
     </symbol>
-    <symbol id="s-bleach" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M24 6.5 L43 39.5 H5 Z"/>
-    </symbol>
     <symbol id="s-tumble" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
       <rect x="6" y="6" width="36" height="36" rx="1.5"/>
       <circle cx="24" cy="24" r="12.5"/>
       <circle cx="24" cy="24" r="2" fill="currentColor" stroke="none"/>
-    </symbol>
-    <symbol id="s-line" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="6" y="6" width="36" height="36" rx="1.5"/>
-      <path d="M6 9.5 C15 21 33 21 42 9.5"/>
     </symbol>
     <symbol id="s-iron1" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
       <path d="M4 39 H44 V22.5 H17 C10.6 22.5 6.6 29.5 4 39 Z"/>
@@ -806,10 +1080,6 @@ input, textarea { caret-color: var(--cobalt); }
       <circle cx="24" cy="24" r="17.5"/>
       <path d="M20.5 32.5 V15.5 H26.3 a4.7 4.7 0 0 1 0 9.4 H20.5"/>
     </symbol>
-    <symbol id="s-f" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="24" cy="24" r="17.5"/>
-      <path d="M21 32.5 V15.5 H29.5 M21 23.7 H28"/>
-    </symbol>
     <symbol id="s-w" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="24" r="17.5"/>
       <path d="M14.5 16.5 L18.7 31.5 L24 19.8 L29.3 31.5 L33.5 16.5"/>
@@ -820,11 +1090,12 @@ input, textarea { caret-color: var(--cobalt); }
 <a class="skip" href="#request">Перейти к заявке</a>
 
 <header class="site-header" id="top">
-  <a class="site-header__brand" href="#top" aria-label="ЮниХим, на главную">
-    <b>ЮниХим</b><span class="todo">логотип в разработке</span>
+  <a class="site-header__brand" href="#top" aria-label="Новая Формула, на главную">
+    <b>Новая Формула</b><span class="todo">логотип в разработке</span>
   </a>
   <nav class="site-nav" id="site-nav" aria-label="Разделы">
     <ul>
+      <li><a href="#dileram">Дилерам</a></li>
       <li><a href="#products">Продукция</a></li>
       <li><a href="#clients">Для кого</a></li>
       <li><a href="#cooperation">Сотрудничество</a></li>
@@ -834,7 +1105,6 @@ input, textarea { caret-color: var(--cobalt); }
   </nav>
   <div class="site-header__cta">
     <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
-    <a class="btn btn--sm btn--light" href="#request">Получить прайс</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Меню"><span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
   </div>
 </header>
@@ -859,80 +1129,40 @@ input, textarea { caret-color: var(--cobalt); }
       <div class="fold" aria-hidden="true"></div>
       <div class="care-label__body">
         <div class="care-label__head">
-          <div class="logo-slot" role="img" aria-label="ЮниХим — логотип в разработке">
-            <span class="logo-slot__name" aria-hidden="true">ЮниХим</span>
+          <div class="logo-slot" role="img" aria-label="Новая Формула — логотип в разработке">
+            <span class="logo-slot__name" aria-hidden="true">Новая<br> Формула</span>
             <span class="todo" aria-hidden="true">логотип в разработке</span>
           </div>
-          <p class="care-label__origin">Сделано в Тучково,<br>Московская обл.</p>
         </div>
-        <hr class="care-label__rule">
-        <ul class="care-grid" aria-label="Знаки ухода">
-          <li data-sym="t30" style="--i:0"><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
-          <li data-sym="t40" style="--i:1"><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-          <li data-sym="t60" style="--i:2"><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
-          <li data-sym="hand" style="--i:3"><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
-          <li data-sym="bleach" style="--i:4"><svg class="sym" role="img" aria-label="Отбеливание допускается"><use href="#s-bleach"/></svg></li>
-          <li data-sym="tumble" style="--i:5"><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
-          <li data-sym="line" style="--i:6"><svg class="sym" role="img" aria-label="Сушка на верёвке"><use href="#s-line"/></svg></li>
-          <li data-sym="iron2" style="--i:7"><svg class="sym" role="img" aria-label="Глажка при средней температуре"><use href="#s-iron2"/></svg></li>
-          <li data-sym="iron1" style="--i:8"><svg class="sym" role="img" aria-label="Глажка при низкой температуре"><use href="#s-iron1"/></svg></li>
-          <li data-sym="p" style="--i:9"><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
-          <li data-sym="f" style="--i:10"><svg class="sym" role="img" aria-label="Химчистка, растворитель F"><use href="#s-f"/></svg></li>
-          <li data-sym="w" style="--i:11"><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
-        </ul>
-        <ul class="care-lines" aria-label="Продукция">
-          <li data-product="soap">Жидкое мыло — номера, санузлы</li>
-          <li data-product="gel">Гель для стирки — ежедневная загрузка</li>
-          <li data-product="cond">Кондиционер — мягкость, лёгкая глажка</li>
-          <li data-product="dish">Средство для посуды — кухня</li>
-        </ul>
-        <p class="care-label__legal">ООО «ЮниХим-Про»<br>143132, Московская обл., Рузский р-н, пос.&nbsp;Тучково</p>
-        <p class="vh" aria-live="polite" id="care-status"></p>
       </div>
     </div>
   </div>
 
   <div class="hero__intro">
-    <h1 id="hero-title">Моющие средства для прачечных, гостиниц и химчисток</h1>
-    <p class="hero__lead">Производим сами, в Тучково Московской области. Поставляем оптом, выпускаем продукцию под вашим брендом и поставляем основу для мыла.</p>
-    <div class="hero__actions">
-      <a class="btn btn--light" href="#request">Получить прайс</a>
-      <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+    <h1 id="hero-title">Добро пожаловать на сайт завода-производителя профессиональной химии!</h1>
+    <div class="hero__lead">
+      <p>Мы специализируемся на разработке и производстве высокоэффективных моющих средств для индустрии гостеприимства (HoReCa), профессиональных прачечных и химчисток, а также для использования в быту.</p>
+      <p>Наш производственный комплекс расположен в г.&nbsp;Тучково Московской области, что позволяет нам оперативно отгружать заказы любого объёма.</p>
     </div>
+    <div class="hero__offer">
+      <p class="hero__offer-title">Мы предлагаем гибкие условия сотрудничества для B2B-партнеров:</p>
+      <ul class="offer-list">
+        <li><b>Прямой опт:</b> качественная химия без наценок посредников.</li>
+        <li>Собственная торговая марка «Новая Формула».</li>
+        <li>Разработаем рецептуру и упакуем продукт под вашим товарным знаком.</li>
+        <li><b>Сырьевой сектор:</b> поставляем высококачественные основы для дальнейшего производства бытовой химии.</li>
+      </ul>
+    </div>
+    <p class="hero__close">Выбирая нас, вы получаете надёжного партнера, гибкий подход к рецептурам и строгий контроль качества каждой партии.</p>
   </div>
 
   <div class="hero__minis">
-    <div class="minis" role="group" aria-label="Продукция: отметить режимы на ярлыке">
-      <div class="mini-wrap">
-        <button class="mini satin" type="button" data-product="soap" data-syms="hand t30" aria-pressed="false" aria-controls="care-label">
-          <span class="mini__name">Жидкое мыло</span>
-          <span class="mini__regime">режим: номера и санузлы</span>
-          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-hand"/></svg><svg class="sym"><use href="#s-t30"/></svg></span>
-        </button>
-      </div>
-      <div class="mini-wrap">
-        <button class="mini satin" type="button" data-product="gel" data-syms="t40 t60 w" aria-pressed="false" aria-controls="care-label">
-          <span class="mini__name">Гель для стирки</span>
-          <span class="mini__regime">режим: ежедневная загрузка</span>
-          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-t40"/></svg><svg class="sym"><use href="#s-t60"/></svg><svg class="sym"><use href="#s-w"/></svg></span>
-        </button>
-      </div>
-      <div class="mini-wrap">
-        <button class="mini satin" type="button" data-product="cond" data-syms="tumble line iron2" aria-pressed="false" aria-controls="care-label">
-          <span class="mini__name">Кондиционер для белья</span>
-          <span class="mini__regime">режим: мягкость и глажка</span>
-          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-tumble"/></svg><svg class="sym"><use href="#s-line"/></svg><svg class="sym"><use href="#s-iron2"/></svg></span>
-        </button>
-      </div>
-      <div class="mini-wrap">
-        <button class="mini satin" type="button" data-product="dish" data-syms="hand t40" aria-pressed="false" aria-controls="care-label">
-          <span class="mini__name">Средство для мытья посуды</span>
-          <span class="mini__regime">режим: кухня</span>
-          <span class="mini__syms" aria-hidden="true"><svg class="sym"><use href="#s-hand"/></svg><svg class="sym"><use href="#s-t40"/></svg></span>
-        </button>
-      </div>
-    </div>
-    <p class="minis__hint">Наведите или нажмите на продукт — на ярлыке отметятся его знаки. <a href="#products">Вся продукция</a></p>
+    <ul class="minis" aria-label="Продукция">
+      <li class="mini-wrap"><a class="mini satin" href="#product-soap"><span class="mini__name">Жидкое мыло</span></a></li>
+      <li class="mini-wrap"><a class="mini satin" href="#product-softener"><span class="mini__name">Кондиционер для белья</span></a></li>
+      <li class="mini-wrap"><a class="mini satin" href="#product-laundry-gel"><span class="mini__name">Гель для стирки</span></a></li>
+      <li class="mini-wrap"><a class="mini satin" href="#product-dish-gel"><span class="mini__name">Гель для мытья посуды</span></a></li>
+    </ul>
   </div>
 </section>
 
@@ -945,96 +1175,97 @@ input, textarea { caret-color: var(--cobalt); }
 
     <div class="plabels">
       <article class="plabel" id="product-soap" aria-labelledby="p-soap">
-        <div class="plabel__inner satin selvage">
-          <div class="fold" aria-hidden="true"></div>
-          <div class="plabel__body">
-            <div class="photo-slot"><span>Фото флакона с этикеткой</span><span class="todo">уточнить</span></div>
-            <h3 class="plabel__name" id="p-soap">Жидкое мыло</h3>
-            <p class="plabel__desc">Мягкое мыло для рук: номера, санузлы, общие зоны.</p>
-            <div class="plabel__regime">
-              <ul class="sym-row" aria-label="Знаки режима">
-                <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
-                <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
-              </ul>
-              <span class="plabel__regime-note">режим: номера и санузлы</span>
-            </div>
-            <dl class="specs">
-              <div><dt>Отдушки</dt><dd>без отдушки, лаванда, зелёный чай <span class="todo">уточнить</span></dd></div>
-              <div><dt>Фасовка</dt><dd><span class="vol code">0,5 л</span><span class="vol code">5 л</span><span class="todo">уточнить</span></dd></div>
-              <div><dt>Этикетка</dt><dd>готова</dd></div>
-            </dl>
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot"><span>Фото флакона с этикеткой</span><span class="todo">уточнить</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-soap">Жидкое мыло «Новая формула»</h3>
+            <p class="plabel__intro">Жидкое мыло «Новая формула» объединяет мощную очищающую способность и деликатный уход — так, чтобы вы могли мыть руки столько раз, сколько нужно, и не переживать за состояние кожи.</p>
+            <p class="plabel__sub">Что даёт «Новая формула»:</p>
+            <ul class="tag-list">
+              <li><b>Эффективное очищение.</b> Активные компоненты удаляют загрязнения, не требуя долгого трения — достаточно нескольких секунд.</li>
+              <li><b>Кремовая текстура пены.</b> Плотная, обволакивающая пена делает процесс мытья приятным и помогает средству равномерно распределяться по коже.</li>
+              <li><b>Забота о коже.</b> В составе — смягчающие и увлажняющие компоненты, которые препятствуют пересушиванию и сохраняют кожу мягкой даже при частом использовании.</li>
+              <li><b>Сбалансированный pH.</b> Формула разработана с учётом естественного уровня кислотности кожи, чтобы не нарушать её защитный барьер.</li>
+              <li><b>Безопасность для всей семьи.</b> Подходит для ежедневного применения.</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это не просто очищение, а ежедневный ритуал заботы о себе, который легко вписать в привычный ритм жизни.</p>
           </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">яблоко</span><span class="chip">лимон</span><span class="chip">цитрус</span><span class="chip">малина</span><span class="chip">дыня</span><span class="chip">ваниль</span><span class="chip">кокос</span><span class="chip">манго</span><span class="chip">лаванда</span><span class="chip">миндальное</span><span class="chip">фруктовый</span><span class="chip">луговые травы</span><span class="chip">алоэ вера</span><span class="chip">миндальное молочко</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">0,5 л</span><span class="vol code">канистра 5 л</span></dd></div>
+            <div><dt>Этикетка</dt><dd>готова</dd></div>
+          </dl>
         </div>
       </article>
 
-      <article class="plabel" id="product-gel" aria-labelledby="p-gel">
-        <div class="plabel__inner satin selvage">
-          <div class="fold" aria-hidden="true"></div>
-          <div class="plabel__body">
-            <div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div>
-            <h3 class="plabel__name" id="p-gel">Гель для стирки</h3>
-            <p class="plabel__desc">Концентрат для белого и цветного белья, для ежедневной загрузки прачечной.</p>
-            <div class="plabel__regime">
-              <ul class="sym-row" aria-label="Знаки режима">
-                <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-                <li><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
-                <li><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
-              </ul>
-              <span class="plabel__regime-note">режим: ежедневная загрузка</span>
-            </div>
-            <dl class="specs">
-              <div><dt>Отдушки</dt><dd>свежесть, альпийские травы, хлопок <span class="todo">уточнить</span></dd></div>
-              <div><dt>Фасовка</dt><dd><span class="vol code">5 л</span><span class="vol code">20 л</span><span class="todo">уточнить</span></dd></div>
-              <div><dt>Этикетка</dt><dd>в разработке</dd></div>
-            </dl>
+      <article class="plabel" id="product-softener" aria-labelledby="p-softener">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot"><span>Фото канистры с этикеткой</span><span class="todo">уточнить</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-softener">Кондиционер для белья «Новая формула»</h3>
+            <p class="plabel__intro">Кондиционер для белья «Новая формула» создан, чтобы вы получали от стирки не только чистоту, но и удовольствие. Его усовершенствованная формула проникает в волокна ткани и делает их невероятно мягкими — без жёсткости и неприятного скрипа.</p>
+            <p class="plabel__sub">Что даёт «Новая формула»:</p>
+            <ul class="tag-list">
+              <li><b>Идеальная мягкость.</b> Активные компоненты обволакивают волокна, делая ткань приятной на ощупь — даже махровые полотенца становятся воздушными, а футболки — нежными.</li>
+              <li><b>Стойкий аромат.</b> Тонкий, ненавязчивый запах сохраняется надолго: одежда пахнет свежестью даже спустя несколько дней после стирки.</li>
+              <li><b>Комфорт в носке.</b> Средство снимает статическое электричество — одежда не прилипает к телу и не притягивает пыль.</li>
+              <li><b>Лёгкая глажка.</b> Благодаря кондиционирующему эффекту ткань меньше мнётся, а утюг скользит лучше — вы тратите меньше времени на утюжку.</li>
+              <li><b>Бережный уход.</b> Формула подходит для деликатных тканей и детской одежды: не повреждает волокна и не вызывает раздражения.</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это не просто кондиционер, а ежедневный комфорт, который вы чувствуете кожей.</p>
           </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">курильские ландыши</span><span class="chip">сибирская свежесть</span><span class="chip">крымская лаванда</span><span class="chip">алтайский бриз</span><span class="chip">цитрус</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">1 кг</span><span class="vol code">канистра 5 кг</span><span class="vol code">канистра 10 кг</span><span class="vol code">бочка 120 кг</span><span class="vol code">куб 1000 кг</span></dd></div>
+            <div><dt>Этикетка</dt><dd>готова</dd></div>
+          </dl>
         </div>
       </article>
 
-      <article class="plabel" id="product-cond" aria-labelledby="p-cond">
-        <div class="plabel__inner satin selvage">
-          <div class="fold" aria-hidden="true"></div>
-          <div class="plabel__body">
-            <div class="photo-slot"><span>Фото канистры с этикеткой</span><span class="todo">уточнить</span></div>
-            <h3 class="plabel__name" id="p-cond">Кондиционер для белья</h3>
-            <p class="plabel__desc">Мягкость тканей, лёгкая глажка, стойкий аромат.</p>
-            <div class="plabel__regime">
-              <ul class="sym-row" aria-label="Знаки режима">
-                <li><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
-                <li><svg class="sym" role="img" aria-label="Сушка на верёвке"><use href="#s-line"/></svg></li>
-                <li><svg class="sym" role="img" aria-label="Глажка при средней температуре"><use href="#s-iron2"/></svg></li>
-              </ul>
-              <span class="plabel__regime-note">режим: мягкость и глажка</span>
-            </div>
-            <dl class="specs">
-              <div><dt>Отдушки</dt><dd>морской бриз, цветочный, детский <span class="todo">уточнить</span></dd></div>
-              <div><dt>Фасовка</dt><dd><span class="vol code">5 л</span><span class="vol code">20 л</span><span class="todo">уточнить</span></dd></div>
-              <div><dt>Этикетка</dt><dd>готова</dd></div>
-            </dl>
+      <article class="plabel" id="product-laundry-gel" aria-labelledby="p-laundry-gel">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-laundry-gel">Гель для стирки «Новая формула»</h3>
+            <p class="plabel__intro">Гель для стирки «Новая формула» создан, чтобы стирка перестала быть испытанием. Он эффективно удаляет повседневные и сложные загрязнения — от следов травы и сока до жирных пятен и пота — без предварительного замачивания и агрессивного трения.</p>
+            <p class="plabel__sub">Что даёт «Новая формула»:</p>
+            <ul class="tag-list">
+              <li><b>Мощное удаление пятен.</b> Инновационная формула работает даже в прохладной воде, сохраняя цвет и структуру ткани.</li>
+              <li><b>Бережный уход.</b> Специальные компоненты защищают волокна от истончения, предотвращают образование катышков и сохраняют мягкость вещей.</li>
+              <li><b>Сохранение цвета.</b> Пигменты остаются яркими дольше: формула препятствует вымыванию красителей и защищает от потускнения.</li>
+              <li><b>Полная смываемость.</b> Гель полностью вымывается из ткани, не оставляя следов и раздражающих остатков — подходит даже для чувствительной кожи.</li>
+              <li><b>Универсальность.</b> Подходит для стирки хлопка, льна, синтетики, смесовых тканей и деликатных вещей (при соблюдении рекомендованного режима).</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это баланс эффективности и заботы о ваших вещах: вы тратите меньше времени на борьбу с пятнами, а любимые вещи служат дольше.</p>
           </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">курильские ландыши</span><span class="chip">сибирская свежесть</span><span class="chip">крымская лаванда</span><span class="chip">алтайский бриз</span><span class="chip">цитрус</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">1 кг</span><span class="vol code">1,5 кг</span><span class="vol code">2 кг</span><span class="vol code">4,5 кг</span><span class="vol code">канистра 5 кг</span><span class="vol code">канистра 10 кг</span><span class="vol code">бочка 120 кг</span></dd></div>
+            <div><dt>Этикетка</dt><dd>в разработке</dd></div>
+          </dl>
         </div>
       </article>
 
-      <article class="plabel" id="product-dish" aria-labelledby="p-dish">
-        <div class="plabel__inner satin selvage">
-          <div class="fold" aria-hidden="true"></div>
-          <div class="plabel__body">
-            <div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div>
-            <h3 class="plabel__name" id="p-dish">Средство для мытья посуды</h3>
-            <p class="plabel__desc">Снимает жир, бережно к рукам. Для кухонь гостиниц и кафе.</p>
-            <div class="plabel__regime">
-              <ul class="sym-row" aria-label="Знаки режима">
-                <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
-                <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-              </ul>
-              <span class="plabel__regime-note">режим: кухня</span>
-            </div>
-            <dl class="specs">
-              <div><dt>Отдушки</dt><dd>лимон, яблоко, алоэ <span class="todo">уточнить</span></dd></div>
-              <div><dt>Фасовка</dt><dd><span class="vol code">0,5 л</span><span class="vol code">5 л</span><span class="todo">уточнить</span></dd></div>
-              <div><dt>Этикетка</dt><dd>в разработке</dd></div>
-            </dl>
+      <article class="plabel" id="product-dish-gel" aria-labelledby="p-dish-gel">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-dish-gel">Гель для мытья посуды «Новая формула»</h3>
+            <p class="plabel__intro">Гель для мытья посуды «Новая формула» создан, чтобы превратить рутину в простое и комфортное дело. Его усовершенствованная формула эффективно растворяет жир и удаляет сложные загрязнения — от засохших остатков еды до пригоревшего масла — без долгого оттирания и жёстких губок.</p>
+            <p class="plabel__sub">Почему выбирают «Новую формулу»:</p>
+            <ul class="tag-list">
+              <li><b>Мощная пена.</b> Достаточно одной капли: густая пена покрывает посуду и работает даже в прохладной воде, экономя расход средства.</li>
+              <li><b>Полная чистота без разводов.</b> Формула полностью смывается водой, не оставляя следов и посторонних запахов — посуда сияет, а вкус блюд остаётся неизменным.</li>
+              <li><b>Забота о коже.</b> В составе — ухаживающие компоненты, которые смягчают воду и защищают кожу рук от сухости и раздражения. Можно мыть посуду без перчаток.</li>
+              <li><b>Универсальность.</b> Подходит для любой посуды: кастрюль, сковородок, стеклянных и керамических изделий.</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это баланс эффективности и комфорта: вы тратите меньше времени на уборку и больше — на то, что по-настоящему важно.</p>
           </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">алоэ вера</span><span class="chip">алоэ и цветы</span><span class="chip">алоэ и травы</span><span class="chip">цитрус</span><span class="chip">лимон</span><span class="chip">зелёный бамбук</span><span class="chip">травы</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">0,5 кг</span><span class="vol code">1 кг</span><span class="vol code">канистра 5 кг</span></dd></div>
+            <div><dt>Этикетка</dt><dd>в разработке</dd></div>
+          </dl>
         </div>
       </article>
 
@@ -1050,16 +1281,27 @@ input, textarea { caret-color: var(--cobalt); }
 
 <figure class="photo-band">
   <img src="img/lab-production.webp" alt="Белые канистры на линии розлива" width="1920" height="1080" loading="lazy" decoding="async">
-  <figcaption class="wrap photo-cap"><b>Розлив в канистры</b><span>Фото условное <span class="todo">заменить</span></span></figcaption>
+  <figcaption class="wrap photo-cap"><span>Фото условное <span class="todo">заменить</span></span></figcaption>
 </figure>
+
 
 <section class="section section--satin" id="clients" aria-labelledby="clients-title">
   <div class="wrap">
     <div class="section__head">
       <h2 id="clients-title">Для кого</h2>
-      <p class="section__lead">Четыре режима — по одному на каждый тип объекта.</p>
     </div>
     <ul class="segments">
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-service.webp" alt="" width="900" height="600"><h3>Для дома</h3></header>
+        <ul class="sym-row" aria-label="Режим для дома">
+          <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text">Для использования в быту, частного использования.</p>
+        </div>
+      </li>
       <li class="segment">
         <header class="segment__head"><img class="segment__photo" src="img/lab-laundry.webp" alt="" width="900" height="600"><h3>Прачечные</h3></header>
         <ul class="sym-row" aria-label="Режим прачечной">
@@ -1068,8 +1310,7 @@ input, textarea { caret-color: var(--cobalt); }
           <li><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
         </ul>
         <div>
-          <p class="segment__text">Гели и кондиционеры в канистрах для ежедневной загрузки машин.</p>
-          <p class="segment__fit">Подойдут: <a href="#product-gel">гель для стирки</a>, <a href="#product-cond">кондиционер для белья</a></p>
+          <p class="segment__text"><span class="todo">текст скоро</span></p>
         </div>
       </li>
       <li class="segment">
@@ -1080,8 +1321,7 @@ input, textarea { caret-color: var(--cobalt); }
           <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
         </ul>
         <div>
-          <p class="segment__text">Жидкое мыло для номеров и общих зон, средство для посуды для кухни.</p>
-          <p class="segment__fit">Подойдут: <a href="#product-soap">жидкое мыло</a>, <a href="#product-dish">средство для мытья посуды</a></p>
+          <p class="segment__text"><span class="todo">текст скоро</span></p>
         </div>
       </li>
       <li class="segment">
@@ -1092,25 +1332,112 @@ input, textarea { caret-color: var(--cobalt); }
           <li><svg class="sym" role="img" aria-label="Глажка при низкой температуре"><use href="#s-iron1"/></svg></li>
         </ul>
         <div>
-          <p class="segment__text">Средства для стирки и ухода за тканями разных типов.</p>
-          <p class="segment__fit">Подойдут: <a href="#product-gel">гель для стирки</a>, <a href="#product-cond">кондиционер для белья</a></p>
+          <p class="segment__text"><span class="todo">текст скоро</span></p>
         </div>
       </li>
-      <li class="segment">
-        <header class="segment__head"><img class="segment__photo" src="img/lab-service.webp" alt="" width="900" height="600"><h3>Дома быта</h3></header>
-        <ul class="sym-row" aria-label="Режим дома быта">
-          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Отбеливание допускается"><use href="#s-bleach"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Глажка при средней температуре"><use href="#s-iron2"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
-        </ul>
+      <li class="segment segment--wide">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-production.webp" alt="" width="1920" height="1080"><h3>Магазинам и оптовым покупателям</h3></header>
         <div>
-          <p class="segment__text">Весь набор моющих средств от одного производителя.</p>
-          <p class="segment__fit">Подойдёт <a href="#products">вся линейка</a></p>
+          <p class="segment__text">Приглашаем к сотрудничеству гипермаркеты, торговые сети, владельцев магазинов и оптовых покупателей!</p>
+          <p class="segment__sub">Почему с нами выгодно работать:</p>
+          <ul class="tag-list">
+            <li><b>Прямые цены от производителя.</b> Максимальная маржинальность для вашего бизнеса.</li>
+            <li><b>Любые объёмы под ключ.</b></li>
+            <li><b>Полный пакет документов.</b> Вся продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Предоставляем полный комплект разрешительной документации.</li>
+            <li><b>Надёжная логистика.</b> Оперативная сборка заказов и отгрузка с завода в Московской области. Работаем со всеми крупными транспортными компаниями.</li>
+            <li><b>Гибкие условия.</b> Индивидуальный подход к объёмам минимального заказа.</li>
+            <li><b>Возможность СТМ.</b> Изготовим партию моющих средств по вашему техническому заданию под вашим личным брендом.</li>
+          </ul>
         </div>
       </li>
     </ul>
     <p class="segments__note">Фото в разделе условные <span class="todo">заменить</span></p>
+  </div>
+</section>
+
+<section class="dealer" id="dileram" aria-labelledby="dileram-title">
+  <div class="wrap dealer__grid">
+    <h2 id="dileram-title">Дилерам и дистрибьюторам</h2>
+    <div class="dealer-label">
+      <div class="dealer-label__inner satin">
+        <p class="dealer__lead">Развивайте бизнес вместе с нами: ищем дилеров и дистрибьюторов в регионах России и СНГ!</p>
+        <p>Приглашаем к долгосрочному партнерству торговые компании, региональных оптовиков и дистрибьюторов бытовой и профессиональной химии.</p>
+        <p>Мы предлагаем востребованный продукт напрямую от завода в Московской области, эксклюзивные права на закреплённой территории.</p>
+        <a class="btn" id="dealer-cta" href="#request">Стать дилером</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="podbor" aria-labelledby="podbor-title">
+  <div class="wrap pick">
+    <div class="pick__intro">
+      <div class="section__head">
+        <h2 id="podbor-title">Подберите набор под ваш объект</h2>
+        <p class="section__lead">Выберите тип объекта — покажем, какие средства понадобятся.</p>
+      </div>
+      <div class="pick-tabs" role="tablist" aria-label="Тип объекта" aria-orientation="vertical">
+        <button class="pick-tab satin" type="button" role="tab" id="pt-home" aria-controls="pp-home" aria-selected="true">Для дома</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-laundry" aria-controls="pp-laundry" aria-selected="false" tabindex="-1">Прачечная</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-hotel" aria-controls="pp-hotel" aria-selected="false" tabindex="-1">Гостиница</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-dry" aria-controls="pp-dry" aria-selected="false" tabindex="-1">Химчистка</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-shop" aria-controls="pp-shop" aria-selected="false" tabindex="-1">Магазин и опт</button>
+      </div>
+    </div>
+
+    <div class="pick-label">
+      <div class="pick-label__inner satin selvage">
+        <div class="fold" aria-hidden="true"></div>
+        <div class="pick-label__body">
+          <div class="pick-panel" role="tabpanel" id="pp-home" aria-labelledby="pt-home" data-set="Для дома — жидкое мыло, кондиционер для белья, гель для стирки, гель для мытья посуды">
+            <h3>Для дома</h3>
+            <p class="pick-panel__lead">Вся линейка «Новая формула» для использования в быту.</p>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-soap">Жидкое мыло</a><span>очищение и уход за кожей рук</span></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a><span>мягкость, аромат, лёгкая глажка</span></li>
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a><span>пятна уходят без замачивания</span></li>
+              <li class="pick-item"><a href="#product-dish-gel">Гель для мытья посуды</a><span>растворяет жир, бережно к рукам</span></li>
+            </ul>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-laundry" aria-labelledby="pt-laundry" data-set="Прачечная — гель для стирки, кондиционер для белья" hidden>
+            <h3>Прачечная</h3>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a><span>ежедневная загрузка машин</span></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a><span>мягкость и лёгкая глажка</span></li>
+            </ul>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-hotel" aria-labelledby="pt-hotel" data-set="Гостиница — жидкое мыло, гель для мытья посуды" hidden>
+            <h3>Гостиница</h3>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-soap">Жидкое мыло</a><span>номера, санузлы, общие зоны</span></li>
+              <li class="pick-item"><a href="#product-dish-gel">Гель для мытья посуды</a><span>кухня, ресторан</span></li>
+            </ul>
+            <p class="pick-note">Если есть своя прачечная — плюс гель и кондиционер.</p>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-dry" aria-labelledby="pt-dry" data-set="Химчистка — гель для стирки, кондиционер для белья" hidden>
+            <h3>Химчистка</h3>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a><span>хлопок, лён, синтетика, деликатные вещи</span></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a><span>уход за тканями, снимает статику</span></li>
+            </ul>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-shop" aria-labelledby="pt-shop" data-set="Магазин и опт — вся линейка: жидкое мыло, кондиционер для белья, гель для стирки, гель для мытья посуды; интересует СТМ" hidden>
+            <h3>Магазин и опт</h3>
+            <p class="pick-panel__lead">Вся линейка по прямым ценам производителя.</p>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-soap">Жидкое мыло</a></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a></li>
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a></li>
+              <li class="pick-item"><a href="#product-dish-gel">Гель для мытья посуды</a></li>
+            </ul>
+            <p class="pick-note">Возможна СТМ: изготовим партию по вашему техническому заданию под вашим брендом.</p>
+          </div>
+        </div>
+        <div class="pick-label__cta">
+          <a class="btn" id="pick-cta" href="#request">Запросить прайс на этот набор</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1122,11 +1449,11 @@ input, textarea { caret-color: var(--cobalt); }
         <ul class="formats">
           <li class="format">
             <h3>Оптовые поставки</h3>
-            <p>Напрямую с производства, от нескольких канистр до паллет <span class="todo">объёмы уточнить</span></p>
+            <p>Качественная химия напрямую с завода, без наценок посредников. Любые объёмы под ключ.</p>
           </li>
           <li class="format">
             <h3>Контрактное производство</h3>
-            <p>Выпустим продукцию под вашим брендом: рецептура, розлив, этикетка.</p>
+            <p>Разработаем рецептуру и упакуем продукт под вашим товарным знаком.</p>
           </li>
           <li class="format">
             <h3>Основа для мыла</h3>
@@ -1154,7 +1481,7 @@ input, textarea { caret-color: var(--cobalt); }
     <ul class="why-list">
       <li><b>Своё производство,</b> <span>не перепродаём.</span></li>
       <li><b>Тучково, Московская область</b> <span>— доставка по Москве и области.</span></li>
-      <li><b>Документы на продукцию</b> <span class="todo">какие именно — уточнить</span></li>
+      <li><b>Продукция сертифицирована,</b> <span>соответствует ГОСТам, ТУ и ТР ТС.</span></li>
       <li><b>Подберём отдушку, фасовку и тару</b> <span>под объект.</span></li>
     </ul>
   </div>
@@ -1184,9 +1511,71 @@ input, textarea { caret-color: var(--cobalt); }
       <li class="step">
         <span class="step__n" aria-hidden="true">4</span>
         <h3>Поставка</h3>
-        <p>Отгрузка и доставка по Москве и МО.</p>
+        <p>Отгрузка с завода в Московской области.</p>
       </li>
     </ol>
+  </div>
+</section>
+
+<section class="section" id="usloviya" aria-labelledby="usloviya-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="usloviya-title">Условия и доставка</h2>
+    </div>
+    <div class="terms-wrap">
+      <dl class="terms">
+        <div class="term"><dt>Отгрузка</dt><dd>Оперативная сборка заказов и отгрузка с завода в Московской области <span class="todo">сроки и стоимость доставки — уточнить</span></dd></div>
+        <div class="term"><dt>В регионы</dt><dd>Работаем со всеми крупными транспортными компаниями</dd></div>
+        <div class="term"><dt>Самовывоз</dt><dd>Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8 <span class="todo">часы работы — уточнить</span></dd></div>
+        <div class="term"><dt>Оплата</dt><dd>Безналичный расчёт для юрлиц и ИП <span class="todo">НДС — уточнить</span></dd></div>
+        <div class="term"><dt>Минимальный заказ</dt><dd>Индивидуальный подход к объёмам минимального заказа</dd></div>
+        <div class="term"><dt>Документы</dt><dd>Продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Полный комплект разрешительной документации</dd></div>
+        <div class="term"><dt>Под ваш бренд (СТМ)</dt><dd>Изготовим партию моющих средств по вашему техническому заданию</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <h2 id="faq-title">Вопросы и ответы</h2>
+    <div class="faq-label">
+      <div class="faq-label__inner satin selvage">
+        <div class="fold" aria-hidden="true"></div>
+        <details class="faq-item" open>
+          <summary>Какой минимальный заказ?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Индивидуальный подход к объёмам минимального заказа. Отгружаем заказы любого объёма.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Можно сначала получить образцы?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да, пришлём образцы, чтобы вы проверили средства на своём объекте. <span class="todo">условия — уточнить</span></p>
+        </details>
+        <details class="faq-item">
+          <summary>Как быстро доставите?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Оперативно собираем заказы и отгружаем с завода в Московской области. Работаем со всеми крупными транспортными компаниями. <span class="todo">сроки — уточнить</span></p>
+        </details>
+        <details class="faq-item">
+          <summary>Какие документы есть на продукцию?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Вся продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Предоставляем полный комплект разрешительной документации.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Можно выбрать отдушку и фасовку?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да. У каждого средства несколько отдушек и вариантов фасовки — от 0,5&nbsp;л до кубов по 1000&nbsp;кг. Подберём под ваш объект.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Как оплатить?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Безналичный расчёт для юрлиц и ИП. <span class="todo">НДС и отсрочка — уточнить</span></p>
+        </details>
+        <details class="faq-item">
+          <summary>Можно выпустить продукцию под нашим брендом?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да, СТМ: разработаем рецептуру и изготовим партию моющих средств по вашему техническому заданию под вашим брендом.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Работаете с дилерами в регионах?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да, ищем дилеров и дистрибьюторов в регионах России и СНГ. Предлагаем эксклюзивные права на закреплённой территории.</p>
+        </details>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1217,7 +1606,7 @@ input, textarea { caret-color: var(--cobalt); }
           </div>
           <div class="field">
             <label for="f-company">Компания <i>— необязательно</i></label>
-            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Прачечная, гостиница, химчистка…">
+            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Магазин, прачечная, гостиница…">
           </div>
           <fieldset>
             <legend>Что интересует</legend>
@@ -1229,6 +1618,8 @@ input, textarea { caret-color: var(--cobalt); }
             </div>
           </fieldset>
           <div class="lform__submit">
+            <input type="hidden" name="set" id="f-set" value="">
+            <p class="lform__set" id="lform-set" hidden></p>
             <button class="btn" type="submit">Отправить заявку</button>
             <p class="lform__consent">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
           </div>
@@ -1245,11 +1636,11 @@ input, textarea { caret-color: var(--cobalt); }
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-slot" role="img" aria-label="ЮниХим — логотип в разработке">
-          <span class="logo-slot__name" aria-hidden="true">ЮниХим</span>
+        <div class="logo-slot" role="img" aria-label="Новая Формула — логотип в разработке">
+          <span class="logo-slot__name" aria-hidden="true">Новая Формула</span>
           <span class="todo" aria-hidden="true">логотип в разработке</span>
         </div>
-        <p>Моющие средства для прачечных, гостиниц, химчисток и домов быта. Своё производство в Тучково.</p>
+        <p>Профессиональная химия для HoReCa, прачечных, химчисток и дома. Своё производство в Тучково.</p>
       </div>
       <div>
         <h2>Телефоны</h2>
@@ -1275,48 +1666,6 @@ input, textarea { caret-color: var(--cobalt); }
 </footer>
 <script>
 (function () {
-  /* Product highlights on the hero label */
-  var label = document.getElementById('care-label');
-  var status = document.getElementById('care-status');
-  var minis = Array.prototype.slice.call(document.querySelectorAll('.mini'));
-  var symCells = Array.prototype.slice.call(label.querySelectorAll('[data-sym]'));
-  var lines = Array.prototype.slice.call(label.querySelectorAll('[data-product]'));
-  var hovered = null, pinned = null;
-
-  function byKey(key) { return minis.filter(function (b) { return b.dataset.product === key; })[0]; }
-
-  function render() {
-    var key = hovered || pinned;
-    var btn = key ? byKey(key) : null;
-    var syms = btn ? btn.dataset.syms.split(' ') : [];
-    label.classList.toggle('is-active', !!key);
-    var names = [];
-    symCells.forEach(function (li) {
-      var on = syms.indexOf(li.dataset.sym) !== -1;
-      li.classList.toggle('is-lit', on);
-      if (on) names.push(li.querySelector('svg').getAttribute('aria-label'));
-    });
-    lines.forEach(function (li) { li.classList.toggle('is-lit', li.dataset.product === key); });
-    minis.forEach(function (b) { b.classList.toggle('is-current', b.dataset.product === key); });
-    status.textContent = btn ? btn.querySelector('.mini__name').textContent + ': ' + names.join(', ') : '';
-  }
-
-  minis.forEach(function (b) {
-    b.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovered = b.dataset.product; render(); } });
-    b.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovered = null; render(); } });
-    b.addEventListener('focus', function () {
-      var fv = true;
-      try { fv = b.matches(':focus-visible'); } catch (err) {}
-      if (fv) { hovered = b.dataset.product; render(); }
-    });
-    b.addEventListener('blur', function () { if (hovered === b.dataset.product) { hovered = null; render(); } });
-    b.addEventListener('click', function () {
-      pinned = pinned === b.dataset.product ? null : b.dataset.product;
-      minis.forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.product === pinned)); });
-      render();
-    });
-  });
-
   /* Mobile menu */
   var menuBtn = document.querySelector('.menu-btn');
   var nav = document.getElementById('site-nav');
@@ -1374,12 +1723,77 @@ input, textarea { caret-color: var(--cobalt); }
     form.reset();
   });
 
+  /* Request topic line: filled by the picker and the dealer button, cleared on reset */
+  var fSet = document.getElementById('f-set');
+  var setLine = document.getElementById('lform-set');
+  function fillRequest(interest, lead, value) {
+    var radio = form.querySelector('input[name="interest"][value="' + interest + '"]');
+    if (radio) radio.checked = true;
+    fSet.value = value;
+    setLine.textContent = '';
+    var b = document.createElement('b');
+    b.textContent = lead;
+    setLine.appendChild(b);
+    setLine.appendChild(document.createTextNode(value));
+    setLine.hidden = false;
+  }
+  form.addEventListener('reset', function () { setLine.hidden = true; setLine.textContent = ''; fSet.value = ''; });
+  var dealerCta = document.getElementById('dealer-cta');
+  if (dealerCta) dealerCta.addEventListener('click', function () { fillRequest('opt', 'Запрос: ', 'Дилерство'); });
+
+  /* Hero headline: measure real lines once the font is in, rise each from a mask, then restore plain text */
+  var intro = document.querySelector('.hero__intro');
+  if (document.documentElement.classList.contains('js-hero') && intro) {
+    var h1 = document.getElementById('hero-title');
+    var text = h1.textContent.replace(/\s+/g, ' ').trim();
+    var started = false;
+    var play = function () {
+      if (started) return;
+      started = true;
+      try {
+        h1.textContent = '';
+        var words = text.split(' ').map(function (w, i) {
+          if (i) h1.appendChild(document.createTextNode(' '));
+          var s = document.createElement('span');
+          s.textContent = w;
+          h1.appendChild(s);
+          return s;
+        });
+        var lines = [], top = null;
+        words.forEach(function (s) {
+          var t = s.offsetTop;
+          if (top === null || Math.abs(t - top) > 4) { lines.push([]); top = t; }
+          lines[lines.length - 1].push(s.textContent);
+        });
+        h1.textContent = '';
+        lines.forEach(function (l, i) {
+          var ln = document.createElement('span');
+          var inner = document.createElement('span');
+          ln.className = 'ln';
+          inner.className = 'ln__i';
+          inner.style.setProperty('--k', i);
+          inner.textContent = l.join(' ');
+          ln.appendChild(inner);
+          h1.appendChild(ln);
+        });
+        intro.style.setProperty('--after', lines.length * 90 + 'ms');
+        setTimeout(function () { h1.textContent = text; }, lines.length * 90 + 900);
+      } catch (err) { h1.textContent = text; }
+      intro.classList.add('is-play');
+    };
+    setTimeout(play, 450);
+    if (document.fonts && document.fonts.load) document.fonts.load('800 64px Commissioner', text).then(play, play);
+    else play();
+  }
+
   /* Scroll reveal: only what starts below the fold; static under reduced motion */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce && 'IntersectionObserver' in window) {
     var targets = document.querySelectorAll([
       '.section__head', '.plabel', '.photo-band img', '.photo-cap', '.segment', '.segments__note',
-      '.band-wrap', '.why__aside', '.why-list li', '.step', '.request__text', '.form-label'
+      '.band-wrap', '.why__aside', '.why-list li', '.steps', '.request__text', '.form-label', '.site-footer',
+      '.dealer h2', '.dealer-label',
+      '.pick-tabs', '.pick-label', '.terms-wrap', '.faq-label', '.faq > h2'
     ].join(','));
     var vh = window.innerHeight || document.documentElement.clientHeight;
     var io = new IntersectionObserver(function (entries) {
@@ -1398,6 +1812,45 @@ input, textarea { caret-color: var(--cobalt); }
       io.observe(el);
     });
     document.documentElement.classList.add('js-reveal');
+  }
+
+  /* Picker: label tabs, arrow keys, label swap, set carried into the request */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.pick-tab'));
+  if (tabs.length) {
+    var pickLabel = document.querySelector('.pick-label');
+    var pickBody = document.querySelector('.pick-label__body');
+    var current = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];
+    var selectTab = function (tab, focus) {
+      if (focus) tab.focus();
+      if (tab === current) return;
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      current = tab;
+      if (!reduce && pickLabel.animate) {
+        var ease = 'cubic-bezier(0.19, 1, 0.22, 1)';
+        pickLabel.animate([{ transform: 'translateY(-8px) rotate(-.7deg)' }, { transform: 'none' }], { duration: 280, easing: ease });
+        pickBody.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 220, easing: ease });
+      }
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { selectTab(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = null, len = tabs.length;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = tabs[(i + 1) % len];
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = tabs[(i - 1 + len) % len];
+        else if (e.key === 'Home') n = tabs[0];
+        else if (e.key === 'End') n = tabs[len - 1];
+        if (n) { e.preventDefault(); selectTab(n, true); }
+      });
+    });
+
+    document.getElementById('pick-cta').addEventListener('click', function () {
+      fillRequest('opt', 'Набор: ', document.getElementById(current.getAttribute('aria-controls')).dataset.set);
+    });
   }
 })();
 </script>
