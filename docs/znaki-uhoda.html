@@ -290,6 +290,13 @@ input, textarea { caret-color: var(--cobalt); }
 .care-label .logo-slot { gap: 14px; padding: 16px 18px 14px; }
 .care-label .logo-slot__name { font-size: clamp(40px, 4.6vw, 66px); line-height: .92; letter-spacing: -.025em; }
 
+.care-dealer { position: relative; margin-top: var(--s-6); padding-top: var(--s-5); scroll-margin-top: 24px; }
+.care-dealer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px; background: var(--stitch); color: rgba(17,17,17,.35); }
+.care-dealer__title { font-size: clamp(20px, 1.1rem + .5vw, 24px); line-height: 1.15; font-weight: 800; letter-spacing: -.01em; }
+.care-dealer__lead { margin-top: var(--s-3); font-size: 16px; line-height: 1.45; font-weight: 700; }
+.care-dealer p:not(.care-dealer__lead) { margin-top: var(--s-3); font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.care-dealer__btn { margin-top: var(--s-5); }
+
 /* Mini labels: product names, each one jumps to its label below */
 .minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
 @container (min-width: 620px) { .minis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
@@ -1132,6 +1139,13 @@ input, textarea { caret-color: var(--cobalt); }
             <span class="todo" aria-hidden="true">логотип в разработке</span>
           </div>
         </div>
+        <div class="care-dealer" id="dileram">
+          <h2 class="care-dealer__title">Дилерам и дистрибьюторам</h2>
+          <p class="care-dealer__lead">Развивайте бизнес вместе с нами: ищем дилеров и дистрибьюторов в регионах России и СНГ!</p>
+          <p>Приглашаем к долгосрочному партнёрству торговые компании, региональных оптовиков и дистрибьюторов бытовой и профессиональной химии.</p>
+          <p>Мы предлагаем востребованный продукт напрямую от завода в Московской области, эксклюзивные права на закреплённой территории.</p>
+          <a class="btn care-dealer__btn" id="dealer-cta" href="#request">Стать дилером</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1350,20 +1364,6 @@ input, textarea { caret-color: var(--cobalt); }
       </li>
     </ul>
     <p class="segments__note">Фото в разделе условные <span class="todo">заменить</span></p>
-  </div>
-</section>
-
-<section class="dealer" id="dileram" aria-labelledby="dileram-title">
-  <div class="wrap dealer__grid">
-    <h2 id="dileram-title">Дилерам и дистрибьюторам</h2>
-    <div class="dealer-label">
-      <div class="dealer-label__inner satin">
-        <p class="dealer__lead">Развивайте бизнес вместе с нами: ищем дилеров и дистрибьюторов в регионах России и СНГ!</p>
-        <p>Приглашаем к долгосрочному партнерству торговые компании, региональных оптовиков и дистрибьюторов бытовой и профессиональной химии.</p>
-        <p>Мы предлагаем востребованный продукт напрямую от завода в Московской области, эксклюзивные права на закреплённой территории.</p>
-        <a class="btn" id="dealer-cta" href="#request">Стать дилером</a>
-      </div>
-    </div>
   </div>
 </section>
 
