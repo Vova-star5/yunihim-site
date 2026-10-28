@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЮниХим — варианты лендинга</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F4F1;--ink:#16181B;--muted:#5C6168;--line:#D6D8D4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,sans-serif}
+main{max-width:1120px;margin:0 auto;padding:clamp(40px,7vw,96px) max(16px,4vw) 64px}
+h1{margin:0;font-size:clamp(2rem,1.4rem + 2.6vw,3.4rem);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+.lead{margin:16px 0 0;max-width:40em;color:var(--muted)}
+.grid{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+a.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(0,0,0,.35)}
+a.card:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.swatch{height:120px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.s-a{background:repeating-linear-gradient(90deg,#24439A 0 6px,#F4F1EA 6px 10px,#24439A 10px 12px,#F4F1EA 12px 24px)}
+.s-a span{background:#D8392E;padding:6px 10px}
+.s-b{background:#1F3FBF}
+.s-c{background:#0B5745}
+.body{padding:20px 20px 24px}
+h2{margin:0;font-size:22px;line-height:1.2}
+.body p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.go{margin-top:16px;font-weight:600;font-size:15px}
+.note{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);max-width:52em}
+</style>
+</head>
+<body>
+<main>
+  <h1>ЮниХим — три варианта лендинга</h1>
+  <p class="lead">Моющие средства для прачечных, гостиниц и химчисток. Тексты одинаковые, отличается подача. Наведите мышку на продукты — в каждом варианте своя анимация.</p>
+  <div class="grid">
+    <a class="card" href="belevaya.html">
+      <div class="swatch s-a"><span>Вариант A</span></div>
+      <div class="body"><h2>Бельевая</h2><p>Бельевая комната гостиницы: стопки белья на полке, тканые бирки, строчка-шов.</p><div class="go">Открыть →</div></div>
+    </a>
+    <a class="card" href="znaki-uhoda.html">
+      <div class="swatch s-b">Вариант B</div>
+      <div class="body"><h2>Знаки ухода</h2><p>Сайт как вшитый атласный ярлык с символами стирки, которые прачечные читают каждый день.</p><div class="go">Открыть →</div></div>
+    </a>
+    <a class="card" href="laboratoriya.html">
+      <div class="swatch s-c">Вариант C</div>
+      <div class="body"><h2>Лаборатория технолога</h2><p>Журнал технолога на миллиметровке, лабораторная посуда, строгий зелёный.</p><div class="go">Открыть →</div></div>
+    </a>
+  </div>
+  <p class="note">Макеты. Отдушки, объёмы, документы, почта и фото — условные, помечены «уточнить». Форма заявки пока никуда не отправляет.</p>
+</main>
+</body>
+</html>

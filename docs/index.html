@@ -3,53 +3,1856 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ЮниХим — варианты лендинга</title>
-<meta name="robots" content="noindex">
+<title>Новая Формула — моющие средства от производителя</title>
+<meta name="description" content="Завод-производитель профессиональной химии в Тучково, Московская область. Моющие средства «Новая Формула»: прямой опт, производство под вашим брендом, основы для бытовой химии.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..900&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F4F4F1;--ink:#16181B;--muted:#5C6168;--line:#D6D8D4}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,sans-serif}
-main{max-width:1120px;margin:0 auto;padding:clamp(40px,7vw,96px) max(16px,4vw) 64px}
-h1{margin:0;font-size:clamp(2rem,1.4rem + 2.6vw,3.4rem);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
-.lead{margin:16px 0 0;max-width:40em;color:var(--muted)}
-.grid{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
-a.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
-a.card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(0,0,0,.35)}
-a.card:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.swatch{height:120px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.s-a{background:repeating-linear-gradient(90deg,#24439A 0 6px,#F4F1EA 6px 10px,#24439A 10px 12px,#F4F1EA 12px 24px)}
-.s-a span{background:#D8392E;padding:6px 10px}
-.s-b{background:#1F3FBF}
-.s-c{background:#0B5745}
-.body{padding:20px 20px 24px}
-h2{margin:0;font-size:22px;line-height:1.2}
-.body p{margin:8px 0 0;color:var(--muted);font-size:15px}
-.go{margin-top:16px;font-weight:600;font-size:15px}
-.note{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);max-width:52em}
+:root {
+  --page: #EFEFEA;
+  --satin: #F6F6F3;
+  --satin-hi: #FDFDFB;
+  --fold: #E4E4DE;
+  --ink: #111111;
+  --ink-2: #4E535A;
+  --grey: #8A8F96;
+  --grey-soft: #BFC3C8;
+  --cobalt: #1F3FBF;
+  --cobalt-deep: #172F94;
+  --cobalt-tint: #E9ECF6;
+  --on-cobalt-2: #CDD5F5;
+  --error: #A61B1B;
+  --hair: rgba(17, 17, 17, .14);
+
+  --f-label: "Commissioner", "Segoe UI", system-ui, sans-serif;
+  --f-code: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  --gutter: clamp(16px, 3.5vw, 56px);
+  --wrap: 1320px;
+  --label-w: clamp(300px, 34.4vw, 440px);
+  --hero-gap: clamp(40px, 5vw, 80px);
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+
+  --sec-top: clamp(88px, 10vw, 152px);
+  --sec-bottom: clamp(64px, 7vw, 104px);
+
+  --ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --sym-bg: var(--satin);
+
+  --stitch: repeating-linear-gradient(90deg, currentColor 0 7px, transparent 7px 12px);
+  --stitch-v: repeating-linear-gradient(180deg, currentColor 0 7px, transparent 7px 12px);
+  --sheen: linear-gradient(104deg, rgba(255,255,255,0) 22%, rgba(255,255,255,.62) 40%, rgba(255,255,255,0) 57%);
+  --weave: repeating-linear-gradient(0deg, rgba(17,17,17,.022) 0 1px, rgba(17,17,17,0) 1px 3px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  scrollbar-color: var(--grey) var(--page);
+  scrollbar-width: thin;
+}
+html::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track { background: var(--page); }
+html::-webkit-scrollbar-thumb { background: var(--grey); border: 3px solid var(--page); border-radius: 6px; }
+html::-webkit-scrollbar-thumb:hover { background: var(--ink-2); }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--f-label);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection { background: var(--cobalt); color: #fff; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { color: var(--cobalt); }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+input, select, textarea, button { font: inherit; color: inherit; }
+input, textarea { caret-color: var(--cobalt); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+.vh {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: var(--gutter); top: -60px; z-index: 50;
+  background: var(--ink); color: #fff; padding: 10px 16px; font-weight: 600; text-decoration: none;
+}
+.skip:focus { top: 12px; color: #fff; }
+
+.wrap { width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+.code { font-family: var(--f-code); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+
+.todo {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 6px 2px;
+  border: 1px dashed var(--grey);
+  border-radius: 2px;
+  font: 600 10.5px/1.1 var(--f-label);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+  vertical-align: .18em;
+}
+
+/* Symbols */
+.sym { width: 100%; height: auto; aspect-ratio: 1; overflow: visible; color: inherit; }
+#sprite path, #sprite rect, #sprite circle { vector-effect: non-scaling-stroke; }
+
+/* Shared label anatomy */
+.fold {
+  position: relative;
+  height: 26px;
+  color: rgba(17,17,17,.5);
+  background: linear-gradient(180deg, #DDDDD6 0%, #ECECE7 55%, #E2E2DB 100%);
+  border-bottom: 1px solid rgba(17,17,17,.09);
+  box-shadow: 0 1px 0 rgba(255,255,255,.85);
+}
+.fold::after {
+  content: ""; position: absolute; left: 12px; right: 12px; top: 11px; height: 1.5px;
+  background: var(--stitch);
+}
+.satin {
+  background-color: var(--satin);
+  background-image: var(--sheen), var(--weave);
+}
+.selvage { position: relative; }
+.selvage::before {
+  content: ""; position: absolute; inset: 0 6px; pointer-events: none;
+  border-inline: 1px solid rgba(17,17,17,.07);
+}
+
+/* Buttons */
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px;
+  padding: 14px 30px;
+  border: 0; border-radius: 2px;
+  background: var(--cobalt); color: #fff;
+  font: 700 17px/1.1 var(--f-label);
+  letter-spacing: .01em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 10px 22px -12px rgba(31,63,191,.7);
+  transition: background-color 400ms var(--ease), box-shadow 400ms var(--ease), transform 400ms var(--ease);
+}
+.btn::after {
+  content: ""; position: absolute; inset: 5px; pointer-events: none;
+  border: 1px dashed rgba(255,255,255,.5); border-radius: 1px;
+}
+.btn:hover { background: var(--cobalt-deep); color: #fff; box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 14px 26px -12px rgba(31,63,191,.8); }
+.btn:active { transform: translateY(1px); }
+.btn--light { background: var(--satin); color: var(--cobalt); box-shadow: 0 10px 22px -14px rgba(0,0,0,.5); }
+.btn--light::after { border-color: rgba(31,63,191,.4); }
+.btn--light:hover { background: #fff; color: var(--cobalt-deep); }
+.btn[disabled] { background: var(--grey); cursor: progress; box-shadow: none; }
+
+.phone {
+  font-weight: 700; font-variant-numeric: tabular-nums lining-nums;
+  text-decoration: none; white-space: nowrap;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+
+/* Header */
+.site-header {
+  position: absolute; z-index: 5; top: 0;
+  left: calc(var(--gutter) + var(--label-w) + var(--hero-gap));
+  right: var(--gutter);
+  height: 88px;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-5);
+}
+.site-header__brand { display: none; }
+.site-nav ul { display: flex; flex-wrap: wrap; gap: 4px clamp(14px, 1.6vw, 24px); }
+.site-nav a { font-size: 15px; font-weight: 500; text-decoration: none; color: #fff; padding-block: 6px; white-space: nowrap; }
+.btn { white-space: nowrap; }
+.site-nav a:hover { color: #fff; text-decoration: underline; }
+.site-header__cta { display: flex; align-items: center; gap: var(--s-5); }
+.site-header__cta .phone { font-size: 16px; color: #fff; }
+.menu-btn { display: none; }
+
+/* On cobalt / on ink: rings, hovers, selection, chips */
+.site-header :focus-visible, .hero :focus-visible, .band :focus-visible, .site-footer :focus-visible { outline-color: #fff; }
+.site-header a:not(.btn):hover, .hero a:not(.btn):hover, .site-footer a:not(.btn):hover { color: #fff; }
+.site-header ::selection, .hero ::selection { background: #fff; color: var(--cobalt-deep); }
+.site-header .todo { color: var(--on-cobalt-2); border-color: rgba(255,255,255,.55); }
+
+/* Hero */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--label-w) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "label intro" "label minis" "label .";
+  column-gap: var(--hero-gap);
+  padding-inline: var(--gutter);
+  min-height: max(100svh, 760px);
+  padding-bottom: clamp(48px, 6vw, 96px);
+  background: var(--cobalt);
+  color: #fff;
+}
+.hero__pattern {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  color: #fff; opacity: .07;
+  --sym-bg: var(--cobalt);
+}
+.hero__label {
+  grid-area: label; position: sticky; top: 0; z-index: 1; align-self: start;
+  filter: drop-shadow(0 2px 2px rgba(6,14,58,.3)) drop-shadow(0 30px 34px rgba(6,14,58,.42));
+}
+.hero__intro { grid-area: intro; position: relative; container-type: inline-size; padding-top: clamp(112px, 15vh, 160px); }
+.hero__minis { grid-area: minis; position: relative; container-type: inline-size; padding-top: var(--s-7); padding-bottom: var(--s-6); }
+
+.hero h1 {
+  font-size: clamp(2.4rem, 7.2cqi, 4.4rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  max-width: 15em;
+  color: #fff;
+}
+.hero__lead {
+  margin-top: var(--s-5);
+  font-size: clamp(17px, 1.05rem + .2vw, 19px);
+  line-height: 1.55;
+  max-width: 40em;
+  color: var(--on-cobalt-2);
+}
+.hero__lead p + p { margin-top: var(--s-3); }
+
+/* B2B offer: rows stitched onto the cobalt, each led by a small satin tag */
+.hero__offer { margin-top: var(--s-6); max-width: 52rem; }
+.hero__offer-title { font-size: clamp(18px, 1.05rem + .3vw, 21px); line-height: 1.35; font-weight: 700; color: #fff; }
+.offer-list { margin-top: var(--s-3); display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--s-6); }
+@container (min-width: 620px) { .offer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.offer-list li {
+  position: relative;
+  padding: 14px 0 14px 30px;
+  font-size: 17px; line-height: 1.45; color: #fff;
+}
+.offer-list li::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.4);
+}
+.offer-list li::before {
+  content: ""; position: absolute; left: 0; top: 21px; width: 16px; height: 10px;
+  background: var(--satin);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 50%, 100% 100%, 0 100%);
+}
+.offer-list b { font-weight: 700; }
+.hero__close {
+  margin-top: var(--s-4);
+  font-size: clamp(17px, 1.05rem + .2vw, 19px); line-height: 1.5; font-weight: 600;
+  max-width: 40em; color: #fff;
+}
+
+/* Big care label: the brand, woven */
+.care-label {
+  position: relative;
+  padding-bottom: 64px;
+  color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 28px), 0 100%);
+  transform-origin: 50% 0;
+}
+.care-label > .fold { height: 52px; }
+.care-label > .fold::after { top: 24px; left: 16px; right: 16px; }
+.care-label__body { padding: clamp(28px, 3vw, 44px) clamp(24px, 2.8vw, 44px) 0; }
+
+.logo-slot {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  padding: 12px 16px 12px;
+  border: 1px dashed var(--grey);
+}
+.logo-slot__name { font-size: clamp(36px, 3.5vw, 52px); line-height: .9; font-weight: 900; letter-spacing: -.02em; }
+.logo-slot .todo { margin-left: 0; }
+.care-label .logo-slot { gap: 14px; padding: 16px 18px 14px; }
+.care-label .logo-slot__name { font-size: clamp(40px, 4.6vw, 66px); line-height: .92; letter-spacing: -.025em; }
+
+/* Mini labels: product names, each one jumps to its label below */
+.minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+@container (min-width: 620px) { .minis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.mini-wrap { filter: drop-shadow(0 1px 1px rgba(6,14,58,.22)) drop-shadow(0 10px 12px rgba(6,14,58,.26)); }
+.mini {
+  position: relative;
+  display: flex; align-items: center;
+  width: 100%; height: 100%; min-height: 60px;
+  padding: 12px 28px 12px 20px;
+  color: var(--ink);
+  text-decoration: none;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%);
+  transition: background-color 450ms var(--ease), color 450ms var(--ease);
+}
+.mini::before {
+  content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(17,17,17,.45);
+}
+.mini__name { font-weight: 700; font-size: 15px; line-height: 1.2; }
+.mini:hover { background-color: var(--ink); background-image: none; color: #fff; }
+.mini:hover::before { color: rgba(255,255,255,.6); }
+.mini:focus-visible { outline: none; }
+.mini-wrap:has(.mini:focus-visible) { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* Sections */
+.section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
+.section__head { margin-bottom: clamp(32px, 3.5vw, 48px); max-width: 52rem; }
+.section h2, .band h2, .dealer h2 {
+  font-size: clamp(2.25rem, 1.3rem + 2.6vw, 3.6rem);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -.024em;
+}
+.section__lead { margin-top: var(--s-4); font-size: 19px; color: var(--ink-2); max-width: 40em; }
+
+/* Products: each one a long woven label, folded and sewn on the left, cut on the right */
+.products { overflow-x: clip; }
+.plabels { display: grid; gap: clamp(28px, 3vw, 44px); }
+.plabel { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 16px 18px rgba(17,17,17,.09)); }
+.plabel:nth-child(odd) { margin-right: clamp(0px, 3vw, 48px); }
+.plabel:nth-child(even) { margin-left: clamp(0px, 3vw, 48px); }
+.plabel__inner {
+  --cut: 30px;
+  --fold: 28px;
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(180px, 16vw, 232px) minmax(0, 1fr) clamp(220px, 20vw, 290px);
+  gap: var(--s-5) clamp(24px, 3vw, 44px);
+  align-items: start;
+  padding: clamp(24px, 2.6vw, 36px) calc(var(--cut) + clamp(16px, 2vw, 28px)) clamp(24px, 2.6vw, 36px) calc(var(--fold) + clamp(18px, 2vw, 28px));
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
+}
+.plabel__inner::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--fold);
+  background: linear-gradient(90deg, #DDDDD6 0%, #ECECE7 55%, #E2E2DB 100%);
+  border-right: 1px solid rgba(17,17,17,.09);
+  box-shadow: 1px 0 0 rgba(255,255,255,.85);
+}
+.plabel__inner::after {
+  content: ""; position: absolute; left: 13px; top: 12px; bottom: 12px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(17,17,17,.5);
+}
+.plabel .photo-slot { height: auto; aspect-ratio: 4 / 5; }
+.plabel__name { font-size: clamp(24px, 1rem + 1vw, 32px); line-height: 1.1; font-weight: 800; letter-spacing: -.015em; }
+.plabel__intro { margin-top: var(--s-3); font-size: 16.5px; line-height: 1.55; color: var(--ink-2); max-width: 64ch; }
+.plabel__sub { margin-top: var(--s-5); font-size: 16.5px; line-height: 1.4; font-weight: 700; }
+.plabel__close {
+  position: relative; margin-top: var(--s-5); padding-top: var(--s-4);
+  font-size: 16.5px; line-height: 1.5; font-weight: 600; max-width: 64ch;
+}
+.plabel__close::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.3);
+}
+.plabel__aside { padding-left: clamp(20px, 2vw, 32px); border-left: 1px solid var(--hair); }
+
+/* Tag list: a small cut label leads each point */
+.tag-list { margin-top: var(--s-3); display: grid; gap: var(--s-3); }
+.tag-list li { position: relative; padding-left: 28px; font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 64ch; }
+.tag-list li::before {
+  content: ""; position: absolute; left: 0; top: .5em; width: 15px; height: 9px;
+  background: var(--cobalt);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 50%, 100% 100%, 0 100%);
+}
+.tag-list b { font-weight: 700; color: var(--ink); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip { padding: 2px 9px 3px; border: 1px solid var(--hair); border-radius: 2px; background: var(--satin-hi); font-size: 14px; line-height: 1.4; }
+.chips .vol { margin: 0; }
+.photo-slot {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  height: 132px; padding: 12px;
+  border: 1px dashed var(--grey);
+  background: repeating-linear-gradient(135deg, rgba(17,17,17,.045) 0 1px, transparent 1px 9px);
+  text-align: center; font-size: 13px; line-height: 1.35; color: var(--ink-2);
+}
+.photo-slot .todo { margin-left: 0; }
+.photo-slot--dev { font-weight: 600; color: var(--ink); }
+.sym-row { display: flex; gap: 10px; }
+.sym-row svg { width: 38px; }
+.specs { display: grid; gap: var(--s-5); }
+.specs dt { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.specs dd { margin-top: 2px; font-size: 15px; line-height: 1.45; }
+.vol { display: inline-block; margin-right: 6px; padding: 2px 7px; border: 1px solid var(--ink); border-radius: 2px; font-size: 13.5px; line-height: 1.4; }
+
+.plabel--soon { filter: none; }
+.plabel--soon .plabel__inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3) var(--s-6);
+  clip-path: none; padding: 28px clamp(22px, 3vw, 40px);
+  border: 1.5px dashed var(--grey); background: transparent;
+}
+.plabel--soon .plabel__inner::before, .plabel--soon .plabel__inner::after { display: none; }
+.plabel--soon p { font-size: 16px; line-height: 1.5; }
+.plabel--soon strong { display: block; font-size: 22px; line-height: 1.12; font-weight: 800; margin-bottom: var(--s-1); }
+.plabel--soon a { font-weight: 600; color: var(--cobalt); }
+
+/* Section grounds */
+.section--satin { background: var(--satin); }
+.section--tint { background: var(--cobalt-tint); }
+
+/* Segments */
+.segments { border-top: 1px solid var(--ink); }
+.segment {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) calc(4 * clamp(40px, 3.6vw, 54px) + 3 * clamp(10px, 1.2vw, 18px)) minmax(0, 1.1fr);
+  gap: var(--s-5) clamp(24px, 4vw, 64px);
+  align-items: center;
+  padding-block: clamp(28px, 3.2vw, 44px);
+}
+.segment + .segment::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.35);
+}
+.segment h3 { font-size: clamp(30px, 1.2rem + 2.2vw, 50px); line-height: 1; font-weight: 800; letter-spacing: -.022em; }
+.segment .sym-row { gap: clamp(10px, 1.2vw, 18px); }
+.segment .sym-row svg { width: clamp(40px, 3.6vw, 54px); }
+.segment__text { font-size: 18px; line-height: 1.5; }
+.segment__text .todo { margin-left: 0; }
+.segment--wide { align-items: start; }
+.segment--wide > div { grid-column: 2 / -1; }
+.segment--wide h3 { font-size: clamp(28px, 1rem + 1.7vw, 40px); line-height: 1.04; }
+.segment__sub { margin-top: var(--s-5); font-size: 17px; font-weight: 700; }
+@media (min-width: 1101px) { .segment .tag-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4) var(--s-6); } }
+
+/* Dealers: a satin label sewn onto ink, both ends cut */
+.dealer {
+  position: relative;
+  padding-block: clamp(80px, 9vw, 136px);
+  color: #fff;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.05) 41%, rgba(255,255,255,0) 58%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(255,255,255,0) 1px 3px);
+}
+.dealer__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: var(--s-6) clamp(32px, 6vw, 112px); align-items: center; }
+.dealer h2 { color: #fff; }
+.dealer h2::selection { background: #fff; color: var(--ink); }
+.dealer-label { filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)) drop-shadow(0 26px 30px rgba(0,0,0,.5)); }
+.dealer-label__inner {
+  --cut: 26px;
+  position: relative;
+  color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%, var(--cut) 50%);
+  padding: clamp(40px, 4vw, 56px) calc(var(--cut) + clamp(22px, 3vw, 44px));
+}
+.dealer-label__inner::before, .dealer-label__inner::after {
+  content: ""; position: absolute; left: calc(var(--cut) + 4px); right: calc(var(--cut) + 4px); height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.4);
+}
+.dealer-label__inner::before { top: 14px; }
+.dealer-label__inner::after { bottom: 14px; }
+.dealer__lead { font-size: clamp(21px, 1rem + .7vw, 26px); line-height: 1.25; font-weight: 800; letter-spacing: -.01em; max-width: 30em; }
+.dealer-label__inner p:not(.dealer__lead) { margin-top: var(--s-3); font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 40em; }
+.dealer-label__inner .btn { margin-top: var(--s-6); }
+
+/* Ink band */
+.band-section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
+.band-wrap {
+  margin-right: clamp(16px, 4vw, 72px);
+  filter: drop-shadow(0 2px 2px rgba(17,17,17,.16)) drop-shadow(0 26px 30px rgba(17,17,17,.28));
+}
+.band {
+  --sym-bg: var(--ink);
+  position: relative;
+  color: #fff;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.07) 41%, rgba(255,255,255,0) 58%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(255,255,255,0) 1px 3px);
+  --cut: 56px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
+  padding: clamp(56px, 6vw, 88px) calc(56px + clamp(24px, 4vw, 72px)) clamp(56px, 6vw, 88px) calc(var(--gutter) + max(0px, (100vw - var(--wrap) - 2 * var(--gutter)) / 2));
+}
+.band::before, .band::after {
+  content: ""; position: absolute; left: 0; right: 80px; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.5);
+}
+.band::before { top: 16px; }
+.band::after { bottom: 16px; }
+.band h2 { color: #fff; }
+.band__inner { max-width: var(--wrap); }
+.band .section__lead { color: var(--grey-soft); }
+.band a:not(.btn):hover { color: #fff; }
+.formats { margin-top: clamp(32px, 3.5vw, 48px); }
+.format {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: var(--s-4) clamp(24px, 4vw, 64px);
+  padding-block: clamp(22px, 2.4vw, 32px);
+  border-top: 1px solid rgba(255,255,255,.28);
+}
+.format h3 { font-size: clamp(24px, 1rem + 1.4vw, 36px); line-height: 1.08; font-weight: 800; letter-spacing: -.015em; }
+.format p { font-size: 18px; line-height: 1.5; color: #fff; max-width: 34em; }
+.format .todo { color: var(--grey-soft); border-color: var(--grey); }
+.band__cta { margin-top: clamp(28px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
+.band__cta .phone { font-size: 19px; color: #fff; }
+
+/* Why */
+.why { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: var(--s-6) clamp(32px, 5vw, 96px); align-items: start; }
+.why-list li {
+  padding-block: clamp(18px, 2vw, 26px);
+  border-top: 1px solid var(--hair);
+  font-size: clamp(21px, 1rem + .9vw, 30px); line-height: 1.25; letter-spacing: -.01em;
+}
+.why-list li:last-child { border-bottom: 1px solid var(--hair); }
+.why-list b { font-weight: 800; }
+.why-list span { color: var(--ink-2); }
+
+/* Steps */
+.steps { --step-gap: clamp(20px, 3vw, 48px); position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-6) var(--step-gap); }
+.step { position: relative; }
+.step:not(:last-child)::before {
+  content: ""; position: absolute; top: 31px; left: 76px; right: calc(-1 * var(--step-gap) + 12px); height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.4);
+}
+.step__n {
+  position: relative; z-index: 1;
+  display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 1.75px solid var(--ink);
+  background: var(--page);
+  font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums lining-nums;
+}
+.step:first-child .step__n { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.step h3 { margin-top: var(--s-5); font-size: 24px; line-height: 1.15; font-weight: 800; }
+.step p { margin-top: var(--s-2); font-size: 16px; color: var(--ink-2); max-width: 22em; }
+
+/* Request */
+.request { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: var(--s-7) clamp(32px, 6vw, 112px); align-items: start; }
+.request__text p { margin-top: var(--s-4); font-size: 19px; color: var(--ink-2); max-width: 30em; }
+.request__phones { margin-top: var(--s-6); display: grid; justify-items: start; gap: var(--s-3); }
+.request__phones a { font-size: clamp(22px, 1rem + 1vw, 30px); }
+
+.form-label {
+  filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 22px 26px rgba(17,17,17,.12));
+}
+.form-label__inner {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%);
+  padding-bottom: 56px;
+}
+.form-label > .form-label__inner > .fold { height: 40px; }
+.form-label > .form-label__inner > .fold::after { top: 18px; }
+.lform { padding: clamp(24px, 3vw, 40px) clamp(22px, 3vw, 44px) 0; }
+.field + .field, .field + fieldset, fieldset + .lform__submit { margin-top: var(--s-5); }
+.field label, .lform legend {
+  display: block;
+  font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-2);
+}
+.field label i { font-style: normal; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.field input {
+  display: block; width: 100%;
+  margin-top: 4px; padding: 10px 0 9px;
+  border: 0; border-bottom: 1.5px solid var(--ink); border-radius: 0;
+  background: transparent;
+  font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums lining-nums;
+  transition: border-color 300ms var(--ease);
+}
+.field input::placeholder { color: #6E737A; font-weight: 400; }
+.field input:hover { border-bottom-color: var(--cobalt); }
+.field input:focus-visible { outline: none; border-bottom-color: var(--cobalt); box-shadow: 0 1.5px 0 var(--cobalt); }
+.field input[aria-invalid="true"] { border-bottom-color: var(--error); box-shadow: 0 1.5px 0 var(--error); }
+.field__error { min-height: 0; margin-top: 6px; font-size: 14px; line-height: 1.4; color: var(--error); font-weight: 500; }
+.field__error:empty { display: none; }
+
+.lform fieldset { margin: 0; padding: 0; border: 0; }
+.lform fieldset { margin-top: var(--s-6); }
+.choices { margin-top: var(--s-3); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2) var(--s-4); }
+.choice { position: relative; display: flex; align-items: center; gap: 12px; padding: 8px 0; cursor: pointer; font-size: 16px; font-weight: 500; }
+.choice input { position: absolute; opacity: 0; width: 24px; height: 24px; margin: 0; cursor: pointer; }
+.choice__mark {
+  flex: none; display: grid; place-items: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 1.75px solid var(--ink);
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease);
+}
+.choice__mark::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #fff; transform: scale(0); transition: transform 300ms var(--ease); }
+.choice:hover .choice__mark { border-color: var(--cobalt); }
+.choice input:checked + .choice__mark { background: var(--cobalt); border-color: var(--cobalt); }
+.choice input:checked + .choice__mark::after { transform: scale(1); }
+.choice input:focus-visible + .choice__mark { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+.lform__submit { margin-top: var(--s-6); }
+.lform__submit .btn { width: 100%; }
+.lform__consent { margin-top: var(--s-3); font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+.lform__status { margin-top: var(--s-4); padding: 14px 16px; background: var(--cobalt-tint); font-size: 15px; line-height: 1.45; }
+.lform__status[hidden] { display: none; }
+.lform__status b { color: var(--cobalt); }
+
+/* Footer */
+.site-footer {
+  position: relative;
+  padding-top: calc(var(--s-8) + 14px);
+  padding-bottom: var(--s-6);
+  background: var(--ink);
+  color: #fff;
+}
+.site-footer::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 14px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.1) 0 1px, rgba(255,255,255,0) 1px 3px),
+    linear-gradient(180deg, #2A2A2A, #1A1A1A);
+}
+.site-footer::after {
+  content: ""; position: absolute; top: 24px; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.4);
+}
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) repeat(3, minmax(0, 1fr)); gap: var(--s-6) var(--s-7); }
+.footer-grid h2 { font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: var(--s-3); }
+.footer-grid p, .footer-grid li { font-size: 16px; line-height: 1.55; }
+.footer-grid .phone { font-size: 19px; }
+.footer-grid li + li { margin-top: 6px; }
+.footer-brand .logo-slot { border-color: rgba(255,255,255,.4); }
+.footer-brand .logo-slot__name { font-size: 34px; }
+.footer-brand p { margin-top: var(--s-4); font-size: 14px; color: var(--grey-soft); max-width: 22em; }
+.site-footer .todo { color: var(--grey-soft); border-color: var(--grey); }
+.footer-bottom {
+  margin-top: var(--s-8); padding-top: var(--s-5);
+  border-top: 1px solid rgba(255,255,255,.18);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-3) var(--s-6);
+  font-size: 14px; color: var(--grey-soft);
+}
+
+/* Photos */
+.photo-band { margin: 0; background: var(--satin); overflow: hidden; }
+.photo-band img { display: block; width: 100%; height: clamp(260px, 32vw, 480px); object-fit: cover; object-position: 50% 55%; filter: saturate(.9); }
+.photo-cap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; padding-block: 14px 4px; font-size: 13px; color: var(--ink-2); }
+.photo-cap b { font-weight: 600; color: var(--ink); }
+.segment__head { display: flex; align-items: center; gap: clamp(14px, 1.6vw, 24px); min-width: 0; }
+.segment__photo { flex: none; width: clamp(96px, 12vw, 176px); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 2px; filter: saturate(.85); box-shadow: 0 1px 1px rgba(17,17,17,.1), 0 12px 18px -10px rgba(17,17,17,.3); }
+.why__photo { margin-top: var(--s-6); }
+.why__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 35% 50%; border-radius: 2px; filter: saturate(.9); }
+.why__photo figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
+.segments__note { margin-top: var(--s-4); font-size: 13px; color: var(--ink-2); }
+
+/* Picker: object tabs + care label with the set */
+.pick { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: var(--s-7) clamp(32px, 6vw, 112px); align-items: start; }
+.pick-tabs {
+  display: grid; gap: var(--s-3); max-width: 440px;
+  filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 10px 12px rgba(17,17,17,.1));
+}
+.pick-tab {
+  --sym-bg: var(--satin);
+  position: relative;
+  display: flex; align-items: center;
+  width: 100%; min-height: 60px;
+  padding: 12px 44px 12px 30px;
+  border: 0; text-align: left; cursor: pointer;
+  font-size: 19px; font-weight: 700; line-height: 1.2; color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 50%, 100% 100%, 0 100%);
+  transition: background-color 300ms var(--ease), color 300ms var(--ease), transform 300ms var(--ease);
+}
+.pick-tab::before {
+  content: ""; position: absolute; left: 10px; top: 9px; bottom: 9px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(17,17,17,.4);
+}
+.pick-tab:hover { color: var(--cobalt); }
+.pick-tab:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--cobalt); }
+.pick-tab[aria-selected="true"] { background-color: var(--ink); background-image: none; color: #fff; transform: translateX(12px); }
+.pick-tab[aria-selected="true"]::before { color: rgba(255,255,255,.6); }
+.pick-tab[aria-selected="true"]:focus-visible { box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px var(--cobalt); }
+
+.pick-label { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 22px 26px rgba(17,17,17,.12)); transform-origin: 50% 0; }
+.pick-label__inner { clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%); padding-bottom: 56px; }
+.pick-label .fold { height: 40px; }
+.pick-label .fold::after { top: 18px; }
+.pick-panel { padding: clamp(24px, 3vw, 40px) clamp(22px, 3vw, 44px) 0; }
+.pick-panel h3 { font-size: clamp(28px, 1.2rem + 1.6vw, 40px); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+.pick-panel__lead { margin-top: var(--s-2); font-size: 16px; color: var(--ink-2); }
+.pick-items { margin-top: var(--s-4); border-top: 1px solid var(--hair); }
+.pick-item {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--s-5); align-items: center;
+  padding-block: var(--s-4);
+}
+.pick-item + .pick-item::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.3);
+}
+.pick-item a { font-size: 20px; font-weight: 800; line-height: 1.2; text-decoration-color: var(--grey-soft); }
+.pick-item a:hover { text-decoration-color: currentColor; }
+.pick-item > span { grid-column: 1; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.pick-note { margin-top: var(--s-2); padding: 12px 14px; border: 1px dashed var(--grey); font-size: 15px; line-height: 1.45; }
+.pick-label__cta { padding: var(--s-5) clamp(22px, 3vw, 44px) 0; }
+.pick-label__cta .btn { width: 100%; white-space: normal; text-align: center; }
+
+/* Terms: long cobalt woven label */
+.terms-wrap { filter: drop-shadow(0 2px 2px rgba(6,14,58,.22)) drop-shadow(0 24px 28px rgba(6,14,58,.26)); }
+.terms {
+  --cut: 44px;
+  --fold: 30px;
+  position: relative;
+  color: #fff;
+  background-color: var(--cobalt);
+  background-image:
+    linear-gradient(100deg, rgba(255,255,255,0) 24%, rgba(255,255,255,.08) 41%, rgba(255,255,255,0) 58%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, rgba(255,255,255,0) 1px 3px);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
+  padding: var(--s-3) calc(var(--cut) + clamp(16px, 3vw, 48px)) var(--s-3) calc(var(--fold) + clamp(20px, 3vw, 44px));
+}
+.terms::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--fold);
+  background: linear-gradient(90deg, rgba(6,14,58,.38), rgba(6,14,58,.14) 60%, rgba(6,14,58,.3));
+  box-shadow: 1px 0 0 rgba(255,255,255,.14);
+}
+.terms::after {
+  content: ""; position: absolute; left: 14px; top: 12px; bottom: 12px; width: 1.5px;
+  background: var(--stitch-v); color: rgba(255,255,255,.5);
+}
+.term {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: var(--s-2) clamp(20px, 3vw, 48px);
+  align-items: baseline;
+  padding-block: clamp(18px, 2vw, 24px);
+}
+.term + .term::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.38);
+}
+.term dt { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; line-height: 1.4; color: var(--on-cobalt-2); }
+.term dd { margin: 0; font-size: clamp(18px, 1rem + .4vw, 21px); line-height: 1.4; }
+.terms .todo { color: var(--on-cobalt-2); border-color: rgba(255,255,255,.55); }
+.terms ::selection { background: #fff; color: var(--cobalt-deep); }
+
+/* FAQ: one satin label, questions divided by stitches */
+.faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: var(--s-6) clamp(32px, 5vw, 96px); align-items: start; }
+.faq-label { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 18px 22px rgba(17,17,17,.1)); transform-origin: 50% 0; }
+.faq-label__inner { clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 20px), 0 100%); padding-bottom: 40px; }
+.faq-item { position: relative; }
+.faq-item + .faq-item::before {
+  content: ""; position: absolute; top: 0; left: 16px; right: 16px; height: 1.5px;
+  background: var(--stitch); color: rgba(17,17,17,.3);
+}
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
+  padding: 22px clamp(20px, 2.6vw, 36px);
+  list-style: none; cursor: pointer;
+  font-size: clamp(19px, 1rem + .45vw, 23px); font-weight: 700; line-height: 1.25;
+  transition: color 300ms var(--ease);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--cobalt); }
+.faq-item summary:focus-visible { outline: 2px solid var(--cobalt); outline-offset: -6px; }
+.faq-mark {
+  flex: none; position: relative; width: 30px; height: 30px; border-radius: 50%;
+  border: 1.75px solid currentColor;
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease), color 300ms var(--ease);
+}
+.faq-mark::before, .faq-mark::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.75px;
+  margin: -.875px 0 0 -6px; background: currentColor;
+  transition: transform 300ms var(--ease);
+}
+.faq-mark::after { transform: rotate(90deg); }
+.faq-item[open] .faq-mark { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.faq-item[open] .faq-mark::after { transform: rotate(90deg) scaleX(0); }
+.faq-item p { padding: 0 calc(clamp(20px, 2.6vw, 36px) + 46px) 24px clamp(20px, 2.6vw, 36px); font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 46em; }
+
+.lform__set { margin-bottom: var(--s-3); padding: 10px 14px; border: 1px dashed var(--cobalt); font-size: 15px; line-height: 1.45; }
+.lform__set b { color: var(--cobalt); }
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference) {
+  .care-label { animation: settle 1500ms var(--ease) both; }
+  .care-label .logo-slot__name { animation: print 900ms var(--ease) both; animation-delay: 280ms; }
+  @keyframes settle {
+    from { transform: translateY(-28px) rotate(-1.4deg); }
+    to { transform: none; }
+  }
+  @keyframes print {
+    from { clip-path: inset(0 100% 0 0); filter: blur(2px); }
+    to { clip-path: inset(0 0 0 0); filter: blur(0); }
+  }
+
+  /* Load: the cobalt fabric settles, its faint symbols come up once */
+  .hero__pattern { transform-origin: 50% 35%; animation: pattern-in 1400ms var(--ease) backwards; }
+  @keyframes pattern-in { from { opacity: 0; transform: scale(1.04); } }
+
+  /* Load: headline lines rise from under a mask (JS splits lines after the font is in, then restores the text) */
+  .js-hero .hero__intro:not(.is-play) > * { animation: hold-hidden 2400ms linear; }
+  @keyframes hold-hidden { from, to { opacity: 0; } }
+  .hero h1 .ln { display: block; overflow: hidden; padding: .06em 0 .14em; margin: -.06em 0 -.14em; }
+  .hero h1 .ln__i { display: block; animation: line-rise 820ms var(--ease) backwards; animation-delay: calc(var(--k, 0) * 90ms); }
+  @keyframes line-rise { from { transform: translateY(120%); } }
+  .js-hero .hero__intro.is-play .hero__lead { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 40ms); }
+  .js-hero .hero__intro.is-play .hero__offer { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 140ms); }
+  .js-hero .hero__intro.is-play .hero__close { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 240ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+
+  /* Load: mini labels pulled off the roll, one by one, after the big label lands */
+  .hero__minis .mini-wrap { animation: unroll 700ms var(--ease) backwards; animation-delay: calc(560ms + var(--k, 0) * 100ms); }
+  .hero__minis .mini-wrap:nth-child(2) { --k: 1; }
+  .hero__minis .mini-wrap:nth-child(3) { --k: 2; }
+  .hero__minis .mini-wrap:nth-child(4) { --k: 3; }
+  @keyframes unroll {
+    from { opacity: 0; transform: translate(-18px, 12px); clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(-40px); }
+  }
+
+  /* Scroll reveal: only below-the-fold elements get .rv (set by JS) */
+  .js-reveal .rv {
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
+  .js-reveal .rv:not(.is-in) { opacity: 0; transform: translateY(24px); }
+  .js-reveal .plabel.rv { transform-origin: 0 50%; transition-duration: 700ms, 1100ms; }
+  .js-reveal .plabel.rv:not(.is-in) { transform: translateX(-28px) rotate(-.5deg); }
+  .js-reveal .dealer-label.rv { transition-duration: 700ms, 1000ms; }
+  .js-reveal .dealer-label.rv:not(.is-in) { transform: translateY(-20px) rotate(-1.2deg); }
+  .js-reveal .photo-band img.rv { transition-duration: 700ms, 1400ms; }
+  .js-reveal .photo-band img.rv:not(.is-in) { transform: scale(1.06); }
+  .js-reveal .rv:not(.is-in) .sym-row .sym { clip-path: inset(0 100% 0 0); }
+  .js-reveal .rv.is-in .sym-row .sym {
+    animation: print 800ms var(--ease) both;
+    animation-delay: calc(var(--d, 0ms) + 220ms + var(--si, 0) * 90ms);
+  }
+  .sym-row li:nth-child(2) .sym { --si: 1; }
+  .sym-row li:nth-child(3) .sym { --si: 2; }
+  .sym-row li:nth-child(4) .sym { --si: 3; }
+
+  /* Ink band: cut from the roll left to right, the cut end travels with the edge */
+  .js-reveal .band-wrap.rv:not(.is-in), .js-reveal .steps.rv:not(.is-in),
+  .js-reveal .why__aside.rv:not(.is-in), .js-reveal .site-footer.rv:not(.is-in) { opacity: 1; transform: none; }
+  .js-reveal .band-wrap.rv .band { transition: clip-path 900ms var(--ease); transition-delay: var(--d, 0ms); }
+  .js-reveal .band-wrap.rv:not(.is-in) .band { clip-path: polygon(0 0, 0 0, calc(0% - var(--cut)) 50%, 0 100%, 0 100%); }
+  .format:nth-child(2) { --k: 1; }
+  .format:nth-child(3) { --k: 2; }
+  .js-reveal .band-wrap.rv .format, .js-reveal .band-wrap.rv .band__cta {
+    transition: opacity 700ms var(--ease), transform 800ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + 360ms + var(--k, 0) * 110ms);
+  }
+  .js-reveal .band-wrap.rv .band__cta { --k: 3; }
+  .js-reveal .band-wrap.rv:not(.is-in) .format,
+  .js-reveal .band-wrap.rv:not(.is-in) .band__cta { opacity: 0; transform: translateX(-20px); }
+
+  /* Steps: circle pops, its stitch sews to the next one */
+  .step:nth-child(2) { --k: 1; }
+  .step:nth-child(3) { --k: 2; }
+  .step:nth-child(4) { --k: 3; }
+  .js-reveal .steps.rv .step__n {
+    transition: opacity 450ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms);
+  }
+  .js-reveal .steps.rv:not(.is-in) .step__n { opacity: 0; transform: scale(.45); }
+  .js-reveal .steps.rv .step h3, .js-reveal .steps.rv .step p {
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms + 90ms);
+  }
+  .js-reveal .steps.rv .step p { transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms + 150ms); }
+  .js-reveal .steps.rv:not(.is-in) .step h3, .js-reveal .steps.rv:not(.is-in) .step p { opacity: 0; transform: translateY(14px); }
+  .js-reveal .steps.rv .step::before { clip-path: inset(0 0 0 0); transition: clip-path 620ms var(--ease); transition-delay: calc(var(--d, 0ms) + var(--k, 0) * 220ms + 160ms); }
+  .js-reveal .steps.rv:not(.is-in) .step::before { clip-path: inset(0 100% 0 0); }
+  @media (max-width: 960px) {
+    .js-reveal .steps.rv:not(.is-in) .step::before { clip-path: inset(0 0 100% 0); }
+  }
+
+  /* Form label drops in and settles like the hero label */
+  .js-reveal .form-label.rv { transform-origin: 50% 0; transition-duration: 700ms, 900ms; }
+  .js-reveal .form-label.rv:not(.is-in) { transform: translateY(-28px) rotate(-1.4deg); }
+
+  /* Why: heading rises, photo wipes in from the left */
+  .js-reveal .why__aside.rv h2 { transition: opacity 700ms var(--ease), transform 700ms var(--ease); transition-delay: var(--d, 0ms); }
+  .js-reveal .why__aside.rv:not(.is-in) h2 { opacity: 0; transform: translateY(24px); }
+  .js-reveal .why__aside.rv .why__photo img { clip-path: inset(0 0 0 0); transition: clip-path 900ms var(--ease); transition-delay: calc(var(--d, 0ms) + 180ms); }
+  .js-reveal .why__aside.rv:not(.is-in) .why__photo img { clip-path: inset(0 100% 0 0); }
+  .js-reveal .why__aside.rv figcaption { transition: opacity 600ms var(--ease); transition-delay: calc(var(--d, 0ms) + 600ms); }
+  .js-reveal .why__aside.rv:not(.is-in) figcaption { opacity: 0; }
+
+  /* Footer: the seam stitch draws across */
+  .js-reveal .site-footer.rv::after { clip-path: inset(0 0 0 0); transition: clip-path 900ms var(--ease); transition-delay: 120ms; }
+  .js-reveal .site-footer.rv:not(.is-in)::after { clip-path: inset(0 100% 0 0); }
+
+  /* Picker and FAQ labels drop in and settle on their seam */
+  .js-reveal .pick-label.rv, .js-reveal .faq-label.rv { transition-duration: 700ms, 900ms; }
+  .js-reveal .pick-label.rv:not(.is-in), .js-reveal .faq-label.rv:not(.is-in) { transform: translateY(-24px) rotate(-1.2deg); }
+
+  /* Terms: the cobalt ribbon is cut off the roll, rows follow */
+  .js-reveal .terms-wrap.rv:not(.is-in) { opacity: 1; transform: none; }
+  .js-reveal .terms-wrap.rv .terms { transition: clip-path 900ms var(--ease); transition-delay: var(--d, 0ms); }
+  .js-reveal .terms-wrap.rv:not(.is-in) .terms { clip-path: polygon(0 0, 0 0, calc(0% - var(--cut)) 50%, 0 100%, 0 100%); }
+  .term:nth-child(2) { --k: 1; }
+  .term:nth-child(3) { --k: 2; }
+  .term:nth-child(4) { --k: 3; }
+  .term:nth-child(5) { --k: 4; }
+  .term:nth-child(6) { --k: 5; }
+  .term:nth-child(7) { --k: 6; }
+  .js-reveal .terms-wrap.rv .term {
+    transition: opacity 600ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--d, 0ms) + 300ms + var(--k, 0) * 80ms);
+  }
+  .js-reveal .terms-wrap.rv:not(.is-in) .term { opacity: 0; transform: translateX(-16px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 1ms !important; }
+}
+
+@media (max-width: 1520px) {
+  .site-header__cta .phone { display: none; }
+}
+@media (max-width: 1360px) {
+  .site-nav a { font-size: 14.5px; }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .site-nav ul { gap: 4px 14px; }
+  .plabel__inner { grid-template-columns: clamp(150px, 20vw, 210px) minmax(0, 1fr); }
+  .plabel__media { grid-row: 1 / span 2; }
+  .plabel__aside { grid-column: 2; padding: var(--s-4) 0 0; border-left: 0; border-top: 1px solid var(--hair); }
+  .segment { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+  .segment .sym-row { grid-column: 1; grid-row: 2; }
+  .segment > div { grid-column: 2; grid-row: 1 / span 2; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 960px) {
+  .site-header {
+    position: relative; left: auto; right: auto; height: auto;
+    padding: 14px var(--gutter);
+    flex-wrap: wrap; gap: 12px;
+    background: var(--cobalt);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .site-header__brand { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; text-decoration: none; color: #fff; }
+  .site-header__brand b { font-size: 23px; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+  .site-header__brand .todo { margin-left: 0; font-size: 9.5px; }
+  .site-header__cta { margin-left: auto; gap: 10px; }
+  .menu-btn {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px;
+    border: 1.5px solid #fff; border-radius: 2px; background: transparent; color: #fff;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+  }
+  .menu-btn[aria-expanded="true"] { background: var(--satin); color: var(--cobalt); border-color: var(--satin); }
+  .burger-lines { display: grid; gap: 5px; width: 20px; }
+  .burger-lines span { display: block; height: 2px; background: currentColor; transition: transform 250ms var(--ease), opacity 200ms var(--ease); }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .site-nav { flex-basis: 100%; display: none; order: 3; }
+  .site-nav.is-open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0; padding-bottom: 8px; }
+  .site-nav a { display: block; padding: 12px 0; font-size: 18px; border-top: 1px solid rgba(255,255,255,.2); }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-template-areas: "intro" "label" "minis";
+    min-height: 0;
+    padding-bottom: var(--s-8);
+    overflow: clip;
+  }
+  .hero__intro { padding-top: var(--s-7); }
+  .hero h1 { font-size: clamp(2rem, 9.2cqi, 3.2rem); }
+  .hero__label { position: relative; top: auto; margin-top: var(--s-7); }
+  .care-label {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 18px), 0 100%);
+    padding-bottom: 44px;
+  }
+  .care-label > .fold { height: 30px; }
+  .care-label > .fold::after { top: 13px; }
+  .care-label__body { padding: 22px 20px 0; }
+  .care-label .logo-slot { gap: 10px; padding: 12px 14px; }
+  .care-label .logo-slot__name { font-size: clamp(30px, 9vw, 40px); }
+  .care-label .logo-slot__name br { display: none; }
+  .logo-slot__name { font-size: 32px; }
+  .hero__minis { padding-top: var(--s-5); padding-bottom: 0; }
+
+  .plabel:nth-child(odd), .plabel:nth-child(even) { margin-inline: 0; }
+
+  .segment { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); }
+
+  .dealer__grid { grid-template-columns: minmax(0, 1fr); }
+  .dealer-label__inner { --cut: 16px; padding: 40px calc(16px + 20px); }
+  .segment .sym-row, .segment > div { grid-column: auto; grid-row: auto; }
+
+  .band-wrap { margin-right: 0; }
+  .band {
+    --cut: 22px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
+    padding: 56px calc(var(--gutter) + 28px) 56px var(--gutter);
+  }
+  .band::before, .band::after { right: 34px; }
+  .format { grid-template-columns: minmax(0, 1fr); gap: var(--s-2); }
+
+  .why { grid-template-columns: minmax(0, 1fr); }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
+  .step:not(:last-child)::before { top: 76px; bottom: calc(-1 * var(--s-6) + 12px); left: 31px; right: auto; width: 1.5px; height: auto; background: var(--stitch-v); }
+  .step { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: var(--s-5); }
+  .step__n { grid-row: 1 / span 2; }
+  .step h3 { margin-top: 6px; }
+
+  .pick { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
+  .pick-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; gap: var(--s-2); }
+  .pick-tab { min-height: 56px; padding: 10px 26px 10px 22px; font-size: 16.5px; }
+  .pick-tab[aria-selected="true"] { transform: none; }
+  .pick-tab:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .pick-item { grid-template-columns: minmax(0, 1fr); }
+  .terms { --cut: 22px; --fold: 22px; padding: var(--s-2) calc(var(--cut) + 16px) var(--s-2) calc(var(--fold) + 18px); }
+  .terms::after { left: 10px; }
+  .term { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .faq { grid-template-columns: minmax(0, 1fr); }
+  .faq-item p { padding-right: clamp(20px, 2.6vw, 36px); }
+
+  .request { grid-template-columns: minmax(0, 1fr); }
+  .choices { grid-template-columns: minmax(0, 1fr); }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Narrow: product label stacks, photo slot goes short */
+@media (max-width: 640px) {
+  .plabel__inner {
+    --cut: 18px; --fold: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 22px calc(var(--cut) + 14px) 24px calc(var(--fold) + 16px);
+  }
+  .plabel__inner::after { left: 9px; }
+  .plabel__media { grid-row: auto; }
+  .plabel .photo-slot { aspect-ratio: auto; min-height: 112px; }
+  .plabel__aside { grid-column: auto; }
+}
 </style>
+<script>try { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-hero'); } catch (e) {}</script>
 </head>
 <body>
-<main>
-  <h1>ЮниХим — три варианта лендинга</h1>
-  <p class="lead">Моющие средства для прачечных, гостиниц и химчисток. Тексты одинаковые, отличается подача. Наведите мышку на продукты — в каждом варианте своя анимация.</p>
-  <div class="grid">
-    <a class="card" href="belevaya.html">
-      <div class="swatch s-a"><span>Вариант A</span></div>
-      <div class="body"><h2>Бельевая</h2><p>Бельевая комната гостиницы: стопки белья на полке, тканые бирки, строчка-шов.</p><div class="go">Открыть →</div></div>
-    </a>
-    <a class="card" href="znaki-uhoda.html">
-      <div class="swatch s-b">Вариант B</div>
-      <div class="body"><h2>Знаки ухода</h2><p>Сайт как вшитый атласный ярлык с символами стирки, которые прачечные читают каждый день.</p><div class="go">Открыть →</div></div>
-    </a>
-    <a class="card" href="laboratoriya.html">
-      <div class="swatch s-c">Вариант C</div>
-      <div class="body"><h2>Лаборатория технолога</h2><p>Журнал технолога на миллиметровке, лабораторная посуда, строгий зелёный.</p><div class="go">Открыть →</div></div>
-    </a>
+
+<svg id="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="s-t30" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">30</text>
+    </symbol>
+    <symbol id="s-t40" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">40</text>
+    </symbol>
+    <symbol id="s-t60" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">60</text>
+    </symbol>
+    <symbol id="s-hand" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13 L9 40 H39 L43 13"/>
+      <path d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+      <path style="fill:var(--sym-bg, #F6F6F3)" d="M30 4 V25.5 a5.5 5.5 0 0 1 -11 0 V20 l-3.6 -4 a2 2 0 0 1 3 -2.7 L19 14 V4"/>
+      <path d="M22.7 24 V30.4 M26.3 24 V30.4"/>
+    </symbol>
+    <symbol id="s-tumble" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="6" width="36" height="36" rx="1.5"/>
+      <circle cx="24" cy="24" r="12.5"/>
+      <circle cx="24" cy="24" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="s-iron1" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 39 H44 V22.5 H17 C10.6 22.5 6.6 29.5 4 39 Z"/>
+      <path d="M20 22.5 C20 15.6 22.6 12 28 12 H42 V22.5"/>
+      <circle cx="26" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="s-iron2" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 39 H44 V22.5 H17 C10.6 22.5 6.6 29.5 4 39 Z"/>
+      <path d="M20 22.5 C20 15.6 22.6 12 28 12 H42 V22.5"/>
+      <circle cx="21.5" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+      <circle cx="30.5" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="s-p" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="17.5"/>
+      <path d="M20.5 32.5 V15.5 H26.3 a4.7 4.7 0 0 1 0 9.4 H20.5"/>
+    </symbol>
+    <symbol id="s-w" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="17.5"/>
+      <path d="M14.5 16.5 L18.7 31.5 L24 19.8 L29.3 31.5 L33.5 16.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#request">Перейти к заявке</a>
+
+<header class="site-header" id="top">
+  <a class="site-header__brand" href="#top" aria-label="Новая Формула, на главную">
+    <b>Новая Формула</b><span class="todo">логотип в разработке</span>
+  </a>
+  <nav class="site-nav" id="site-nav" aria-label="Разделы">
+    <ul>
+      <li><a href="#dileram">Дилерам</a></li>
+      <li><a href="#products">Продукция</a></li>
+      <li><a href="#clients">Для кого</a></li>
+      <li><a href="#cooperation">Сотрудничество</a></li>
+      <li><a href="#start">Как начать</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+  <div class="site-header__cta">
+    <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Меню"><span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
   </div>
-  <p class="note">Макеты. Отдушки, объёмы, документы, почта и фото — условные, помечены «уточнить». Форма заявки пока никуда не отправляет.</p>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="hero__pattern" aria-hidden="true" focusable="false">
+    <defs>
+      <pattern id="care-pattern" width="520" height="440" patternUnits="userSpaceOnUse">
+        <use href="#s-t40" x="24" y="28" width="168" height="168"/>
+        <use href="#s-tumble" x="300" y="44" width="150" height="150"/>
+        <use href="#s-iron2" x="150" y="250" width="168" height="168"/>
+        <use href="#s-w" x="390" y="268" width="120" height="120"/>
+      </pattern>
+      <filter id="care-pattern-ink" x="0" y="0" width="100%" height="100%"><feMorphology operator="dilate" radius="1.2"/></filter>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#care-pattern)" filter="url(#care-pattern-ink)"/>
+  </svg>
+  <div class="hero__label">
+    <div class="care-label satin selvage" id="care-label">
+      <div class="fold" aria-hidden="true"></div>
+      <div class="care-label__body">
+        <div class="care-label__head">
+          <div class="logo-slot" role="img" aria-label="Новая Формула — логотип в разработке">
+            <span class="logo-slot__name" aria-hidden="true">Новая<br> Формула</span>
+            <span class="todo" aria-hidden="true">логотип в разработке</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__intro">
+    <h1 id="hero-title">Добро пожаловать на сайт завода-производителя профессиональной химии!</h1>
+    <div class="hero__lead">
+      <p>Мы специализируемся на разработке и производстве высокоэффективных моющих средств для индустрии гостеприимства (HoReCa), профессиональных прачечных и химчисток, а также для использования в быту.</p>
+      <p>Наш производственный комплекс расположен в г.&nbsp;Тучково Московской области, что позволяет нам оперативно отгружать заказы любого объёма.</p>
+    </div>
+    <div class="hero__offer">
+      <p class="hero__offer-title">Мы предлагаем гибкие условия сотрудничества для B2B-партнеров:</p>
+      <ul class="offer-list">
+        <li><b>Прямой опт:</b> качественная химия без наценок посредников.</li>
+        <li>Собственная торговая марка «Новая Формула».</li>
+        <li>Разработаем рецептуру и упакуем продукт под вашим товарным знаком.</li>
+        <li><b>Сырьевой сектор:</b> поставляем высококачественные основы для дальнейшего производства бытовой химии.</li>
+      </ul>
+    </div>
+    <p class="hero__close">Выбирая нас, вы получаете надёжного партнера, гибкий подход к рецептурам и строгий контроль качества каждой партии.</p>
+  </div>
+
+  <div class="hero__minis">
+    <ul class="minis" aria-label="Продукция">
+      <li class="mini-wrap"><a class="mini satin" href="#product-soap"><span class="mini__name">Жидкое мыло</span></a></li>
+      <li class="mini-wrap"><a class="mini satin" href="#product-softener"><span class="mini__name">Кондиционер для белья</span></a></li>
+      <li class="mini-wrap"><a class="mini satin" href="#product-laundry-gel"><span class="mini__name">Гель для стирки</span></a></li>
+      <li class="mini-wrap"><a class="mini satin" href="#product-dish-gel"><span class="mini__name">Гель для мытья посуды</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="section products" id="products" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="products-title">Продукция</h2>
+    </div>
+
+    <div class="plabels">
+      <article class="plabel" id="product-soap" aria-labelledby="p-soap">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot"><span>Фото флакона с этикеткой</span><span class="todo">уточнить</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-soap">Жидкое мыло «Новая формула»</h3>
+            <p class="plabel__intro">Жидкое мыло «Новая формула» объединяет мощную очищающую способность и деликатный уход — так, чтобы вы могли мыть руки столько раз, сколько нужно, и не переживать за состояние кожи.</p>
+            <p class="plabel__sub">Что даёт «Новая формула»:</p>
+            <ul class="tag-list">
+              <li><b>Эффективное очищение.</b> Активные компоненты удаляют загрязнения, не требуя долгого трения — достаточно нескольких секунд.</li>
+              <li><b>Кремовая текстура пены.</b> Плотная, обволакивающая пена делает процесс мытья приятным и помогает средству равномерно распределяться по коже.</li>
+              <li><b>Забота о коже.</b> В составе — смягчающие и увлажняющие компоненты, которые препятствуют пересушиванию и сохраняют кожу мягкой даже при частом использовании.</li>
+              <li><b>Сбалансированный pH.</b> Формула разработана с учётом естественного уровня кислотности кожи, чтобы не нарушать её защитный барьер.</li>
+              <li><b>Безопасность для всей семьи.</b> Подходит для ежедневного применения.</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это не просто очищение, а ежедневный ритуал заботы о себе, который легко вписать в привычный ритм жизни.</p>
+          </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">яблоко</span><span class="chip">лимон</span><span class="chip">цитрус</span><span class="chip">малина</span><span class="chip">дыня</span><span class="chip">ваниль</span><span class="chip">кокос</span><span class="chip">манго</span><span class="chip">лаванда</span><span class="chip">миндальное</span><span class="chip">фруктовый</span><span class="chip">луговые травы</span><span class="chip">алоэ вера</span><span class="chip">миндальное молочко</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">0,5 л</span><span class="vol code">канистра 5 л</span></dd></div>
+            <div><dt>Этикетка</dt><dd>готова</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="plabel" id="product-softener" aria-labelledby="p-softener">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot"><span>Фото канистры с этикеткой</span><span class="todo">уточнить</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-softener">Кондиционер для белья «Новая формула»</h3>
+            <p class="plabel__intro">Кондиционер для белья «Новая формула» создан, чтобы вы получали от стирки не только чистоту, но и удовольствие. Его усовершенствованная формула проникает в волокна ткани и делает их невероятно мягкими — без жёсткости и неприятного скрипа.</p>
+            <p class="plabel__sub">Что даёт «Новая формула»:</p>
+            <ul class="tag-list">
+              <li><b>Идеальная мягкость.</b> Активные компоненты обволакивают волокна, делая ткань приятной на ощупь — даже махровые полотенца становятся воздушными, а футболки — нежными.</li>
+              <li><b>Стойкий аромат.</b> Тонкий, ненавязчивый запах сохраняется надолго: одежда пахнет свежестью даже спустя несколько дней после стирки.</li>
+              <li><b>Комфорт в носке.</b> Средство снимает статическое электричество — одежда не прилипает к телу и не притягивает пыль.</li>
+              <li><b>Лёгкая глажка.</b> Благодаря кондиционирующему эффекту ткань меньше мнётся, а утюг скользит лучше — вы тратите меньше времени на утюжку.</li>
+              <li><b>Бережный уход.</b> Формула подходит для деликатных тканей и детской одежды: не повреждает волокна и не вызывает раздражения.</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это не просто кондиционер, а ежедневный комфорт, который вы чувствуете кожей.</p>
+          </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">курильские ландыши</span><span class="chip">сибирская свежесть</span><span class="chip">крымская лаванда</span><span class="chip">алтайский бриз</span><span class="chip">цитрус</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">1 кг</span><span class="vol code">канистра 5 кг</span><span class="vol code">канистра 10 кг</span><span class="vol code">бочка 120 кг</span><span class="vol code">куб 1000 кг</span></dd></div>
+            <div><dt>Этикетка</dt><dd>готова</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="plabel" id="product-laundry-gel" aria-labelledby="p-laundry-gel">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-laundry-gel">Гель для стирки «Новая формула»</h3>
+            <p class="plabel__intro">Гель для стирки «Новая формула» создан, чтобы стирка перестала быть испытанием. Он эффективно удаляет повседневные и сложные загрязнения — от следов травы и сока до жирных пятен и пота — без предварительного замачивания и агрессивного трения.</p>
+            <p class="plabel__sub">Что даёт «Новая формула»:</p>
+            <ul class="tag-list">
+              <li><b>Мощное удаление пятен.</b> Инновационная формула работает даже в прохладной воде, сохраняя цвет и структуру ткани.</li>
+              <li><b>Бережный уход.</b> Специальные компоненты защищают волокна от истончения, предотвращают образование катышков и сохраняют мягкость вещей.</li>
+              <li><b>Сохранение цвета.</b> Пигменты остаются яркими дольше: формула препятствует вымыванию красителей и защищает от потускнения.</li>
+              <li><b>Полная смываемость.</b> Гель полностью вымывается из ткани, не оставляя следов и раздражающих остатков — подходит даже для чувствительной кожи.</li>
+              <li><b>Универсальность.</b> Подходит для стирки хлопка, льна, синтетики, смесовых тканей и деликатных вещей (при соблюдении рекомендованного режима).</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это баланс эффективности и заботы о ваших вещах: вы тратите меньше времени на борьбу с пятнами, а любимые вещи служат дольше.</p>
+          </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">курильские ландыши</span><span class="chip">сибирская свежесть</span><span class="chip">крымская лаванда</span><span class="chip">алтайский бриз</span><span class="chip">цитрус</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">1 кг</span><span class="vol code">1,5 кг</span><span class="vol code">2 кг</span><span class="vol code">4,5 кг</span><span class="vol code">канистра 5 кг</span><span class="vol code">канистра 10 кг</span><span class="vol code">бочка 120 кг</span></dd></div>
+            <div><dt>Этикетка</dt><dd>в разработке</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="plabel" id="product-dish-gel" aria-labelledby="p-dish-gel">
+        <div class="plabel__inner satin">
+          <div class="plabel__media"><div class="photo-slot photo-slot--dev"><span>Этикетка в разработке</span></div></div>
+          <div class="plabel__main">
+            <h3 class="plabel__name" id="p-dish-gel">Гель для мытья посуды «Новая формула»</h3>
+            <p class="plabel__intro">Гель для мытья посуды «Новая формула» создан, чтобы превратить рутину в простое и комфортное дело. Его усовершенствованная формула эффективно растворяет жир и удаляет сложные загрязнения — от засохших остатков еды до пригоревшего масла — без долгого оттирания и жёстких губок.</p>
+            <p class="plabel__sub">Почему выбирают «Новую формулу»:</p>
+            <ul class="tag-list">
+              <li><b>Мощная пена.</b> Достаточно одной капли: густая пена покрывает посуду и работает даже в прохладной воде, экономя расход средства.</li>
+              <li><b>Полная чистота без разводов.</b> Формула полностью смывается водой, не оставляя следов и посторонних запахов — посуда сияет, а вкус блюд остаётся неизменным.</li>
+              <li><b>Забота о коже.</b> В составе — ухаживающие компоненты, которые смягчают воду и защищают кожу рук от сухости и раздражения. Можно мыть посуду без перчаток.</li>
+              <li><b>Универсальность.</b> Подходит для любой посуды: кастрюль, сковородок, стеклянных и керамических изделий.</li>
+            </ul>
+            <p class="plabel__close">«Новая формула» — это баланс эффективности и комфорта: вы тратите меньше времени на уборку и больше — на то, что по-настоящему важно.</p>
+          </div>
+          <dl class="plabel__aside specs">
+            <div><dt>Отдушки</dt><dd class="chips"><span class="chip">алоэ вера</span><span class="chip">алоэ и цветы</span><span class="chip">алоэ и травы</span><span class="chip">цитрус</span><span class="chip">лимон</span><span class="chip">зелёный бамбук</span><span class="chip">травы</span></dd></div>
+            <div><dt>Фасовка</dt><dd class="chips"><span class="vol code">0,5 кг</span><span class="vol code">1 кг</span><span class="vol code">канистра 5 кг</span></dd></div>
+            <div><dt>Этикетка</dt><dd>в разработке</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <aside class="plabel plabel--soon" aria-label="Скоро в линейке">
+        <div class="plabel__inner">
+          <p><strong>Скоро в линейке</strong>Гели для душа, шампуни и другие средства.</p>
+          <a href="#request">Спросить о новинках</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<figure class="photo-band">
+  <img src="img/lab-production.webp" alt="Белые канистры на линии розлива" width="1920" height="1080" loading="lazy" decoding="async">
+  <figcaption class="wrap photo-cap"><span>Фото условное <span class="todo">заменить</span></span></figcaption>
+</figure>
+
+
+<section class="section section--satin" id="clients" aria-labelledby="clients-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="clients-title">Для кого</h2>
+    </div>
+    <ul class="segments">
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-service.webp" alt="" width="900" height="600"><h3>Для дома</h3></header>
+        <ul class="sym-row" aria-label="Режим для дома">
+          <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text">Для использования в быту, частного использования.</p>
+        </div>
+      </li>
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-laundry.webp" alt="" width="900" height="600"><h3>Прачечные</h3></header>
+        <ul class="sym-row" aria-label="Режим прачечной">
+          <li><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text"><span class="todo">текст скоро</span></p>
+        </div>
+      </li>
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-hotel.webp" alt="" width="900" height="600"><h3>Гостиницы</h3></header>
+        <ul class="sym-row" aria-label="Режим гостиницы">
+          <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text"><span class="todo">текст скоро</span></p>
+        </div>
+      </li>
+      <li class="segment">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-drycleaning.webp" alt="" width="900" height="600"><h3>Химчистки</h3></header>
+        <ul class="sym-row" aria-label="Режим химчистки">
+          <li><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
+          <li><svg class="sym" role="img" aria-label="Глажка при низкой температуре"><use href="#s-iron1"/></svg></li>
+        </ul>
+        <div>
+          <p class="segment__text"><span class="todo">текст скоро</span></p>
+        </div>
+      </li>
+      <li class="segment segment--wide">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-production.webp" alt="" width="1920" height="1080"><h3>Магазинам и оптовым покупателям</h3></header>
+        <div>
+          <p class="segment__text">Приглашаем к сотрудничеству гипермаркеты, торговые сети, владельцев магазинов и оптовых покупателей!</p>
+          <p class="segment__sub">Почему с нами выгодно работать:</p>
+          <ul class="tag-list">
+            <li><b>Прямые цены от производителя.</b> Максимальная маржинальность для вашего бизнеса.</li>
+            <li><b>Любые объёмы под ключ.</b></li>
+            <li><b>Полный пакет документов.</b> Вся продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Предоставляем полный комплект разрешительной документации.</li>
+            <li><b>Надёжная логистика.</b> Оперативная сборка заказов и отгрузка с завода в Московской области. Работаем со всеми крупными транспортными компаниями.</li>
+            <li><b>Гибкие условия.</b> Индивидуальный подход к объёмам минимального заказа.</li>
+            <li><b>Возможность СТМ.</b> Изготовим партию моющих средств по вашему техническому заданию под вашим личным брендом.</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <p class="segments__note">Фото в разделе условные <span class="todo">заменить</span></p>
+  </div>
+</section>
+
+<section class="dealer" id="dileram" aria-labelledby="dileram-title">
+  <div class="wrap dealer__grid">
+    <h2 id="dileram-title">Дилерам и дистрибьюторам</h2>
+    <div class="dealer-label">
+      <div class="dealer-label__inner satin">
+        <p class="dealer__lead">Развивайте бизнес вместе с нами: ищем дилеров и дистрибьюторов в регионах России и СНГ!</p>
+        <p>Приглашаем к долгосрочному партнерству торговые компании, региональных оптовиков и дистрибьюторов бытовой и профессиональной химии.</p>
+        <p>Мы предлагаем востребованный продукт напрямую от завода в Московской области, эксклюзивные права на закреплённой территории.</p>
+        <a class="btn" id="dealer-cta" href="#request">Стать дилером</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="podbor" aria-labelledby="podbor-title">
+  <div class="wrap pick">
+    <div class="pick__intro">
+      <div class="section__head">
+        <h2 id="podbor-title">Подберите набор под ваш объект</h2>
+        <p class="section__lead">Выберите тип объекта — покажем, какие средства понадобятся.</p>
+      </div>
+      <div class="pick-tabs" role="tablist" aria-label="Тип объекта" aria-orientation="vertical">
+        <button class="pick-tab satin" type="button" role="tab" id="pt-home" aria-controls="pp-home" aria-selected="true">Для дома</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-laundry" aria-controls="pp-laundry" aria-selected="false" tabindex="-1">Прачечная</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-hotel" aria-controls="pp-hotel" aria-selected="false" tabindex="-1">Гостиница</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-dry" aria-controls="pp-dry" aria-selected="false" tabindex="-1">Химчистка</button>
+        <button class="pick-tab satin" type="button" role="tab" id="pt-shop" aria-controls="pp-shop" aria-selected="false" tabindex="-1">Магазин и опт</button>
+      </div>
+    </div>
+
+    <div class="pick-label">
+      <div class="pick-label__inner satin selvage">
+        <div class="fold" aria-hidden="true"></div>
+        <div class="pick-label__body">
+          <div class="pick-panel" role="tabpanel" id="pp-home" aria-labelledby="pt-home" data-set="Для дома — жидкое мыло, кондиционер для белья, гель для стирки, гель для мытья посуды">
+            <h3>Для дома</h3>
+            <p class="pick-panel__lead">Вся линейка «Новая формула» для использования в быту.</p>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-soap">Жидкое мыло</a><span>очищение и уход за кожей рук</span></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a><span>мягкость, аромат, лёгкая глажка</span></li>
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a><span>пятна уходят без замачивания</span></li>
+              <li class="pick-item"><a href="#product-dish-gel">Гель для мытья посуды</a><span>растворяет жир, бережно к рукам</span></li>
+            </ul>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-laundry" aria-labelledby="pt-laundry" data-set="Прачечная — гель для стирки, кондиционер для белья" hidden>
+            <h3>Прачечная</h3>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a><span>ежедневная загрузка машин</span></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a><span>мягкость и лёгкая глажка</span></li>
+            </ul>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-hotel" aria-labelledby="pt-hotel" data-set="Гостиница — жидкое мыло, гель для мытья посуды" hidden>
+            <h3>Гостиница</h3>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-soap">Жидкое мыло</a><span>номера, санузлы, общие зоны</span></li>
+              <li class="pick-item"><a href="#product-dish-gel">Гель для мытья посуды</a><span>кухня, ресторан</span></li>
+            </ul>
+            <p class="pick-note">Если есть своя прачечная — плюс гель и кондиционер.</p>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-dry" aria-labelledby="pt-dry" data-set="Химчистка — гель для стирки, кондиционер для белья" hidden>
+            <h3>Химчистка</h3>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a><span>хлопок, лён, синтетика, деликатные вещи</span></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a><span>уход за тканями, снимает статику</span></li>
+            </ul>
+          </div>
+          <div class="pick-panel" role="tabpanel" id="pp-shop" aria-labelledby="pt-shop" data-set="Магазин и опт — вся линейка: жидкое мыло, кондиционер для белья, гель для стирки, гель для мытья посуды; интересует СТМ" hidden>
+            <h3>Магазин и опт</h3>
+            <p class="pick-panel__lead">Вся линейка по прямым ценам производителя.</p>
+            <ul class="pick-items">
+              <li class="pick-item"><a href="#product-soap">Жидкое мыло</a></li>
+              <li class="pick-item"><a href="#product-softener">Кондиционер для белья</a></li>
+              <li class="pick-item"><a href="#product-laundry-gel">Гель для стирки</a></li>
+              <li class="pick-item"><a href="#product-dish-gel">Гель для мытья посуды</a></li>
+            </ul>
+            <p class="pick-note">Возможна СТМ: изготовим партию по вашему техническому заданию под вашим брендом.</p>
+          </div>
+        </div>
+        <div class="pick-label__cta">
+          <a class="btn" id="pick-cta" href="#request">Запросить прайс на этот набор</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-section" id="cooperation" aria-labelledby="coop-title">
+  <div class="band-wrap">
+    <div class="band">
+      <div class="band__inner">
+        <h2 id="coop-title">Три формата сотрудничества</h2>
+        <ul class="formats">
+          <li class="format">
+            <h3>Оптовые поставки</h3>
+            <p>Качественная химия напрямую с завода, без наценок посредников. Любые объёмы под ключ.</p>
+          </li>
+          <li class="format">
+            <h3>Контрактное производство</h3>
+            <p>Разработаем рецептуру и упакуем продукт под вашим товарным знаком.</p>
+          </li>
+          <li class="format">
+            <h3>Основа для мыла</h3>
+            <p>Готовая мыльная основа для производителей и мыловаров.</p>
+          </li>
+        </ul>
+        <div class="band__cta">
+          <a class="btn btn--light" href="#request">Обсудить формат</a>
+          <a class="phone" href="tel:+79852007060">+7 985 200-70-60</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why" aria-labelledby="why-title">
+  <div class="wrap why">
+    <div class="why__aside">
+      <h2 id="why-title">Почему мы</h2>
+      <figure class="why__photo">
+        <img src="img/znaki-label.webp" alt="Ярлык, вшитый в шов сложенного белья" width="1920" height="823">
+        <figcaption>Фото условное <span class="todo">заменить</span></figcaption>
+      </figure>
+    </div>
+    <ul class="why-list">
+      <li><b>Своё производство,</b> <span>не перепродаём.</span></li>
+      <li><b>Тучково, Московская область</b> <span>— доставка по Москве и области.</span></li>
+      <li><b>Продукция сертифицирована,</b> <span>соответствует ГОСТам, ТУ и ТР ТС.</span></li>
+      <li><b>Подберём отдушку, фасовку и тару</b> <span>под объект.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="start" aria-labelledby="start-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="start-title">Как начать</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n" aria-hidden="true">1</span>
+        <h3>Заявка</h3>
+        <p>На сайте или по телефону.</p>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">2</span>
+        <h3>Прайс и образцы</h3>
+        <p>Пришлём цены, при необходимости — образцы.</p>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">3</span>
+        <h3>Договор</h3>
+        <p>Согласуем объёмы, тару и условия.</p>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">4</span>
+        <h3>Поставка</h3>
+        <p>Отгрузка с завода в Московской области.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="usloviya" aria-labelledby="usloviya-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="usloviya-title">Условия и доставка</h2>
+    </div>
+    <div class="terms-wrap">
+      <dl class="terms">
+        <div class="term"><dt>Отгрузка</dt><dd>Оперативная сборка заказов и отгрузка с завода в Московской области <span class="todo">сроки и стоимость доставки — уточнить</span></dd></div>
+        <div class="term"><dt>В регионы</dt><dd>Работаем со всеми крупными транспортными компаниями</dd></div>
+        <div class="term"><dt>Самовывоз</dt><dd>Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8 <span class="todo">часы работы — уточнить</span></dd></div>
+        <div class="term"><dt>Оплата</dt><dd>Безналичный расчёт для юрлиц и ИП <span class="todo">НДС — уточнить</span></dd></div>
+        <div class="term"><dt>Минимальный заказ</dt><dd>Индивидуальный подход к объёмам минимального заказа</dd></div>
+        <div class="term"><dt>Документы</dt><dd>Продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Полный комплект разрешительной документации</dd></div>
+        <div class="term"><dt>Под ваш бренд (СТМ)</dt><dd>Изготовим партию моющих средств по вашему техническому заданию</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <h2 id="faq-title">Вопросы и ответы</h2>
+    <div class="faq-label">
+      <div class="faq-label__inner satin selvage">
+        <div class="fold" aria-hidden="true"></div>
+        <details class="faq-item" open>
+          <summary>Какой минимальный заказ?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Индивидуальный подход к объёмам минимального заказа. Отгружаем заказы любого объёма.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Можно сначала получить образцы?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да, пришлём образцы, чтобы вы проверили средства на своём объекте. <span class="todo">условия — уточнить</span></p>
+        </details>
+        <details class="faq-item">
+          <summary>Как быстро доставите?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Оперативно собираем заказы и отгружаем с завода в Московской области. Работаем со всеми крупными транспортными компаниями. <span class="todo">сроки — уточнить</span></p>
+        </details>
+        <details class="faq-item">
+          <summary>Какие документы есть на продукцию?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Вся продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Предоставляем полный комплект разрешительной документации.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Можно выбрать отдушку и фасовку?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да. У каждого средства несколько отдушек и вариантов фасовки — от 0,5&nbsp;л до кубов по 1000&nbsp;кг. Подберём под ваш объект.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Как оплатить?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Безналичный расчёт для юрлиц и ИП. <span class="todo">НДС и отсрочка — уточнить</span></p>
+        </details>
+        <details class="faq-item">
+          <summary>Можно выпустить продукцию под нашим брендом?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да, СТМ: разработаем рецептуру и изготовим партию моющих средств по вашему техническому заданию под вашим брендом.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Работаете с дилерами в регионах?<span class="faq-mark" aria-hidden="true"></span></summary>
+          <p>Да, ищем дилеров и дистрибьюторов в регионах России и СНГ. Предлагаем эксклюзивные права на закреплённой территории.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="request" aria-labelledby="request-title">
+  <div class="wrap request">
+    <div class="request__text">
+      <h2 id="request-title">Получите прайс-лист</h2>
+      <p>Оставьте телефон — перезвоним в течение рабочего дня и подберём продукцию под ваш объект.</p>
+      <div class="request__phones">
+        <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
+        <a class="phone" href="tel:+79852007060">+7 985 200-70-60</a>
+      </div>
+    </div>
+
+    <div class="form-label">
+      <div class="form-label__inner satin selvage">
+        <div class="fold" aria-hidden="true"></div>
+        <form class="lform" id="lform" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" placeholder="Как к вам обращаться">
+            <p class="field__error" id="e-name"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-phone" placeholder="Номер для звонка">
+            <p class="field__error" id="e-phone"></p>
+          </div>
+          <div class="field">
+            <label for="f-company">Компания <i>— необязательно</i></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Магазин, прачечная, гостиница…">
+          </div>
+          <fieldset>
+            <legend>Что интересует</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="interest" value="opt"><span class="choice__mark" aria-hidden="true"></span>Опт</label>
+              <label class="choice"><input type="radio" name="interest" value="brand"><span class="choice__mark" aria-hidden="true"></span>Под мой бренд</label>
+              <label class="choice"><input type="radio" name="interest" value="base"><span class="choice__mark" aria-hidden="true"></span>Основа для мыла</label>
+              <label class="choice"><input type="radio" name="interest" value="other"><span class="choice__mark" aria-hidden="true"></span>Другое</label>
+            </div>
+          </fieldset>
+          <div class="lform__submit">
+            <input type="hidden" name="set" id="f-set" value="">
+            <p class="lform__set" id="lform-set" hidden></p>
+            <button class="btn" type="submit">Отправить заявку</button>
+            <p class="lform__consent">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
+          </div>
+          <p class="lform__status" id="lform-status" role="status" hidden></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<footer class="site-footer" id="contacts">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-slot" role="img" aria-label="Новая Формула — логотип в разработке">
+          <span class="logo-slot__name" aria-hidden="true">Новая Формула</span>
+          <span class="todo" aria-hidden="true">логотип в разработке</span>
+        </div>
+        <p>Профессиональная химия для HoReCa, прачечных, химчисток и дома. Своё производство в Тучково.</p>
+      </div>
+      <div>
+        <h2>Телефоны</h2>
+        <ul>
+          <li><a class="phone" href="tel:+74959684745">+7 495 968-47-45</a></li>
+          <li><a class="phone" href="tel:+79852007060">+7 985 200-70-60</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Почта</h2>
+        <p>Адрес почты <span class="todo">уточнить</span></p>
+      </div>
+      <div>
+        <h2>Производство</h2>
+        <p><span class="num">143132</span>, Московская обл., Рузский р-н, пос. Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="num">2026</span> ООО «ЮниХим-Про»</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  /* Mobile menu */
+  var menuBtn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('site-nav');
+  menuBtn.addEventListener('click', function () {
+    var open = menuBtn.getAttribute('aria-expanded') !== 'true';
+    menuBtn.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) { menuBtn.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { menuBtn.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
+  });
+
+  /* Request form */
+  var form = document.getElementById('lform');
+  var fName = document.getElementById('f-name');
+  var fPhone = document.getElementById('f-phone');
+  var formStatus = document.getElementById('lform-status');
+
+  function checkName() {
+    if (!fName.value.trim()) return 'Укажите имя — так мы будем знать, как к вам обращаться.';
+    return '';
+  }
+  function checkPhone() {
+    var v = fPhone.value.trim();
+    var digits = v.replace(/\D/g, '');
+    if (!v) return 'Укажите телефон — по нему перезвоним с прайсом.';
+    if (/[^\d\s()+\-]/.test(v)) return 'В телефоне могут быть только цифры, пробелы, скобки, «+» и «-».';
+    if (digits.length < 10) return 'В номере меньше 10 цифр. Проверьте телефон, например: +7 495 968-47-45.';
+    if (digits.length > 15) return 'В номере слишком много цифр. Проверьте телефон, например: +7 495 968-47-45.';
+    return '';
+  }
+  function show(input, msg) {
+    var err = document.getElementById(input.getAttribute('aria-describedby'));
+    err.textContent = msg;
+    if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    return !msg;
+  }
+  fName.addEventListener('input', function () { if (fName.hasAttribute('aria-invalid')) show(fName, checkName()); });
+  fPhone.addEventListener('input', function () { if (fPhone.hasAttribute('aria-invalid')) show(fPhone, checkPhone()); });
+  fName.addEventListener('blur', function () { if (fName.value) show(fName, checkName()); });
+  fPhone.addEventListener('blur', function () { if (fPhone.value) show(fPhone, checkPhone()); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    formStatus.hidden = true;
+    var okName = show(fName, checkName());
+    var okPhone = show(fPhone, checkPhone());
+    if (!okName) { fName.focus(); return; }
+    if (!okPhone) { fPhone.focus(); return; }
+    formStatus.innerHTML = '<b>Спасибо, заявка заполнена.</b> Перезвоним в течение рабочего дня. <span class="todo">отправка заявок: почта или Telegram — уточнить</span>';
+    formStatus.hidden = false;
+    form.reset();
+  });
+
+  /* Request topic line: filled by the picker and the dealer button, cleared on reset */
+  var fSet = document.getElementById('f-set');
+  var setLine = document.getElementById('lform-set');
+  function fillRequest(interest, lead, value) {
+    var radio = form.querySelector('input[name="interest"][value="' + interest + '"]');
+    if (radio) radio.checked = true;
+    fSet.value = value;
+    setLine.textContent = '';
+    var b = document.createElement('b');
+    b.textContent = lead;
+    setLine.appendChild(b);
+    setLine.appendChild(document.createTextNode(value));
+    setLine.hidden = false;
+  }
+  form.addEventListener('reset', function () { setLine.hidden = true; setLine.textContent = ''; fSet.value = ''; });
+  var dealerCta = document.getElementById('dealer-cta');
+  if (dealerCta) dealerCta.addEventListener('click', function () { fillRequest('opt', 'Запрос: ', 'Дилерство'); });
+
+  /* Hero headline: measure real lines once the font is in, rise each from a mask, then restore plain text */
+  var intro = document.querySelector('.hero__intro');
+  if (document.documentElement.classList.contains('js-hero') && intro) {
+    var h1 = document.getElementById('hero-title');
+    var text = h1.textContent.replace(/\s+/g, ' ').trim();
+    var started = false;
+    var play = function () {
+      if (started) return;
+      started = true;
+      try {
+        h1.textContent = '';
+        var words = text.split(' ').map(function (w, i) {
+          if (i) h1.appendChild(document.createTextNode(' '));
+          var s = document.createElement('span');
+          s.textContent = w;
+          h1.appendChild(s);
+          return s;
+        });
+        var lines = [], top = null;
+        words.forEach(function (s) {
+          var t = s.offsetTop;
+          if (top === null || Math.abs(t - top) > 4) { lines.push([]); top = t; }
+          lines[lines.length - 1].push(s.textContent);
+        });
+        h1.textContent = '';
+        lines.forEach(function (l, i) {
+          var ln = document.createElement('span');
+          var inner = document.createElement('span');
+          ln.className = 'ln';
+          inner.className = 'ln__i';
+          inner.style.setProperty('--k', i);
+          inner.textContent = l.join(' ');
+          ln.appendChild(inner);
+          h1.appendChild(ln);
+        });
+        intro.style.setProperty('--after', lines.length * 90 + 'ms');
+        setTimeout(function () { h1.textContent = text; }, lines.length * 90 + 900);
+      } catch (err) { h1.textContent = text; }
+      intro.classList.add('is-play');
+    };
+    setTimeout(play, 450);
+    if (document.fonts && document.fonts.load) document.fonts.load('800 64px Commissioner', text).then(play, play);
+    else play();
+  }
+
+  /* Scroll reveal: only what starts below the fold; static under reduced motion */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var targets = document.querySelectorAll([
+      '.section__head', '.plabel', '.photo-band img', '.photo-cap', '.segment', '.segments__note',
+      '.band-wrap', '.why__aside', '.why-list li', '.steps', '.request__text', '.form-label', '.site-footer',
+      '.dealer h2', '.dealer-label',
+      '.pick-tabs', '.pick-label', '.terms-wrap', '.faq-label', '.faq > h2'
+    ].join(','));
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var io = new IntersectionObserver(function (entries) {
+      var n = 0;
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.style.setProperty('--d', Math.min(n, 5) * 90 + 'ms');
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+        n++;
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    Array.prototype.forEach.call(targets, function (el) {
+      if (el.getBoundingClientRect().top < vh * 0.92) return;
+      el.classList.add('rv');
+      io.observe(el);
+    });
+    document.documentElement.classList.add('js-reveal');
+  }
+
+  /* Picker: label tabs, arrow keys, label swap, set carried into the request */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.pick-tab'));
+  if (tabs.length) {
+    var pickLabel = document.querySelector('.pick-label');
+    var pickBody = document.querySelector('.pick-label__body');
+    var current = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];
+    var selectTab = function (tab, focus) {
+      if (focus) tab.focus();
+      if (tab === current) return;
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      current = tab;
+      if (!reduce && pickLabel.animate) {
+        var ease = 'cubic-bezier(0.19, 1, 0.22, 1)';
+        pickLabel.animate([{ transform: 'translateY(-8px) rotate(-.7deg)' }, { transform: 'none' }], { duration: 280, easing: ease });
+        pickBody.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 220, easing: ease });
+      }
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { selectTab(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = null, len = tabs.length;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = tabs[(i + 1) % len];
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = tabs[(i - 1 + len) % len];
+        else if (e.key === 'Home') n = tabs[0];
+        else if (e.key === 'End') n = tabs[len - 1];
+        if (n) { e.preventDefault(); selectTab(n, true); }
+      });
+    });
+
+    document.getElementById('pick-cta').addEventListener('click', function () {
+      fillRequest('opt', 'Набор: ', document.getElementById(current.getAttribute('aria-controls')).dataset.set);
+    });
+  }
+})();
+</script>
 </body>
 </html>
