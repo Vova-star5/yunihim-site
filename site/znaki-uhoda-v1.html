@@ -223,6 +223,8 @@ input, textarea { caret-color: var(--cobalt); }
 .site-header__cta { display: flex; align-items: center; gap: var(--s-5); }
 .site-header__cta .phone { font-size: 16px; color: #fff; }
 .menu-btn { display: none; }
+.site-nav__inner { display: contents; }
+.site-nav__fold, .site-nav__foot, .nav-extra, .nav-backdrop { display: none; }
 
 /* On cobalt / on ink: rings, hovers, selection, chips */
 .site-header :focus-visible, .hero :focus-visible, .band :focus-visible, .site-footer :focus-visible { outline-color: #fff; }
@@ -989,10 +991,70 @@ input, textarea { caret-color: var(--cobalt); }
   .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(2) { opacity: 0; }
   .menu-btn[aria-expanded="true"] .burger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .site-nav { flex-basis: 100%; display: none; order: 3; }
-  .site-nav.is-open { display: block; }
-  .site-nav ul { flex-direction: column; gap: 0; padding-bottom: 8px; }
-  .site-nav a { display: block; padding: 12px 0; font-size: 18px; border-top: 1px solid rgba(255,255,255,.2); }
+  /* Mobile menu: a satin label that drops from the header and settles */
+  .site-nav {
+    position: absolute; z-index: 2; top: calc(100% + 10px); left: var(--gutter); right: var(--gutter);
+    max-height: calc(100vh - 110px); overflow-y: auto; overscroll-behavior: contain;
+    visibility: hidden; pointer-events: none; opacity: 0;
+    transform: translateY(-14px) rotate(-.8deg); transform-origin: 50% 0;
+    filter: drop-shadow(0 2px 2px rgba(6,14,58,.3)) drop-shadow(0 26px 30px rgba(6,14,58,.45));
+    transition: transform 380ms var(--ease), opacity 180ms ease, visibility 0s linear 380ms;
+  }
+  .site-nav.is-open {
+    visibility: visible; pointer-events: auto; opacity: 1; transform: none;
+    transition: transform 560ms var(--ease), opacity 200ms ease;
+  }
+  .site-nav__inner {
+    display: block; color: var(--ink); padding-bottom: 46px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%);
+  }
+  .site-nav__fold { display: block; height: 30px; }
+  .site-nav__fold::after { top: 13px; }
+  .site-nav ul { display: block; padding: 6px 22px 0; }
+  .site-nav li { position: relative; }
+  .site-nav li + li::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+    background: var(--stitch); color: rgba(17,17,17,.28);
+  }
+  .site-nav a {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 15px 2px; color: var(--ink); white-space: normal;
+    font-size: 22px; font-weight: 800; letter-spacing: -.015em; line-height: 1.15;
+  }
+  .site-nav a::after {
+    content: ""; flex: none; width: 9px; height: 9px; margin-right: 4px;
+    border-top: 2px solid var(--cobalt); border-right: 2px solid var(--cobalt);
+    transform: rotate(45deg);
+  }
+  .site-nav a:hover, .site-nav a:focus-visible { color: var(--cobalt); text-decoration: none; }
+  .site-nav :focus-visible { outline-color: var(--cobalt); }
+  .nav-extra { display: block; }
+  .site-nav__foot { display: grid; justify-items: start; gap: 6px; position: relative; margin: 6px 22px 0; padding-top: 20px; }
+  .site-nav__foot::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+    background: var(--stitch); color: rgba(17,17,17,.28);
+  }
+  .site-nav__label { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+  .site-nav .site-nav__phone {
+    display: inline; padding: 0; font: 600 18px/1.35 var(--f-code); letter-spacing: -.01em;
+    color: var(--ink); text-decoration: none;
+  }
+  .site-nav .site-nav__phone::after { content: none; }
+  .site-nav .site-nav__cta { display: flex; width: 100%; margin-top: 12px; padding: 14px 20px; font-size: 17px; color: #fff; justify-content: center; }
+  .site-nav .site-nav__cta::after { content: ""; position: absolute; inset: 5px; width: auto; height: auto; margin: 0; transform: none; border: 1px dashed rgba(255,255,255,.5); }
+  .nav-backdrop {
+    display: block; position: fixed; inset: 0; z-index: -1;
+    background: rgba(9,20,72,.55);
+    opacity: 0; visibility: hidden; transition: opacity 300ms ease, visibility 0s linear 300ms;
+  }
+  .site-header.menu-open .nav-backdrop { opacity: 1; visibility: visible; transition: opacity 300ms ease; }
+  .site-nav.is-open li { animation: menu-item 520ms var(--ease) both; animation-delay: calc(140ms + var(--i, 0) * 45ms); }
+  .site-nav.is-open .site-nav__foot { animation: menu-item 520ms var(--ease) both; animation-delay: 420ms; }
+  @keyframes menu-item { from { opacity: 0; transform: translateY(10px); } }
+  @media (prefers-reduced-motion: reduce) {
+    .site-nav, .site-nav.is-open { transition: opacity 120ms ease, visibility 0s; transform: none; }
+    .site-nav.is-open li, .site-nav.is-open .site-nav__foot { animation: none; }
+  }
 
   .hero {
     grid-template-columns: minmax(0, 1fr);
@@ -1133,13 +1195,25 @@ input, textarea { caret-color: var(--cobalt); }
     <b>Новая Формула</b><span class="todo">логотип в разработке</span>
   </a>
   <nav class="site-nav" id="site-nav" aria-label="Разделы">
-    <ul>
-      <li><a href="#dileram">Дилерам</a></li>
-      <li><a href="#products">Продукция</a></li>
-      <li><a href="#clients">Для кого</a></li>
-      <li><a href="#contacts">Контакты</a></li>
-    </ul>
+    <div class="site-nav__inner satin">
+      <div class="fold site-nav__fold" aria-hidden="true"></div>
+      <ul>
+        <li style="--i:0"><a href="#dileram">Дилерам</a></li>
+        <li style="--i:1"><a href="#products">Продукция</a></li>
+        <li style="--i:2"><a href="#clients">Для кого</a></li>
+        <li class="nav-extra" style="--i:3"><a href="#usloviya">Условия работы</a></li>
+        <li class="nav-extra" style="--i:4"><a href="#faq">Вопросы и ответы</a></li>
+        <li style="--i:5"><a href="#contacts">Контакты</a></li>
+      </ul>
+      <div class="site-nav__foot">
+        <span class="site-nav__label">Отдел продаж</span>
+        <a class="site-nav__phone" href="tel:+74959684745">+7 495 968-47-45</a>
+        <a class="site-nav__phone" href="tel:+79852007060">+7 985 200-70-60</a>
+        <a class="btn site-nav__cta" href="#request">Оставить заявку</a>
+      </div>
+    </div>
   </nav>
+  <div class="nav-backdrop" aria-hidden="true"></div>
   <div class="site-header__cta">
     <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Меню"><span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
@@ -1556,16 +1630,18 @@ input, textarea { caret-color: var(--cobalt); }
   /* Mobile menu */
   var menuBtn = document.querySelector('.menu-btn');
   var nav = document.getElementById('site-nav');
-  menuBtn.addEventListener('click', function () {
-    var open = menuBtn.getAttribute('aria-expanded') !== 'true';
+  var siteHeader = document.querySelector('.site-header');
+  var backdrop = document.querySelector('.nav-backdrop');
+  function setMenu(open) {
     menuBtn.setAttribute('aria-expanded', String(open));
     nav.classList.toggle('is-open', open);
-  });
-  nav.addEventListener('click', function (e) {
-    if (e.target.closest('a')) { menuBtn.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
-  });
+    siteHeader.classList.toggle('menu-open', open);
+  }
+  menuBtn.addEventListener('click', function () { setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  if (backdrop) backdrop.addEventListener('click', function () { setMenu(false); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { menuBtn.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }
+    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
   });
 
   /* Request form */
