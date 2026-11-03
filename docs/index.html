@@ -406,6 +406,13 @@ input, textarea { caret-color: var(--cobalt); }
   background: var(--stitch-v); color: rgba(17,17,17,.5);
 }
 .plabel .photo-slot { height: auto; aspect-ratio: 4 / 5; }
+.plabel--photo .plabel__inner { grid-template-columns: minmax(0, 1fr) clamp(220px, 20vw, 290px); }
+.plabel__photo { grid-column: 1 / -1; margin: 0; }
+#product-softener .plabel__photo img { aspect-ratio: 16 / 9; object-position: 50% 12%; }
+.plabel__photo img {
+  display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 45%;
+  border-radius: 2px; box-shadow: 0 0 0 1px var(--hair);
+}
 .plabel__name { font-size: clamp(24px, 1rem + 1vw, 32px); line-height: 1.1; font-weight: 800; letter-spacing: -.015em; }
 .plabel__intro { margin-top: var(--s-3); font-size: 16.5px; line-height: 1.55; color: var(--ink-2); max-width: 64ch; }
 .plabel__sub { margin-top: var(--s-5); font-size: 16.5px; line-height: 1.4; font-weight: 700; }
@@ -971,6 +978,9 @@ input, textarea { caret-color: var(--cobalt); }
   .site-nav ul { gap: 4px 14px; }
   .plabel__inner { grid-template-columns: clamp(150px, 20vw, 210px) minmax(0, 1fr); }
   .plabel__media { grid-row: 1 / span 2; }
+  .plabel--photo .plabel__inner { grid-template-columns: minmax(0, 1fr); }
+  .plabel--photo .plabel__photo { grid-row: auto; }
+  .plabel--photo .plabel__aside { grid-column: 1; }
   .plabel__aside { grid-column: 2; padding: var(--s-4) 0 0; border-left: 0; border-top: 1px solid var(--hair); }
   .segment { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
   .segment .sym-row { grid-column: 1; grid-row: 2; }
@@ -1145,6 +1155,7 @@ input, textarea { caret-color: var(--cobalt); }
   .plabel__inner::after { left: 9px; }
   .plabel__media { grid-row: auto; }
   .plabel .photo-slot { aspect-ratio: auto; min-height: 112px; }
+  .plabel__photo img { aspect-ratio: auto; }
   .plabel__aside { grid-column: auto; }
 }
 </style>
@@ -1306,9 +1317,9 @@ input, textarea { caret-color: var(--cobalt); }
     </div>
 
     <div class="plabels">
-      <article class="plabel" id="product-soap" aria-labelledby="p-soap">
+      <article class="plabel plabel--photo" id="product-soap" aria-labelledby="p-soap">
         <div class="plabel__inner satin">
-          <div class="plabel__media"><div class="photo-slot"><span>Фото флакона с этикеткой</span><span class="todo">уточнить</span></div></div>
+          <figure class="plabel__media plabel__photo"><img src="img/nf-soap.webp" alt="Жидкое мыло «Новая формула»: яблоко, алоэ вера, луговые травы, цитрус" width="1600" height="900" loading="lazy" decoding="async"></figure>
           <div class="plabel__main">
             <h3 class="plabel__name" id="p-soap">Жидкое мыло «Новая формула»</h3>
             <p class="plabel__intro">Жидкое мыло «Новая формула» объединяет мощную очищающую способность и деликатный уход — так, чтобы вы могли мыть руки столько раз, сколько нужно, и не переживать за состояние кожи.</p>
@@ -1330,9 +1341,9 @@ input, textarea { caret-color: var(--cobalt); }
         </div>
       </article>
 
-      <article class="plabel" id="product-softener" aria-labelledby="p-softener">
+      <article class="plabel plabel--photo" id="product-softener" aria-labelledby="p-softener">
         <div class="plabel__inner satin">
-          <div class="plabel__media"><div class="photo-slot"><span>Фото канистры с этикеткой</span><span class="todo">уточнить</span></div></div>
+          <figure class="plabel__media plabel__photo"><img src="img/nf-softener.webp" alt="Кондиционер для белья «Новая формула»: алтайский бриз, крымская лаванда, цитрус, курильские ландыши, сибирская свежесть" width="1536" height="1024" loading="lazy" decoding="async"></figure>
           <div class="plabel__main">
             <h3 class="plabel__name" id="p-softener">Кондиционер для белья «Новая формула»</h3>
             <p class="plabel__intro">Кондиционер для белья «Новая формула» создан, чтобы вы получали от стирки не только чистоту, но и удовольствие. Его усовершенствованная формула проникает в волокна ткани и делает их невероятно мягкими — без жёсткости и неприятного скрипа.</p>
