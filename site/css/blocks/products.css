@@ -1,0 +1,2 @@
+.products { overflow-x: clip; }
+.products__list { display: grid; gap: clamp(28px, 3vw, 44px); }

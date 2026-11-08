@@ -1,0 +1,32 @@
+/* Brand name until the logo is ready */
+.logo-slot {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  padding: 12px 16px 12px;
+  border: 1px dashed var(--grey);
+}
+.logo-slot__name { font-size: clamp(36px, 3.5vw, 52px); line-height: .9; font-weight: 900; letter-spacing: -.02em; }
+.logo-slot__badge { margin-left: 0; }
+
+.logo-slot--large { gap: 14px; padding: 16px 18px 14px; }
+.logo-slot--large .logo-slot__name { font-size: clamp(40px, 4.6vw, 66px); line-height: .92; letter-spacing: -.025em; }
+.logo-slot--large .logo-slot__word { display: block; }
+
+.logo-slot--on-ink { border-color: rgba(255,255,255,.4); }
+.logo-slot--on-ink .logo-slot__name { font-size: 34px; }
+.logo-slot--on-ink .logo-slot__badge { color: var(--grey-soft); border-color: var(--grey); }
+
+/* Load: the brand name is printed on the big label */
+@media (prefers-reduced-motion: no-preference) {
+  .logo-slot--large .logo-slot__name { animation: print 900ms var(--ease) both; animation-delay: 280ms; }
+  @keyframes print {
+    from { clip-path: inset(0 100% 0 0); filter: blur(2px); }
+    to { clip-path: inset(0 0 0 0); filter: blur(0); }
+  }
+}
+
+@media (max-width: 960px) {
+  .logo-slot__name { font-size: 32px; }
+  .logo-slot--large { gap: 10px; padding: 12px 14px; }
+  .logo-slot--large .logo-slot__name { font-size: clamp(30px, 9vw, 40px); }
+  .logo-slot--large .logo-slot__word { display: inline; }
+}

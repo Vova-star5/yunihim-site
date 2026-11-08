@@ -1,0 +1,82 @@
+/* Desktop: a row of links in the header. Phones: a satin label that drops from the header */
+.site-nav__panel { display: contents; }
+.site-nav__list { display: flex; flex-wrap: wrap; gap: 4px clamp(14px, 1.6vw, 24px); }
+.site-nav__link { font-size: 15px; font-weight: 500; text-decoration: none; color: #fff; padding-block: 6px; white-space: nowrap; }
+.site-nav__link:hover { color: #fff; text-decoration: underline; }
+.site-nav__fold, .site-nav__footer, .site-nav__item--extra { display: none; }
+
+@media (max-width: 1360px) {
+  .site-nav__link { font-size: 14.5px; }
+}
+
+@media (max-width: 1100px) {
+  .site-nav__list { gap: 4px 14px; }
+}
+
+@media (max-width: 960px) {
+  .site-nav {
+    --focus-ring: var(--cobalt);
+    --link-hover: var(--cobalt);
+    position: absolute; z-index: 2; top: calc(100% + 10px); left: var(--gutter); right: var(--gutter);
+    max-height: calc(100vh - 110px); overflow-y: auto; overscroll-behavior: contain;
+    visibility: hidden; pointer-events: none; opacity: 0;
+    transform: translateY(-14px) rotate(-.8deg); transform-origin: 50% 0;
+    filter: drop-shadow(0 2px 2px rgba(6,14,58,.3)) drop-shadow(0 26px 30px rgba(6,14,58,.45));
+    transition: transform 380ms var(--ease), opacity 180ms ease, visibility 0s linear 380ms;
+  }
+  .site-nav--open {
+    visibility: visible; pointer-events: auto; opacity: 1; transform: none;
+    transition: transform 560ms var(--ease), opacity 200ms ease;
+  }
+  .site-nav__panel {
+    display: block; color: var(--ink); padding-bottom: 46px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%);
+  }
+  .site-nav__fold { display: block; height: 30px; }
+  .site-nav__fold::after { top: 13px; }
+  .site-nav__list { display: block; padding: 6px 22px 0; }
+  .site-nav__item { position: relative; }
+  .site-nav__item + .site-nav__item::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+    background: var(--stitch); color: rgba(17,17,17,.28);
+  }
+  .site-nav__item--extra { display: block; }
+  .site-nav__link {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 15px 2px; color: var(--ink); white-space: normal;
+    font-size: 22px; font-weight: 800; letter-spacing: -.015em; line-height: 1.15;
+  }
+  .site-nav__link::after {
+    content: ""; flex: none; width: 9px; height: 9px; margin-right: 4px;
+    border-top: 2px solid var(--cobalt); border-right: 2px solid var(--cobalt);
+    transform: rotate(45deg);
+  }
+  .site-nav__link:hover, .site-nav__link:focus-visible { color: var(--cobalt); text-decoration: none; }
+  .site-nav__footer { display: grid; justify-items: start; gap: 6px; position: relative; margin: 6px 22px 0; padding-top: 20px; }
+  .site-nav__footer::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+    background: var(--stitch); color: rgba(17,17,17,.28);
+  }
+  .site-nav__label { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+  .site-nav__phone {
+    display: inline; padding: 0; font: 600 18px/1.35 var(--f-code); letter-spacing: -.01em;
+    color: var(--ink); text-decoration: none;
+  }
+  .site-nav__cta {
+    display: flex; width: 100%; margin-top: 12px; padding: 14px 20px; gap: 16px;
+    font-size: 17px; font-weight: 800; line-height: 1.15; letter-spacing: -.015em; white-space: normal;
+  }
+
+  /* Items slide in one after another */
+  .site-nav__item:nth-child(2) { --i: 1; }
+  .site-nav__item:nth-child(3) { --i: 2; }
+  .site-nav__item:nth-child(4) { --i: 3; }
+  .site-nav__item:nth-child(5) { --i: 4; }
+  .site-nav--open .site-nav__item { animation: menu-item 520ms var(--ease) both; animation-delay: calc(140ms + var(--i, 0) * 45ms); }
+  .site-nav--open .site-nav__footer { animation: menu-item 520ms var(--ease) both; animation-delay: 420ms; }
+  @keyframes menu-item { from { opacity: 0; transform: translateY(10px); } }
+  @media (prefers-reduced-motion: reduce) {
+    .site-nav, .site-nav--open { transition: opacity 120ms ease, visibility 0s; transform: none; }
+    .site-nav--open .site-nav__item, .site-nav--open .site-nav__footer { animation: none; }
+  }
+}

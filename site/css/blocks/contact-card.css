@@ -1,0 +1,13 @@
+/* A hanging satin label with mail, phones and pickup */
+.contact-card { filter: drop-shadow(0 1px 1px rgba(17,17,17,.08)) drop-shadow(0 22px 26px rgba(17,17,17,.12)); }
+.contact-card__inner {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%);
+  padding-bottom: 56px;
+}
+.contact-card__fold { height: 40px; }
+.contact-card__fold::after { top: 18px; }
+.contact-card__list { display: grid; gap: var(--s-5); padding: clamp(22px, 3vw, 36px) clamp(22px, 3vw, 44px) clamp(10px, 1.5vw, 18px); }
+.contact-card__term { font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-2); }
+.contact-card__value { margin-top: 6px; font-size: 17px; line-height: 1.5; }
+.contact-card__phone { font-size: clamp(20px, 1rem + .6vw, 26px); line-height: 1.45; }
+.contact-card__mail { font-size: clamp(20px, 1rem + .7vw, 28px); font-weight: 700; color: var(--cobalt); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .2em; overflow-wrap: anywhere; }

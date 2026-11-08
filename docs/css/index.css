@@ -1,0 +1,52 @@
+/* Новая Формула — точка входа стилей.
+   Классы по БЭМ: block, block__element, block--modifier. Один блок — один файл.
+   Порядок важен: общие блоки-миксы (todo, fold, btn, phone…) идут раньше блоков,
+   которые их уточняют. */
+
+/* Base */
+@import url('base/fonts.css');
+@import url('base/vars.css');
+@import url('base/normalize.css');
+@import url('base/globals.css');
+
+/* Shared blocks */
+@import url('blocks/container.css');
+@import url('blocks/skip-link.css');
+@import url('blocks/todo.css');
+@import url('blocks/fold.css');
+@import url('blocks/satin.css');
+@import url('blocks/selvage.css');
+@import url('blocks/btn.css');
+@import url('blocks/phone.css');
+@import url('blocks/logo-slot.css');
+
+/* Header */
+@import url('blocks/site-header.css');
+@import url('blocks/burger.css');
+@import url('blocks/site-nav.css');
+
+/* Hero */
+@import url('blocks/hero.css');
+@import url('blocks/offer-list.css');
+@import url('blocks/care-label.css');
+@import url('blocks/dealer.css');
+@import url('blocks/quick-links.css');
+
+/* Sections */
+@import url('blocks/section.css');
+@import url('blocks/products.css');
+@import url('blocks/product.css');
+@import url('blocks/specs.css');
+@import url('blocks/chip.css');
+@import url('blocks/tag-list.css');
+@import url('blocks/photo-band.css');
+@import url('blocks/audience.css');
+@import url('blocks/terms.css');
+@import url('blocks/contact.css');
+@import url('blocks/contact-card.css');
+
+/* Footer */
+@import url('blocks/site-footer.css');
+
+/* Motion */
+@import url('blocks/reveal.css');

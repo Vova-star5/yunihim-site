@@ -1,0 +1,48 @@
+.site-footer {
+  --focus-ring: #fff;
+  --link-hover: #fff;
+  position: relative;
+  padding-top: calc(var(--s-8) + 14px);
+  padding-bottom: var(--s-6);
+  background: var(--ink);
+  color: #fff;
+}
+/* Woven selvage along the top edge and a seam stitch under it */
+.site-footer::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 14px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.1) 0 1px, rgba(255,255,255,0) 1px 3px),
+    linear-gradient(180deg, #2A2A2A, #1A1A1A);
+}
+.site-footer::after {
+  content: ""; position: absolute; top: 24px; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.4);
+}
+.site-footer__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) repeat(3, minmax(0, 1fr)); gap: var(--s-6) var(--s-7); }
+.site-footer__title { font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: var(--s-3); }
+.site-footer__text, .site-footer__item { font-size: 16px; line-height: 1.55; }
+.site-footer__item + .site-footer__item { margin-top: 6px; }
+.site-footer__phone { font-size: 19px; }
+.site-footer__about { margin-top: var(--s-4); font-size: 14px; line-height: 1.55; color: var(--grey-soft); max-width: 22em; }
+.site-footer__num { font-variant-numeric: tabular-nums lining-nums; }
+.site-footer__bottom {
+  margin-top: var(--s-8); padding-top: var(--s-5);
+  border-top: 1px solid rgba(255,255,255,.18);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-3) var(--s-6);
+  font-size: 14px; color: var(--grey-soft);
+}
+.site-footer__copy { font-size: inherit; }
+
+/* Reveal: the seam stitch draws across */
+@media (prefers-reduced-motion: no-preference) {
+  .site-footer.reveal::after { clip-path: inset(0 0 0 0); transition: clip-path 900ms var(--ease); transition-delay: 120ms; }
+  .site-footer.reveal--hidden::after { clip-path: inset(0 100% 0 0); }
+}
+
+@media (max-width: 1100px) {
+  .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 960px) {
+  .site-footer__grid { grid-template-columns: minmax(0, 1fr); }
+}

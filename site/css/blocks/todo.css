@@ -1,0 +1,14 @@
+/* Dashed chip for content that is still coming from the client */
+.todo {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 6px 2px;
+  border: 1px dashed var(--grey);
+  border-radius: 2px;
+  font: 600 10.5px/1.1 var(--f-label);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+  vertical-align: .18em;
+}

@@ -1,0 +1,41 @@
+/* Цвета фокуса, выделения и наведения берутся из переменных,
+   тёмные блоки переопределяют их у себя (--focus-ring, --selection-*, --link-hover) */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  scrollbar-color: var(--grey) var(--page);
+  scrollbar-width: thin;
+}
+html::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track { background: var(--page); }
+html::-webkit-scrollbar-thumb { background: var(--grey); border: 3px solid var(--page); border-radius: 6px; }
+html::-webkit-scrollbar-thumb:hover { background: var(--ink-2); }
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--f-label);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection { background: var(--selection-bg, var(--cobalt)); color: var(--selection-fg, #fff); }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { color: var(--link-hover, var(--cobalt)); }
+
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--focus-ring, var(--cobalt)); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 1ms !important; }
+}

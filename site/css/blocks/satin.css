@@ -1,0 +1,5 @@
+/* Woven label fabric */
+.satin {
+  background-color: var(--satin);
+  background-image: var(--sheen), var(--weave);
+}

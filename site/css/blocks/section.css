@@ -1,0 +1,10 @@
+.section { padding-top: var(--sec-top); padding-bottom: var(--sec-bottom); }
+.section--satin { background: var(--satin); }
+.section--tint { background: var(--cobalt-tint); }
+.section__head { margin-bottom: clamp(32px, 3.5vw, 48px); max-width: 52rem; }
+.section__title {
+  font-size: clamp(2.25rem, 1.3rem + 2.6vw, 3.6rem);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -.024em;
+}

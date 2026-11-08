@@ -1,0 +1,17 @@
+/* B2B offer: rows stitched onto the cobalt, each led by a small satin tag */
+.offer-list { margin-top: var(--s-3); display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--s-6); }
+@container (min-width: 620px) { .offer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.offer-list__item {
+  position: relative;
+  padding: 14px 0 14px 30px;
+  font-size: 17px; line-height: 1.45; color: #fff;
+}
+.offer-list__item::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--stitch); color: rgba(255,255,255,.4);
+}
+.offer-list__item::before {
+  content: ""; position: absolute; left: 0; top: 21px; width: 16px; height: 10px;
+  background: var(--satin);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 50%, 100% 100%, 0 100%);
+}

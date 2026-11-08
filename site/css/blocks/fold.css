@@ -1,0 +1,13 @@
+/* The folded, stitched top of a woven label */
+.fold {
+  position: relative;
+  height: 26px;
+  color: rgba(17,17,17,.5);
+  background: linear-gradient(180deg, #DDDDD6 0%, #ECECE7 55%, #E2E2DB 100%);
+  border-bottom: 1px solid rgba(17,17,17,.09);
+  box-shadow: 0 1px 0 rgba(255,255,255,.85);
+}
+.fold::after {
+  content: ""; position: absolute; left: 12px; right: 12px; top: 11px; height: 1.5px;
+  background: var(--stitch);
+}

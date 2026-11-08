@@ -1,0 +1,7 @@
+/* Dealer offer on the care label */
+.dealer { position: relative; margin-top: var(--s-6); padding-top: var(--s-5); scroll-margin-top: 24px; }
+.dealer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.5px; background: var(--stitch); color: rgba(17,17,17,.35); }
+.dealer__title { font-size: clamp(20px, 1.1rem + .5vw, 24px); line-height: 1.15; font-weight: 800; letter-spacing: -.01em; }
+.dealer__lead { margin-top: var(--s-3); font-size: 16px; line-height: 1.45; font-weight: 700; }
+.dealer__text { margin-top: var(--s-3); font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.dealer__btn { margin-top: var(--s-5); }

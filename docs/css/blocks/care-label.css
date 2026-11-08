@@ -1,0 +1,30 @@
+/* The big woven brand label in the hero */
+.care-label {
+  position: relative;
+  padding-bottom: 64px;
+  color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 28px), 0 100%);
+  transform-origin: 50% 0;
+}
+.care-label__fold { height: 52px; }
+.care-label__fold::after { top: 24px; left: 16px; right: 16px; }
+.care-label__body { padding: clamp(28px, 3vw, 44px) clamp(24px, 2.8vw, 44px) 0; }
+
+/* Load: the label drops in and settles */
+@media (prefers-reduced-motion: no-preference) {
+  .care-label { animation: settle 1500ms var(--ease) both; }
+  @keyframes settle {
+    from { transform: translateY(-28px) rotate(-1.4deg); }
+    to { transform: none; }
+  }
+}
+
+@media (max-width: 960px) {
+  .care-label {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 18px), 0 100%);
+    padding-bottom: 44px;
+  }
+  .care-label__fold { height: 30px; }
+  .care-label__fold::after { top: 13px; }
+  .care-label__body { padding: 22px 20px 0; }
+}
