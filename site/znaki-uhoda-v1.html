@@ -827,6 +827,11 @@ input, textarea { caret-color: var(--cobalt); }
 .faq-item[open] .faq-mark::after { transform: rotate(90deg) scaleX(0); }
 .faq-item p { padding: 0 calc(clamp(20px, 2.6vw, 36px) + 46px) 24px clamp(20px, 2.6vw, 36px); font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 46em; }
 
+.contact-card { display: grid; gap: var(--s-5); padding: clamp(22px, 3vw, 36px) clamp(22px, 3vw, 44px) clamp(10px, 1.5vw, 18px); }
+.contact-card dt { font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-2); }
+.contact-card dd { margin-top: 6px; font-size: 17px; line-height: 1.5; }
+.contact-card .phone { font-size: clamp(20px, 1rem + .6vw, 26px); line-height: 1.45; }
+.contact-card__mail { font-size: clamp(20px, 1rem + .7vw, 28px); font-weight: 700; color: var(--cobalt); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .2em; overflow-wrap: anywhere; }
 .lform__set { margin-bottom: var(--s-3); padding: 10px 14px; border: 1px dashed var(--cobalt); font-size: 15px; line-height: 1.45; }
 .lform__set b { color: var(--cobalt); }
 
@@ -1213,7 +1218,7 @@ input, textarea { caret-color: var(--cobalt); }
   </defs>
 </svg>
 
-<a class="skip" href="#request">Перейти к заявке</a>
+<a class="skip" href="#request">Перейти к контактам</a>
 
 <header class="site-header" id="top">
   <a class="site-header__brand" href="#top" aria-label="Новая Формула, на главную">
@@ -1227,14 +1232,13 @@ input, textarea { caret-color: var(--cobalt); }
         <li style="--i:1"><a href="#products">Продукция</a></li>
         <li style="--i:2"><a href="#clients">Для кого</a></li>
         <li class="nav-extra" style="--i:3"><a href="#usloviya">Условия работы</a></li>
-        <li class="nav-extra" style="--i:4"><a href="#faq">Вопросы и ответы</a></li>
-        <li style="--i:5"><a href="#contacts">Контакты</a></li>
+        <li style="--i:4"><a href="#contacts">Контакты</a></li>
       </ul>
       <div class="site-nav__foot">
         <span class="site-nav__label">Отдел продаж</span>
         <a class="site-nav__phone" href="tel:+74959684745">+7 495 968-47-45</a>
-        <a class="site-nav__phone" href="tel:+79852007060">+7 985 200-70-60</a>
-        <a class="btn site-nav__cta" href="#request">Оставить заявку</a>
+        <a class="site-nav__phone" href="tel:+74959684743">+7 495 968-47-43</a>
+        <a class="btn site-nav__cta" href="#request">Связаться с нами</a>
       </div>
     </div>
   </nav>
@@ -1434,48 +1438,56 @@ input, textarea { caret-color: var(--cobalt); }
       <h2 id="clients-title">Для кого</h2>
     </div>
     <ul class="segments">
-      <li class="segment">
+      <li class="segment segment--wide">
         <header class="segment__head"><img class="segment__photo" src="img/lab-service.webp" alt="" width="900" height="600"><h3>Для дома</h3></header>
-        <ul class="sym-row" aria-label="Режим для дома">
-          <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-        </ul>
         <div>
-          <p class="segment__text">Для использования в быту, частного использования.</p>
+          <p class="segment__text">Профессиональная эффективность в удобном формате для ежедневного ухода за домом и гардеробом. Мы создали средства, которые справляются со сложными бытовыми задачами, но при этом остаются бережными к коже и любимым вещам.</p>
+          <ul class="tag-list">
+            <li><b>Бережный состав.</b> Сбалансированный pH и мягкие компоненты не сушат кожу — посуду можно мыть без перчаток, а средства подходят для ежедневного применения.</li>
+            <li><b>Полная смываемость.</b> Гели для стирки и мытья посуды не оставляют разводов, резкого химического запаха и следов на ткани.</li>
+            <li><b>Приятные природные ароматы.</b> Широкий выбор отдушек — от крымской лаванды и сибирской свежести до спелого манго и алоэ вера.</li>
+            <li><b>Экономичный расход.</b> Концентрированные формулы работают даже в прохладной воде, а гель для посуды даёт густую пену всего с одной капли.</li>
+            <li><b>Удобная фасовка.</b> Выпускаем средства в практичных флаконах и канистрах от 0,5 до 5 литров, чтобы запаса хватило надолго.</li>
+          </ul>
         </div>
       </li>
-      <li class="segment">
+      <li class="segment segment--wide">
         <header class="segment__head"><img class="segment__photo" src="img/lab-laundry.webp" alt="" width="900" height="600"><h3>Прачечные</h3></header>
-        <ul class="sym-row" aria-label="Режим прачечной">
-          <li><svg class="sym" role="img" aria-label="Стирка при 60 °C"><use href="#s-t60"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Барабанная сушка, бережный режим"><use href="#s-tumble"/></svg></li>
-        </ul>
         <div>
-          <p class="segment__text"><span class="todo">текст скоро</span></p>
+          <p class="segment__text">Надёжные решения для коммерческих и индустриальных прачечных, где на первом месте стоят скорость цикла, экономика стирки и безупречный результат с первого раза.</p>
+          <ul class="tag-list">
+            <li><b>Эффективность при высоких нагрузках.</b> Концентрированные гели удаляют сложные, въевшиеся загрязнения без предварительного замачивания и агрессивного трения.</li>
+            <li><b>Защита и продление срока службы текстиля.</b> Бережные формулы сохраняют прочность волокон, предотвращают истончение ткани и образование катышков даже при частых циклах стирки.</li>
+            <li><b>Лёгкая глажка и антистатический эффект.</b> Кондиционеры смягчают жёсткую воду, снимают статику и ускоряют работу гладильного оборудования.</li>
+            <li><b>Промышленная фасовка.</b> Поставляем продукцию в канистрах от 5–10 кг, бочках по 120 кг и еврокубах по 1000 кг под любой масштаб производства.</li>
+            <li><b>Стабильность каждой партии.</b> Строгий лабораторный контроль на заводе в Московской области гарантирует предсказуемый результат при каждом заказе.</li>
+          </ul>
         </div>
       </li>
-      <li class="segment">
-        <header class="segment__head"><img class="segment__photo" src="img/lab-hotel.webp" alt="" width="900" height="600"><h3>Гостиницы</h3></header>
-        <ul class="sym-row" aria-label="Режим гостиницы">
-          <li><svg class="sym" role="img" aria-label="Ручная стирка"><use href="#s-hand"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Стирка при 30 °C"><use href="#s-t30"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Стирка при 40 °C"><use href="#s-t40"/></svg></li>
-        </ul>
+      <li class="segment segment--wide">
+        <header class="segment__head"><img class="segment__photo" src="img/lab-hotel.webp" alt="" width="900" height="600"><h3>Гостиницы, отели, дома отдыха</h3></header>
         <div>
-          <p class="segment__text"><span class="todo">текст скоро</span></p>
+          <p class="segment__text">Комплексное обеспечение отелей, санаториев и баз отдыха средствами, которые формируют у гостей ощущение безупречной чистоты, свежести и заботы.</p>
+          <ul class="tag-list">
+            <li><b>Белоснежность и мягкость текстиля.</b> Постельное бельё и махровые полотенца остаются воздушными, приятными к телу и сохраняют свежесть надолго.</li>
+            <li><b>Премиальные ненавязчивые отдушки.</b> Тонкие ароматы создают атмосферу уюта в номерах, не вызывая дискомфорта у чувствительных гостей.</li>
+            <li><b>Единый поставщик для всех зон.</b> Закрываем потребности номерного фонда, прачечной службы и кухни — от жидкого мыла для диспенсеров до гелей для посуды и стирки.</li>
+            <li><b>Выгодные прямые поставки.</b> Работаем напрямую с завода без посредников, предоставляем полный пакет сертификатов и отгружаем заказы точно в срок.</li>
+            <li><b>Индивидуальный подход.</b> Поможем подобрать оптимальные фасовки под загрузку вашего отеля и отправим бесплатные образцы для тестирования.</li>
+          </ul>
         </div>
       </li>
-      <li class="segment">
+      <li class="segment segment--wide">
         <header class="segment__head"><img class="segment__photo" src="img/lab-drycleaning.webp" alt="" width="900" height="600"><h3>Химчистки</h3></header>
-        <ul class="sym-row" aria-label="Режим химчистки">
-          <li><svg class="sym" role="img" aria-label="Химчистка, растворитель P"><use href="#s-p"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Профессиональная аквачистка"><use href="#s-w"/></svg></li>
-          <li><svg class="sym" role="img" aria-label="Глажка при низкой температуре"><use href="#s-iron1"/></svg></li>
-        </ul>
         <div>
-          <p class="segment__text"><span class="todo">текст скоро</span></p>
+          <p class="segment__text">Деликатные и высокотехнологичные составы для профессиональной аквачистки и бережного восстановления сложных изделий.</p>
+          <ul class="tag-list">
+            <li><b>Бережное отношение к капризным тканям.</b> Формулы разработаны для работы со смесовыми, синтетическими и деликатными материалами без риска деформации и усадки.</li>
+            <li><b>Сохранение яркости пигментов.</b> Средства препятствуют вымыванию красителей, защищают вещи от потускнения и сохраняют первозданный вид одежды клиентов.</li>
+            <li><b>Никаких следов после обработки.</b> Составы полностью вымываются из структуры ткани, не оставляя белёсых разводов и липкости.</li>
+            <li><b>Контролируемое пенообразование.</b> Рецептуры адаптированы под профессиональное оборудование с точным дозированием.</li>
+            <li><b>Адаптация рецептур под ваши задачи.</b> При необходимости можем скорректировать состав или отдушку под специфику вашего предприятия.</li>
+          </ul>
         </div>
       </li>
       <li class="segment segment--wide">
@@ -1507,9 +1519,9 @@ input, textarea { caret-color: var(--cobalt); }
       <dl class="terms">
         <div class="term"><dt>Отгрузка</dt><dd>Оперативная сборка заказов и отгрузка с завода в Московской области</dd></div>
         <div class="term"><dt>В регионы</dt><dd>Работаем со всеми крупными транспортными компаниями</dd></div>
-        <div class="term"><dt>Самовывоз</dt><dd>Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8 <span class="todo">часы работы — уточнить</span></dd></div>
-        <div class="term"><dt>Оплата</dt><dd>Безналичный расчёт для юрлиц и ИП <span class="todo">НДС — уточнить</span></dd></div>
-        <div class="term"><dt>Частным покупателям</dt><dd>Нашу продукцию можно купить в магазинах. Напрямую с завода работаем с юрлицами и ИП</dd></div>
+        <div class="term"><dt>Самовывоз</dt><dd>143132, Московская обл., Рузский р-н, пос. Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8. Заезд машин на погрузку: понедельник — пятница, с&nbsp;8:00 до&nbsp;15:30</dd></div>
+        <div class="term"><dt>Оплата</dt><dd>Работаем только с юридическими лицами и ИП. Безналичный расчёт (с НДС и без НДС)</dd></div>
+        <div class="term"><dt>Частным покупателям</dt><dd>Напрямую с завода мы отгружаем только оптовые партии, а купить нашу продукцию в розницу можно в магазинах и на маркетплейсах</dd></div>
         <div class="term"><dt>Минимальный заказ</dt><dd>Индивидуальный подход к объёмам минимального заказа</dd></div>
         <div class="term"><dt>Документы</dt><dd>Продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Полный комплект разрешительной документации</dd></div>
         <div class="term"><dt>Под ваш бренд (СТМ)</dt><dd>Изготовим партию моющих средств по вашему техническому заданию</dd></div>
@@ -1518,99 +1530,21 @@ input, textarea { caret-color: var(--cobalt); }
   </div>
 </section>
 
-<section class="section" id="faq" aria-labelledby="faq-title">
-  <div class="wrap faq">
-    <h2 id="faq-title">Вопросы и ответы</h2>
-    <div class="faq-label">
-      <div class="faq-label__inner satin selvage">
-        <div class="fold" aria-hidden="true"></div>
-        <details class="faq-item" open>
-          <summary>Какой минимальный заказ?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Индивидуальный подход к объёмам минимального заказа. Отгружаем заказы любого объёма.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Можно сначала получить образцы?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Да, пришлём образцы, чтобы вы проверили средства на своём объекте. <span class="todo">условия — уточнить</span></p>
-        </details>
-        <details class="faq-item">
-          <summary>Как вы отгружаете заказы?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Оперативно собираем заказы и отгружаем с завода в Московской области. В регионы отправляем через крупные транспортные компании. <span class="todo">сроки — уточнить</span></p>
-        </details>
-        <details class="faq-item">
-          <summary>Какие документы есть на продукцию?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Вся продукция сертифицирована, соответствует ГОСТам, ТУ и ТР ТС. Предоставляем полный комплект разрешительной документации.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Можно выбрать отдушку и фасовку?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Да. У каждого средства несколько отдушек и вариантов фасовки — от 0,5&nbsp;л до кубов по 1000&nbsp;кг. Подберём под ваш объект.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Как оплатить?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Безналичный расчёт для юрлиц и ИП. <span class="todo">НДС и отсрочка — уточнить</span></p>
-        </details>
-        <details class="faq-item">
-          <summary>Можно купить как частное лицо?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Частные покупатели могут купить нашу продукцию в магазинах. Напрямую с завода мы работаем с юрлицами и ИП.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Можно выпустить продукцию под нашим брендом?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Да, СТМ: разработаем рецептуру и изготовим партию моющих средств по вашему техническому заданию под вашим брендом.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Работаете с дилерами в регионах?<span class="faq-mark" aria-hidden="true"></span></summary>
-          <p>Да, ищем дилеров и дистрибьюторов в регионах России и СНГ. Предлагаем эксклюзивные права на закреплённой территории.</p>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section--tint" id="request" aria-labelledby="request-title">
   <div class="wrap request">
     <div class="request__text">
-      <h2 id="request-title">Получите прайс-лист</h2>
-      <p>Оставьте телефон — перезвоним в течение рабочего дня и подберём продукцию под ваш объект.</p>
-      <div class="request__phones">
-        <a class="phone" href="tel:+74959684745">+7 495 968-47-45</a>
-        <a class="phone" href="tel:+79852007060">+7 985 200-70-60</a>
-      </div>
+      <h2 id="request-title">Свяжитесь с нами</h2>
+      <p>Напишите нам на почту или позвоните — подберём продукцию под ваш объект.</p>
     </div>
 
     <div class="form-label">
       <div class="form-label__inner satin selvage">
         <div class="fold" aria-hidden="true"></div>
-        <form class="lform" id="lform" action="#" method="post" novalidate>
-          <div class="field">
-            <label for="f-name">Имя</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" placeholder="Как к вам обращаться">
-            <p class="field__error" id="e-name"></p>
-          </div>
-          <div class="field">
-            <label for="f-phone">Телефон</label>
-            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-phone" placeholder="Номер для звонка">
-            <p class="field__error" id="e-phone"></p>
-          </div>
-          <div class="field">
-            <label for="f-company">Компания <i>— необязательно</i></label>
-            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Магазин, прачечная, гостиница…">
-          </div>
-          <fieldset>
-            <legend>Что интересует</legend>
-            <div class="choices">
-              <label class="choice"><input type="radio" name="interest" value="opt"><span class="choice__mark" aria-hidden="true"></span>Опт</label>
-              <label class="choice"><input type="radio" name="interest" value="brand"><span class="choice__mark" aria-hidden="true"></span>Под мой бренд</label>
-              <label class="choice"><input type="radio" name="interest" value="base"><span class="choice__mark" aria-hidden="true"></span>Основа для мыла</label>
-              <label class="choice"><input type="radio" name="interest" value="other"><span class="choice__mark" aria-hidden="true"></span>Другое</label>
-            </div>
-          </fieldset>
-          <div class="lform__submit">
-            <input type="hidden" name="set" id="f-set" value="">
-            <p class="lform__set" id="lform-set" hidden></p>
-            <button class="btn" type="submit">Отправить заявку</button>
-            <p class="lform__consent">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
-          </div>
-          <p class="lform__status" id="lform-status" role="status" hidden></p>
-        </form>
+        <dl class="contact-card">
+          <div><dt>Почта</dt><dd><a class="contact-card__mail" href="mailto:unichimpro@gmail.com">unichimpro@gmail.com</a></dd></div>
+          <div><dt>Телефоны</dt><dd><a class="phone" href="tel:+74959684745">+7 495 968-47-45</a><br><a class="phone" href="tel:+74959684743">+7 495 968-47-43</a></dd></div>
+          <div><dt>Самовывоз</dt><dd>Пос. Тучково, ул.&nbsp;Партизан, д.&nbsp;41, стр.&nbsp;8. Понедельник — пятница, с&nbsp;8:00 до&nbsp;15:30</dd></div>
+        </dl>
       </div>
     </div>
   </div>
@@ -1626,18 +1560,18 @@ input, textarea { caret-color: var(--cobalt); }
           <span class="logo-slot__name" aria-hidden="true">Новая Формула</span>
           <span class="todo" aria-hidden="true">логотип в разработке</span>
         </div>
-        <p>Профессиональная химия для HoReCa, прачечных, химчисток и дома. Своё производство в Тучково.</p>
+        <p>Профессиональная химия для HoReCa, прачечных, химчисток и дома.</p>
       </div>
       <div>
         <h2>Телефоны</h2>
         <ul>
           <li><a class="phone" href="tel:+74959684745">+7 495 968-47-45</a></li>
-          <li><a class="phone" href="tel:+79852007060">+7 985 200-70-60</a></li>
+          <li><a class="phone" href="tel:+74959684743">+7 495 968-47-43</a></li>
         </ul>
       </div>
       <div>
         <h2>Почта</h2>
-        <p>Адрес почты <span class="todo">уточнить</span></p>
+        <p><a href="mailto:unichimpro@gmail.com">unichimpro@gmail.com</a></p>
       </div>
       <div>
         <h2>Производство</h2>
@@ -1646,7 +1580,6 @@ input, textarea { caret-color: var(--cobalt); }
     </div>
     <div class="footer-bottom">
       <span>© <span class="num">2026</span> ООО «ЮниХим-Про»</span>
-      <a href="#">Политика конфиденциальности</a>
     </div>
   </div>
 </footer>
@@ -1679,66 +1612,6 @@ input, textarea { caret-color: var(--cobalt); }
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
   });
-
-  /* Request form */
-  var form = document.getElementById('lform');
-  var fName = document.getElementById('f-name');
-  var fPhone = document.getElementById('f-phone');
-  var formStatus = document.getElementById('lform-status');
-
-  function checkName() {
-    if (!fName.value.trim()) return 'Укажите имя — так мы будем знать, как к вам обращаться.';
-    return '';
-  }
-  function checkPhone() {
-    var v = fPhone.value.trim();
-    var digits = v.replace(/\D/g, '');
-    if (!v) return 'Укажите телефон — по нему перезвоним с прайсом.';
-    if (/[^\d\s()+\-]/.test(v)) return 'В телефоне могут быть только цифры, пробелы, скобки, «+» и «-».';
-    if (digits.length < 10) return 'В номере меньше 10 цифр. Проверьте телефон, например: +7 495 968-47-45.';
-    if (digits.length > 15) return 'В номере слишком много цифр. Проверьте телефон, например: +7 495 968-47-45.';
-    return '';
-  }
-  function show(input, msg) {
-    var err = document.getElementById(input.getAttribute('aria-describedby'));
-    err.textContent = msg;
-    if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
-    return !msg;
-  }
-  fName.addEventListener('input', function () { if (fName.hasAttribute('aria-invalid')) show(fName, checkName()); });
-  fPhone.addEventListener('input', function () { if (fPhone.hasAttribute('aria-invalid')) show(fPhone, checkPhone()); });
-  fName.addEventListener('blur', function () { if (fName.value) show(fName, checkName()); });
-  fPhone.addEventListener('blur', function () { if (fPhone.value) show(fPhone, checkPhone()); });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    formStatus.hidden = true;
-    var okName = show(fName, checkName());
-    var okPhone = show(fPhone, checkPhone());
-    if (!okName) { fName.focus(); return; }
-    if (!okPhone) { fPhone.focus(); return; }
-    formStatus.innerHTML = '<b>Спасибо, заявка заполнена.</b> Перезвоним в течение рабочего дня. <span class="todo">отправка заявок: почта или Telegram — уточнить</span>';
-    formStatus.hidden = false;
-    form.reset();
-  });
-
-  /* Request topic line: filled by the picker and the dealer button, cleared on reset */
-  var fSet = document.getElementById('f-set');
-  var setLine = document.getElementById('lform-set');
-  function fillRequest(interest, lead, value) {
-    var radio = form.querySelector('input[name="interest"][value="' + interest + '"]');
-    if (radio) radio.checked = true;
-    fSet.value = value;
-    setLine.textContent = '';
-    var b = document.createElement('b');
-    b.textContent = lead;
-    setLine.appendChild(b);
-    setLine.appendChild(document.createTextNode(value));
-    setLine.hidden = false;
-  }
-  form.addEventListener('reset', function () { setLine.hidden = true; setLine.textContent = ''; fSet.value = ''; });
-  var dealerCta = document.getElementById('dealer-cta');
-  if (dealerCta) dealerCta.addEventListener('click', function () { fillRequest('opt', 'Запрос: ', 'Дилерство'); });
 
   /* Hero headline: measure real lines once the font is in, rise each from a mask, then restore plain text */
   var intro = document.querySelector('.hero__intro');
@@ -1811,45 +1684,6 @@ input, textarea { caret-color: var(--cobalt); }
       io.observe(el);
     });
     document.documentElement.classList.add('js-reveal');
-  }
-
-  /* Picker: label tabs, arrow keys, label swap, set carried into the request */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.pick-tab'));
-  if (tabs.length) {
-    var pickLabel = document.querySelector('.pick-label');
-    var pickBody = document.querySelector('.pick-label__body');
-    var current = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];
-    var selectTab = function (tab, focus) {
-      if (focus) tab.focus();
-      if (tab === current) return;
-      tabs.forEach(function (t) {
-        var on = t === tab;
-        t.setAttribute('aria-selected', String(on));
-        t.tabIndex = on ? 0 : -1;
-        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-      });
-      current = tab;
-      if (!reduce && pickLabel.animate) {
-        var ease = 'cubic-bezier(0.19, 1, 0.22, 1)';
-        pickLabel.animate([{ transform: 'translateY(-8px) rotate(-.7deg)' }, { transform: 'none' }], { duration: 280, easing: ease });
-        pickBody.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 220, easing: ease });
-      }
-    };
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { selectTab(t); });
-      t.addEventListener('keydown', function (e) {
-        var n = null, len = tabs.length;
-        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = tabs[(i + 1) % len];
-        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = tabs[(i - 1 + len) % len];
-        else if (e.key === 'Home') n = tabs[0];
-        else if (e.key === 'End') n = tabs[len - 1];
-        if (n) { e.preventDefault(); selectTab(n, true); }
-      });
-    });
-
-    document.getElementById('pick-cta').addEventListener('click', function () {
-      fillRequest('opt', 'Набор: ', document.getElementById(current.getAttribute('aria-controls')).dataset.set);
-    });
   }
 })();
 </script>
