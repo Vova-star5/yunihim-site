@@ -1,0 +1,87 @@
+/* First screen: cobalt fabric, the big care label on the left, intro on the right */
+.hero {
+  --focus-ring: #fff;
+  --link-hover: #fff;
+  --selection-bg: #fff;
+  --selection-fg: var(--cobalt-deep);
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--label-w) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "label intro" "label minis" "label .";
+  column-gap: var(--hero-gap);
+  padding-inline: var(--gutter);
+  min-height: max(100svh, 760px);
+  padding-bottom: clamp(48px, 6vw, 96px);
+  background: var(--cobalt);
+  color: #fff;
+}
+.hero__pattern {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  color: #fff; opacity: .07;
+}
+.hero__label {
+  grid-area: label; position: sticky; top: 0; z-index: 1; align-self: start;
+  filter: drop-shadow(0 2px 2px rgba(6,14,58,.3)) drop-shadow(0 30px 34px rgba(6,14,58,.42));
+}
+.hero__intro { grid-area: intro; position: relative; container-type: inline-size; padding-top: clamp(112px, 15vh, 160px); }
+.hero__minis { grid-area: minis; position: relative; container-type: inline-size; padding-top: var(--s-7); padding-bottom: var(--s-6); }
+.hero__title {
+  font-size: clamp(2.4rem, 7.2cqi, 4.4rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  max-width: 15em;
+  color: #fff;
+}
+.hero__lead {
+  margin-top: var(--s-5);
+  font-size: clamp(17px, 1.05rem + .2vw, 19px);
+  line-height: 1.55;
+  max-width: 40em;
+  color: var(--on-cobalt-2);
+}
+.hero__text + .hero__text { margin-top: var(--s-3); }
+.hero__offer { margin-top: var(--s-6); max-width: 52rem; }
+.hero__offer-title { font-size: clamp(18px, 1.05rem + .3vw, 21px); line-height: 1.35; font-weight: 700; color: #fff; }
+.hero__close {
+  margin-top: var(--s-4);
+  font-size: clamp(17px, 1.05rem + .2vw, 19px); line-height: 1.5; font-weight: 600;
+  max-width: 40em; color: #fff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Load: the cobalt fabric settles, its faint symbols come up once */
+  .hero__pattern { transform-origin: 50% 35%; animation: pattern-in 1400ms var(--ease) backwards; }
+  @keyframes pattern-in { from { opacity: 0; transform: scale(1.04); } }
+
+  /* Load: headline lines rise from under a mask (js/hero.js splits lines after the font is in, then restores the text) */
+  .page--hero-motion .hero__intro:not(.hero__intro--play) .hero__title,
+  .page--hero-motion .hero__intro:not(.hero__intro--play) .hero__lead,
+  .page--hero-motion .hero__intro:not(.hero__intro--play) .hero__offer,
+  .page--hero-motion .hero__intro:not(.hero__intro--play) .hero__close { animation: hold-hidden 1200ms linear; }
+  @keyframes hold-hidden { from, to { opacity: 0; } }
+  .hero__line { display: block; overflow: hidden; padding: .06em 0 .14em; margin: -.06em 0 -.14em; }
+  .hero__line-inner { display: block; animation: line-rise 820ms var(--ease) backwards; animation-delay: calc(var(--k, 0) * 90ms); }
+  @keyframes line-rise { from { transform: translateY(120%); } }
+  .hero__intro--play .hero__lead { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 40ms); }
+  .hero__intro--play .hero__offer { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 140ms); }
+  .hero__intro--play .hero__close { animation: rise 760ms var(--ease) backwards; animation-delay: calc(var(--after, 300ms) + 240ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-template-areas: "intro" "label" "minis";
+    min-height: 0;
+    padding-bottom: var(--s-8);
+    overflow: clip;
+  }
+  .hero__intro { padding-top: var(--s-7); }
+  .hero__title { font-size: clamp(2rem, 9.2cqi, 3.2rem); }
+  .hero__label { position: relative; top: auto; margin-top: var(--s-7); }
+  .hero__minis { padding-top: var(--s-5); padding-bottom: 0; }
+}

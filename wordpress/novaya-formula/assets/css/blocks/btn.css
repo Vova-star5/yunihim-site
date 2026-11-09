@@ -1,0 +1,21 @@
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px;
+  padding: 14px 30px;
+  border: 0; border-radius: 2px;
+  background: var(--cobalt); color: #fff;
+  font: 700 17px/1.1 var(--f-label);
+  letter-spacing: .01em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 10px 22px -12px rgba(31,63,191,.7);
+  transition: background-color 400ms var(--ease), box-shadow 400ms var(--ease), transform 400ms var(--ease);
+}
+.btn::after {
+  content: ""; position: absolute; inset: 5px; pointer-events: none;
+  border: 1px dashed rgba(255,255,255,.5); border-radius: 1px;
+}
+.btn:hover { background: var(--cobalt-deep); color: #fff; box-shadow: 0 1px 1px rgba(17,17,17,.12), 0 14px 26px -12px rgba(31,63,191,.8); }
+.btn:active { transform: translateY(1px); }

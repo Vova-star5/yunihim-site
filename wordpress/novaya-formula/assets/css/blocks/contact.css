@@ -1,0 +1,7 @@
+/* Contact section: intro on the left, the contact card on the right */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: var(--s-7) clamp(32px, 6vw, 112px); align-items: start; }
+.contact__text { margin-top: var(--s-4); font-size: 19px; color: var(--ink-2); max-width: 30em; }
+
+@media (max-width: 960px) {
+  .contact { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,11 @@
+/*
+Theme Name: Новая Формула
+Description: Тема лендинга «Новая Формула» (ООО «ЮниХим-Про»). Тексты, продукция, сегменты, условия и контакты редактируются в админке: «Продукция», «Для кого», «Условия работы», «Настройки сайта».
+Version: 1.0.0
+Requires at least: 6.3
+Tested up to: 6.8
+Requires PHP: 7.4
+Text Domain: novaya-formula
+*/
+
+/* Стили темы подключаются из assets/css/index.css (см. inc/enqueue.php). */

@@ -1,0 +1,24 @@
+/* Reveal on scroll: js/reveal.js adds reveal--hidden to what starts below the fold
+   and removes it when the element comes into view */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
+  .reveal--hidden { opacity: 0; transform: translateY(24px); }
+
+  /* Product labels swing in from the left */
+  .reveal--sway { transform-origin: 0 50%; transition-duration: 700ms, 1100ms; }
+  .reveal--sway.reveal--hidden { transform: translateX(-28px) rotate(-.5deg); }
+
+  /* Photos settle from a slight zoom */
+  .reveal--zoom { transition-duration: 700ms, 1400ms; }
+  .reveal--zoom.reveal--hidden { transform: scale(1.06); }
+
+  /* Hanging labels drop in and settle on their seam */
+  .reveal--drop { transform-origin: 50% 0; transition-duration: 700ms, 900ms; }
+  .reveal--drop.reveal--hidden { transform: translateY(-28px) rotate(-1.4deg); }
+
+  /* The block stays put, its own parts animate (see terms.css, site-footer.css) */
+  .reveal--inner.reveal--hidden { opacity: 1; transform: none; }
+}

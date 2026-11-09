@@ -1,0 +1,13 @@
+/* A small cut label leads each point */
+.tag-list { margin-top: var(--s-3); display: grid; gap: var(--s-3); }
+.tag-list__item { position: relative; padding-left: 28px; font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 64ch; }
+.tag-list__item::before {
+  content: ""; position: absolute; left: 0; top: .5em; width: 15px; height: 9px;
+  background: var(--cobalt);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 50%, 100% 100%, 0 100%);
+}
+.tag-list__lead { font-weight: 700; color: var(--ink); }
+
+@media (min-width: 1101px) {
+  .tag-list--columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4) var(--s-6); }
+}

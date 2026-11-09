@@ -1,0 +1,41 @@
+:root {
+  /* Colors */
+  --page: #EFEFEA;
+  --satin: #F6F6F3;
+  --satin-hi: #FDFDFB;
+  --ink: #111111;
+  --ink-2: #4E535A;
+  --grey: #8A8F96;
+  --grey-soft: #BFC3C8;
+  --cobalt: #1F3FBF;
+  --cobalt-deep: #172F94;
+  --cobalt-tint: #E9ECF6;
+  --on-cobalt-2: #CDD5F5;
+  --hair: rgba(17, 17, 17, .14);
+
+  /* Fonts */
+  --f-label: "Commissioner", "Segoe UI", system-ui, sans-serif;
+  --f-code: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  /* Layout */
+  --gutter: clamp(16px, 3.5vw, 56px);
+  --wrap: 1320px;
+  --label-w: clamp(300px, 34.4vw, 440px);
+  --hero-gap: clamp(40px, 5vw, 80px);
+
+  /* Spacing */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px;
+
+  --sec-top: clamp(88px, 10vw, 152px);
+  --sec-bottom: clamp(64px, 7vw, 104px);
+
+  /* Motion */
+  --ease: cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* Fabric textures */
+  --stitch: repeating-linear-gradient(90deg, currentColor 0 7px, transparent 7px 12px);
+  --stitch-v: repeating-linear-gradient(180deg, currentColor 0 7px, transparent 7px 12px);
+  --sheen: linear-gradient(104deg, rgba(255,255,255,0) 22%, rgba(255,255,255,.62) 40%, rgba(255,255,255,0) 57%);
+  --weave: repeating-linear-gradient(0deg, rgba(17,17,17,.022) 0 1px, rgba(17,17,17,0) 1px 3px);
+}

@@ -1,0 +1,16 @@
+/* Menu button, shown on phones and tablets only */
+.burger { display: none; }
+
+@media (max-width: 960px) {
+  .burger {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px;
+    border: 1.5px solid #fff; border-radius: 2px; background: transparent; color: #fff;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+  }
+  .burger--active { background: var(--satin); color: var(--cobalt); border-color: var(--satin); }
+  .burger__lines { display: grid; gap: 5px; width: 20px; }
+  .burger__line { display: block; height: 2px; background: currentColor; transition: transform 250ms var(--ease), opacity 200ms var(--ease); }
+  .burger--active .burger__line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger--active .burger__line:nth-child(2) { opacity: 0; }
+  .burger--active .burger__line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}

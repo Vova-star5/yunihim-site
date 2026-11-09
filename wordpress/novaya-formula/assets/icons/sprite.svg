@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="s-t40" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path vector-effect="non-scaling-stroke" d="M5 13 L9 40 H39 L43 13"/>
+    <path vector-effect="non-scaling-stroke" d="M5.8 18 c3 -3.4 6.1 -3.4 9.1 0 s6.1 3.4 9.1 0 s6.1 -3.4 9.1 0 s6.1 3.4 9.1 0"/>
+    <text x="24" y="34.6" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600">40</text>
+  </symbol>
+  <symbol id="s-tumble" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect vector-effect="non-scaling-stroke" x="6" y="6" width="36" height="36" rx="1.5"/>
+    <circle vector-effect="non-scaling-stroke" cx="24" cy="24" r="12.5"/>
+    <circle vector-effect="non-scaling-stroke" cx="24" cy="24" r="2" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="s-iron2" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path vector-effect="non-scaling-stroke" d="M4 39 H44 V22.5 H17 C10.6 22.5 6.6 29.5 4 39 Z"/>
+    <path vector-effect="non-scaling-stroke" d="M20 22.5 C20 15.6 22.6 12 28 12 H42 V22.5"/>
+    <circle vector-effect="non-scaling-stroke" cx="21.5" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+    <circle vector-effect="non-scaling-stroke" cx="30.5" cy="31.5" r="2" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="s-w" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <circle vector-effect="non-scaling-stroke" cx="24" cy="24" r="17.5"/>
+    <path vector-effect="non-scaling-stroke" d="M14.5 16.5 L18.7 31.5 L24 19.8 L29.3 31.5 L33.5 16.5"/>
+  </symbol>
+
+</svg>

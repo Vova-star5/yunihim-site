@@ -1,0 +1,6 @@
+/* Thin woven edges along the label sides */
+.selvage { position: relative; }
+.selvage::before {
+  content: ""; position: absolute; inset: 0 6px; pointer-events: none;
+  border-inline: 1px solid rgba(17,17,17,.07);
+}

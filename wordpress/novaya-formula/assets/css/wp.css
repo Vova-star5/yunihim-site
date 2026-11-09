@@ -1,0 +1,15 @@
+/* Только для WordPress: логотип из «Внешний вид → Настроить» и отступ под админ-панель */
+
+.brand-logo { display: block; width: auto; max-width: 100%; height: auto; }
+.brand-logo--large { max-height: 160px; }
+.brand-logo--footer { max-height: 72px; }
+.brand-logo--header { max-height: 40px; }
+
+/* Админ-панель WordPress видна только вошедшим в админку */
+.admin-bar .site-header { top: 32px; }
+@media (max-width: 782px) {
+  .admin-bar .site-header { top: 46px; }
+}
+@media (max-width: 600px) {
+  .admin-bar .site-header { top: 0; }
+}
