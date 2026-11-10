@@ -17,7 +17,7 @@ function nf_import_demo_content() {
 
 	$nbsp = "\u{00A0}";
 
-	if ( in_array( get_option( 'blogname' ), array( '', 'Мой сайт', 'Мой блог', 'My WordPress Website', 'My Blog' ), true ) ) {
+	if ( in_array( get_option( 'blogname' ), array( '', 'WordPress', 'Мой сайт', 'Мой блог', 'My WordPress Website', 'My Blog' ), true ) ) {
 		update_option( 'blogname', 'Новая Формула' );
 	}
 	if ( in_array( get_option( 'blogdescription' ), array( '', 'Ещё один сайт на WordPress', 'Just another WordPress site' ), true ) ) {
